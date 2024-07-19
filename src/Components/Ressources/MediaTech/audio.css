@@ -1,0 +1,212 @@
+
+/* Styling for the audio player */
+.audio-container {
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Ensure content stacks vertically */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  padding: 16px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px 220px 50px 220px ; /* Margin from the top of the screen */
+  max-width: 100%; /* Limit the maximum width of the container */
+}
+
+.audio-info {
+  margin-bottom: 12px;
+  text-align: center; /* Center align text within the info section */
+}
+
+.audio-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.audio-description {
+  font-size: 14px;
+  text-align: center;
+  color: #666;
+  max-width: 100%; /* Adjust as needed */
+  overflow: hidden;
+  white-space: normal; /* Allow wrapping onto the next line */
+}
+
+.audio-player {
+  height: 150px; /* Adjust height as needed */
+  width: 700px; /* Adjust width as needed */
+  background: #7F95E4;
+  box-shadow: 0 0 20px 0 #000a;
+  border-radius: 25px;
+  font-family: Arial, sans-serif;
+  font-size: 1.2rem;
+  color: white;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 6px auto;
+  align-items: center;
+  position: relative; /* Ensure relative positioning for child elements */
+  margin-top: 10px; /* Adjust margin to separate info and player */
+}
+
+.progress {
+  background: rgb(216, 171, 97);
+  height: 100%;
+  transition: width 0.25s ease-in-out;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.controls > * {
+  display: flex;
+  align-items: center;
+}
+
+.toggle-play,
+.stop {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  fill: white;
+}
+
+.toggle-play.pause {
+  width: 28px;
+}
+
+.time {
+  display: flex;
+  align-items: center;
+  color: #ccc;
+}
+
+.volume-container {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.volume-button {
+  height: 26px;
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+}
+
+.volume {
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+}
+
+.timeline-container {
+  position: relative;
+  width: 100%;
+  padding: 0 10px; /* Add padding to the left and right */
+  box-sizing: border-box; /* Ensure padding is included in the width */
+  top: 10px;
+}
+
+.timeline {
+  position: relative;
+  width: 100%;
+  height: 10px;
+  background: #ccc;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 50px; /* Ensure content stays within the timeline */
+}
+
+.progress-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #eee;
+  border-radius: 50px;
+}
+
+.volume-slider-container {
+  position: relative;
+  width: 100px;
+  height: 8px;
+}
+
+.volume-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: white;
+  box-shadow: 0 0 20px #000a;
+  transition: 0.25s;
+  border-radius: 50px;
+}
+
+.slider-dot {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  background: #000;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.volume-percentage {
+  background: coral;
+  height: 100%;
+}
+
+.loading-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-indicator::after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite; /* Animation for spinner */
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Additional icons for volume control */
+.icono-volumeMedium {
+  background-image: url('../../../Assets/Volume/volume-up.svg');
+  background-size: cover;
+}
+
+.icono-volumeLow {
+  background-image: url('../../../Assets/Volume/volume-down.svg');
+  background-size: cover;
+}
+
+.icono-volumeMute {
+  background-image: url('../../../Assets/Volume/volume-off.svg');
+  background-size: cover;
+}

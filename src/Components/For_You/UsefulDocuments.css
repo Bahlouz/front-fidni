@@ -1,0 +1,50 @@
+.useful-documents {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .document {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 200px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .document:hover {
+    transform: translateY(-5px);
+  }
+  
+  .preview img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .info {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .info h2 {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+  
+  .download-btn {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .download-btn:hover {
+    background-color: #0056b3;
+  }
+  

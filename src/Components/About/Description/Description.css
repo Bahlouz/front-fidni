@@ -1,0 +1,45 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.description {
+    background-color: white;
+    border-radius: 25px;
+    padding: 20px;
+    text-align: center;
+}
+
+.concept-title {
+    margin-top: 20px;
+    color: #000000;
+}
+
+.concept-description {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+
+h2 {
+    color: #303030;
+    font-weight: semibold;
+}
+
+.concept-section {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+}
+
+.concept-icon {
+    font-size: 3em;
+    color: #7F95E4;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    text-align: left;
+}

@@ -1,0 +1,14 @@
+.pdf-title {
+    margin-top: 20px;
+    color: #333;
+}
+
+.pdf-preview {
+    height: 305px;
+    overflow: auto;
+    z-index: 9999;
+}
+
+.list-group-item {
+    cursor: pointer;
+}

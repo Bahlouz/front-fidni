@@ -1,0 +1,20 @@
+.epub-title {
+    margin-top: 20px;
+    color: #333;
+}
+
+.epub-container {
+    margin-top:170px;
+}
+
+.epub-preview {
+    height: 350px;
+    overflow: auto;
+    z-index: 9999;
+    
+
+}
+
+.list-group-item {
+    cursor: pointer;
+}
