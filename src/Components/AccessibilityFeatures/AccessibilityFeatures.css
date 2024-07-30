@@ -1,9 +1,4 @@
 /* Basic Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 /* Container Styling */
 .accessibility-features {
@@ -78,8 +73,8 @@
 }
 
 /* Accessibility Styles */
-body {
-  font-size: 16px;
+.accessibility-container body {
+  font-size: 1.2em;
   line-height: 1.5;
 }
 

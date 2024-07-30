@@ -1,0 +1,44 @@
+/* Background image for the page */
+body {
+    background-image: url('https://via.placeholder.com/1920x1080'); /* Replace with your background image URL */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Optional: keeps the background image fixed during scrolling */
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Unique class names for styling the Annuaire component */
+  .annuaire-container {
+    margin-top: 170px;
+    padding: 0 15px;
+    width: 90vw;
+    
+}
+  
+  .annuaire-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .annuaire-card-img {
+    border-radius: 50%;
+    object-fit: cover;
+    width: 8em; /* Adjust size as needed */
+    aspect-ratio: 1/1;
+  }
+  
+  .annuaire-card-body {
+    padding: 15px;
+  }
+  
+  .annuaire-card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .annuaire-card-text {
+    font-size: 1rem;
+  }
+  

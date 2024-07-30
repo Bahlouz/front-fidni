@@ -4,36 +4,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora&family=Ubuntu:wght@300;400;700&display=swap');
 
-body {
-  margin: 0;
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 1.125rem;
-  font-weight: 300;
-}
-
-h1, h2, h3 {
-  font-family: 'Lora', serif;
-  font-weight: 400;
-  color: #143774;
-  margin-top: 0;
-}
-
-h1 {
-  font-size: 2rem;
-  margin-bottom: 0.5em;
-}
-
-a {
-  color: #1792d2;
-}
-
-a:hover,
-a:focus {
-  color: #143774;
-}
-
-strong {
-  font-weight: 700;
+.single-post-container{
+  margin-top:0px !important;
 }
 
 .single-post-info {
@@ -55,13 +27,15 @@ strong {
 }
 
 .single-post-container {
-  max-width: 800px;
+  max-width: 70em;
   margin: 0 auto;
   padding: 2em 1em;
 }
 
 .single-post-image {
-  max-width: 100%;
+  width: 100vw;
   display: block;
+  margin-top: 1em;
   margin-bottom: 1em;
+
 }

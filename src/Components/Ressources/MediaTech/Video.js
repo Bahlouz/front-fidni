@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import ReactPlayer from 'react-player';
 import './video.css'; // Import the custom CSS
 import videos from './videolist'; // Import the video list
+import backvideo from"../../../Assets/backvideo.jpg";
 const VideoPlayer = ({ url, title, description }) => {
   const [isMuted, setIsMuted] = useState(false);
   const [volume, setVolume] = useState(1);  
@@ -26,8 +27,8 @@ const VideoPlayer = ({ url, title, description }) => {
           url={url}
           playing={false}
           controls
-          width="720px"
-          height="405px"
+          width="100%"
+          height="100%"
           muted={isMuted}
           volume={volume}
         />
@@ -43,6 +44,9 @@ const VideoPlayer = ({ url, title, description }) => {
 const VideoPlayerList = () => {
   return (
     <div>
+      <div className="audio-image">
+                <img src={backvideo}></img>
+      </div> 
       <h1 className='video-page-title'>Vidéos Informatives</h1>
       <p className='video-page-description'>Découvrez nos vidéos sélectionnées pour vous.</p>
       {videos.map((video, index) => (

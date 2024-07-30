@@ -1,6 +1,6 @@
 import React from 'react';
 import './AccessibilityFeatures.css';
-
+import backnavhead from "../../Assets/back navhead.jpg";
 const AccessibilityFeatures = () => {
   const w3cMeasures = "Les mesures d'accessibilité du W3C (World Wide Web Consortium) sont conçues pour rendre le contenu web accessible à tous, y compris aux personnes handicapées. Ces mesures comprennent l'amélioration de la perceptibilité, de l'utilisabilité, de la compréhensibilité et de la robustesse du contenu web.";
 
@@ -34,6 +34,8 @@ const AccessibilityFeatures = () => {
   ];
 
   return (
+    <>
+    <img className="backnavhead" src={backnavhead} aria-hidden="true" />
     <div className="accessibility-features">
       <h2 className="accessible-heading">Mesures d'accessibilité du W3C</h2>
       <p className="w3c-measures">{w3cMeasures}</p>
@@ -58,6 +60,7 @@ const AccessibilityFeatures = () => {
         <li className="app-item"><span className="app-name">TalkBack</span> - Lecteur d'écran pour Android</li>
       </ul>
     </div>
+    </>
   );
 };
 

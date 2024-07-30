@@ -1,0 +1,30 @@
+.qui-sommes-nous-container {
+  background: radial-gradient(circle, #ffffff, #f0f0f0);
+  color: rgb(48, 48, 48); /* Adjust text color for better contrast */
+  
+    padding: 1.25em;
+    font-family: Arial, sans-serif;
+  }
+  
+  .qui-sommes-nous-title {
+    color: #0056b3;
+    font-weight: bold;
+    text-align: center;
+    font-size: 4rem;
+    font-family: raleway;
+  }
+  
+  .qui-sommes-nous-text {
+    margin: 2em 6em 2em 6em;
+    font-size: 1.3em;
+    text-align: justify;
+    font-family: raleway;
+  }
+ 
+  @media(max-width:767px){
+    .qui-sommes-nous-text {
+      padding:1px;
+      margin: 0;
+      font-size: 1.2em;
+    }
+  }

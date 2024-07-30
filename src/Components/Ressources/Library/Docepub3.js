@@ -5,15 +5,15 @@ import './Docepub3.css';
 
 const epubDocuments = [
     {
-        title: 'Book 1',
+        title: 'Protocole GBV Handicap TAMSS UNFPA',
         url: '/path/to/book1.epub'
     },
     {
-        title: 'Book 2',
+        title: 'Le handicap et les personnes handicapées dans les médias Tunisiens',
         url: '/path/to/book2.epub'
     },
     {
-        title: 'Book 3',
+        title: 'L’accès des personnes handicapées à leurs droits culturels en tunisie',
         url: '/path/to/book3.epub'
     }
 ];
@@ -36,7 +36,7 @@ const Docepub3 = () => {
         <Container className="mt-4 epub-container">
             <Row>
                 <Col>
-                    <h1 className="epub-title">EPUB Books</h1>
+                    <h1 className="epub-title">Documents EPUB3</h1>
                     <ListGroup>
                         {epubDocuments.map((book, index) => (
                             <ListGroup.Item key={index} action onClick={() => handleSelectBook(book)}>

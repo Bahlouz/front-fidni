@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 import { Link } from 'react-router-dom';
 import { AiOutlineFacebook, AiOutlineInstagram, AiOutlineYoutube } from 'react-icons/ai';
 import { IoIosContrast } from "react-icons/io";
@@ -8,7 +8,7 @@ import { useTheme } from '../Context/ThemeContext';
 function Header() {
   const isVisible = ScrollHandler();
   const { toggleTheme, theme } = useTheme(); // Access toggleTheme and theme from context
-
+  const [isScrolled, setIsScrolled] = useState(false);
   const handleZoomAlert = () => {
     alert('Vous pouvez augmenter ou diminuer le zoom de la page en utilisant les raccourcis Ctrl + et Ctrl -');
   };
@@ -19,9 +19,24 @@ function Header() {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) { // Adjust this value based on when you want the color change to happen
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
 
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
-    <header className={`header ${isVisible ? 'visible' : 'hidden'} ${theme}`}>
+    <header className={`header ${isScrolled ? 'scrolled' : 'visible'} ${theme}`}>
       <div className="header-links">
         <a href="#content" onClick={() => window.scrollBy(0, 50)}>Aller au contenu [1]</a>
         <a href="#navbar" onClick={() => handleScrollTo('navbar')} style={{ cursor: 'pointer' }}>Aller au menu [2]</a>

@@ -1,40 +1,72 @@
-body {
-    background-color: #f8f9fa;
+/* Existing styles */
+
+.concept-section {
+    background: #ffffff; /* Match background color */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    text-align: center; /* Center text and icons */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    height: 100%; /* Full height of its container */
+    margin-top: 1.4em;
+    font-family: 'Raleway', sans-serif; /* Use Raleway font */
+}
+
+.flex-grow-1 {
+    flex: 1; /* Ensure columns grow equally */
+}
+
+.description-container {
+    background: radial-gradient(circle, #ffffff, #f0f0f0); /* Match background style */
+    padding: 1em;
+    border-radius: 15px;
+    margin-bottom: 2em;
 }
 
 .description {
-    background-color: white;
+    background: #ffffff; /* Light background for consistency */
     border-radius: 25px;
     padding: 20px;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    font-family: 'Raleway', sans-serif; /* Use Raleway font */
 }
 
-.concept-title {
-    margin-top: 20px;
-    color: #000000;
+/* Ensure the description title and text are consistent */
+.description-title {
+    font-size: 2.5em;
+}
+
+.description-p {
+    font-size: 1.2em;
 }
 
 .concept-description {
     margin-bottom: 20px;
-    font-size: 1.2em;
+    font-size: 1.6em;
+    color: #333; /* Darker color for better readability */
+    font-family: 'Raleway', sans-serif; /* Use Raleway font */
 }
 
-h2 {
-    color: #303030;
-    font-weight: semibold;
+.concept-description h2 {
+    color: #0056b3; /* Deep blue to match other elements */
+    font-weight: 700; /* Bold for emphasis */
+    font-family: 'Raleway', sans-serif; /* Use Raleway font */
 }
 
-.concept-section {
-    background-color: #ffffff;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: justify;
+.icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 .concept-icon {
-    font-size: 3em;
-    color: #7F95E4;
+    font-size: 6em;
+    color: #0056b3; /* Deep blue to match other elements */
     margin-bottom: 10px;
 }
 
@@ -42,4 +74,7 @@ ul {
     list-style-type: disc;
     padding-left: 20px;
     text-align: left;
+    font-family: 'Raleway', sans-serif; /* Use Raleway font */
+    color: #333; /* Darker color for consistency */
 }
+

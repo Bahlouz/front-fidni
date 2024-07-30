@@ -1,35 +1,47 @@
 import React from 'react';
 import './UsefulDocuments.css';
+import backnavhead from "../../Assets/back navhead.jpg"
+import { Row,Col, Container } from 'react-bootstrap';
 
 const documents = [
   {
     id: 1,
-    title: "Guide d'accessibilité",
-    previewUrl: "https://via.placeholder.com/150",
+    title: "Protocole GBV Handicap TAMSS UNFPA",
+    previewUrl: "https://mecdata.it/wp-content/uploads/2021/04/534px-PDF_file_icon.svg_.png",
     downloadUrl: "#"
   },
   {
     id: 2,
-    title: "Règlement sur l'accessibilité",
-    previewUrl: "https://via.placeholder.com/150",
+    title: "Le handicap et les personnes handicapées dans les médias Tunisiens",
+    previewUrl: "https://mecdata.it/wp-content/uploads/2021/04/534px-PDF_file_icon.svg_.png",
     downloadUrl: "#"
   },
   {
     id: 3,
-    title: "Manuel de l'utilisateur",
-    previewUrl: "https://via.placeholder.com/150",
-    downloadUrl: "#"
-  },
-  {
-    id: 4,
-    title: "Rapport annuel",
-    previewUrl: "https://via.placeholder.com/150",
+    title: "L’accès des personnes handicapées à leurs droits culturels en tunisie",
+    previewUrl: "https://mecdata.it/wp-content/uploads/2021/04/534px-PDF_file_icon.svg_.png",
     downloadUrl: "#"
   },
 ];
 
 const UsefulDocuments = () => {
   return (
+    <>
+    <Row>
+        <img className="backnavhead" src={backnavhead} aria-hidden="true" />
+        </Row>
+        <Container>
+        <Row>
+                <Col>
+                <h1 className="documents-utiles-titre">Documents pour vous </h1>
+                </Col>
+            </Row>
+        <Row>
+                <Col>
+                    <p className="documents-utiles-description">Explorez les options de travail, de formation, de financement et de bénévolat pour les personnes handicapées en Tunisie. Encouragez l'intégration et le développement en saisissant toutes les occasions d'avancer dans votre carrière et votre vie personnelle.
+                    </p>
+                </Col>
+            </Row>
     <div className="useful-documents">
       {documents.map((doc) => (
         <div className="document" key={doc.id}>
@@ -42,7 +54,9 @@ const UsefulDocuments = () => {
           </div>
         </div>
       ))}
-    </div>
+    </div>*
+    </Container>
+    </>
   );
 };
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import './Opportunities.css';
+import backnavhead from "../../Assets/back navhead.jpg";
 
 const volunteerOpportunities = [
     {
@@ -26,10 +27,20 @@ const volunteerOpportunities = [
 
 const Opportunities = () => {
     return (
+        <>       
+        <Row>
+        <img className="backnavhead" src={backnavhead} aria-hidden="true" />
+        </Row>
         <Container className="mt-4">
             <Row>
                 <Col>
                     <h1 className="opportunities-title">Opportunités de Bénévolat</h1>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <p className="liens-utiles-description">Explorez les options de travail, de formation, de financement et de bénévolat pour les personnes handicapées en Tunisie. Encouragez l'intégration et le développement en saisissant toutes les occasions d'avancer dans votre carrière et votre vie personnelle.
+                    </p>
                 </Col>
             </Row>
             <Row>
@@ -46,6 +57,7 @@ const Opportunities = () => {
                 ))}
             </Row>
         </Container>
+    </>    
     );
 };
 

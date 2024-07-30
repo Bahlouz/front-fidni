@@ -1,0 +1,145 @@
+/* Import fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Roboto:wght@400;700&family=Merriweather:wght@400;700&display=swap');
+
+.quote-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: radial-gradient(circle, #ffffff, #f0f0f0);
+    padding: 1em;
+    box-sizing: border-box; /* Ensure padding is included in element's width */
+    font-family: 'Raleway', sans-serif; /* Apply Raleway as default */
+}
+
+.quote-text {
+    font-size: 2.3em;
+    font-weight: 700; /* Bold weight for emphasis */
+    color: #0056b3; /* Deep blue for emphasis */
+    padding: 5px 10px;
+    border-bottom: none;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.quote-text::before,
+.quote-text::after {
+    content: "";
+    position: absolute;
+    background-color: #0056b3; /* Match color to text for consistency */
+}
+
+.quote-text::before {
+    width: 100px;
+    height: 3px;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.quote-text::after {
+    width: 100px;
+    height: 3px;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.quote-container-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+}
+
+.quote-mot {
+    font-size: 1.5em;
+    font-family: 'Merriweather', serif; /* Complementary serif font */
+    color: #ff6600; /* Vibrant orange for contrast */
+}
+
+.quote-author {
+    font-size: 1.4em;
+    font-family: 'Roboto', sans-serif; /* Complementary sans-serif font */
+    color: #7d4c3a; /* Warm brown for a softer look */
+    text-align: center;
+}
+
+.unesco-logo {
+    width: 100%;
+    max-width: 27em;
+    aspect-ratio: 1 / 1; /* Ensures a 1:1 aspect ratio */
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 20px auto;
+}
+
+.quote-content {
+    padding: 1em;
+    margin: 3em;
+}
+
+.quote-body {
+    font-size: 1.3rem;
+    color: #003366; /* Dark blue for a professional look */
+    line-height: 1.5;
+    position: relative;
+    padding: 0 1em; /* Adjust padding for better responsiveness */
+    margin-top: 1.2em;
+    font-family: 'Raleway', sans-serif; /* Apply Raleway for body text */
+}
+
+.quote-body::before,
+.quote-body::after {
+    font-size: 3em;
+    color: #cccccc; /* Light gray for subtle emphasis */
+    position: absolute;
+    font-size: 7em;
+}
+
+.quote-body::before {
+    content: '\201C';
+    top: -0.5em;
+    left: -0.3em;
+}
+
+.quote-body::after {
+    content: '\201D';
+    bottom: -1em;
+    right: 0em;
+}
+
+@media (max-width: 768px) {
+    .quote-text {
+        font-size: 20px;
+    }
+
+    .quote-author {
+        font-size: 1.2em;
+    }
+
+    .quote-body {
+        font-size: 1em;
+    }
+
+    .unesco-logo {
+        max-width: 15em;
+    }
+}
+
+@media (max-width: 576px) {
+    .quote-text {
+        font-size: 18px;
+    }
+
+    .quote-author {
+        font-size: 1em;
+    }
+
+    .quote-body {
+        font-size: 0.9em;
+    }
+
+    .unesco-logo {
+        max-width: 10em;
+    }
+}

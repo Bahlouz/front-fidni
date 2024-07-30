@@ -20,7 +20,6 @@ const SingleWikidi = () => {
                     <Card.Title className="single-wikidi-title">{storyItem.title}</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">{storyItem.date}</Card.Subtitle>
                     <Card.Text className="single-wikidi-content">{storyItem.content}</Card.Text>
-                    <Button variant="primary" href="/wikidi">Retour aux histoires</Button>
                 </Card.Body>
             </Card>
         </Container>

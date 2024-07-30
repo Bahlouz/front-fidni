@@ -14,7 +14,7 @@ import {
 import NavBar from './Components/Navbar';
 import Home from './Components/Home/Home';
 import Footer from './Components/Footer';
-import Audio from './Components/Ressources/MediaTech/Audio';
+import AudioPage from './Components/Ressources/MediaTech/AudioPage';
 import PressCorner from './Components/Press_Corner/PressCorner';
 import Docpdf from './Components/Ressources/Library/Docpdf';
 import Docepub3 from './Components/Ressources/Library/Docepub3';
@@ -36,28 +36,14 @@ import SinglePost from './Components/Blog/SinglePost';
 import SingleNews from './Components/News_&_Events/News/SingleNews';
 import SingleWikidi from './Components/Wikid/SingleWikidi';
 import SinglePressRelease from './Components/Press_Corner/SinglePress';
+import Artistes from './Components/Wikid/Artistes';
+import Entrepreneurs from './Components/Wikid/Entrepreneurs';
+import Paralympiques from './Components/Wikid/Paralympiques';
+import SavoirLab from './Components/SavoirLab/SavoirLab';
+import Annuaire from './Components/For_You/Annuaire';
 function App() {
   const { toggleTheme, theme } = useTheme();
-  const audioFiles = [
-    {
-      name: 'Song A',
-      description: 'This is Song A descriptionzadzdaaffoeahfofheubfzbvsivbqsibveszubqzuiegbzi.',
-      url: '/a.mp3',
-      type: 'audio/mpeg',
-    },
-    {
-      name: 'Another Song',
-      description: 'Description for Another Song.',
-      url: '/Assets/AnotherSong.ogg',
-      type: 'audio/ogg',
-    },
-    {
-      name: 'Sample Audio',
-      description: 'Sample Audio description.',
-      url: '/Assets/SampleAudio.wav',
-      type: 'audio/wav',
-    },
-  ];
+  
   
   const [isLoading, setIsLoading] = useState(true);
  
@@ -74,18 +60,21 @@ function App() {
   return (
     <>
       <div className={`app ${theme}`}>
-      {isLoading ? <Preloader /> : (
+      
         
     <Router>
       <NavBar />
       <Routes>
         <Route path="/accessibility" element={<AccessibilityFeatures />} />
-        <Route path='wikidi'element={<Wikid />} />
+        <Route path='wikiphidia'element={<Wikid />} />
+        <Route path='/wikiphidia/artistes'element={<Artistes />} />
+        <Route path='wikiphidia/entrepreneurs'element={<Entrepreneurs />} />
+        <Route path='wikiphidia/para-lympiques'element={<Paralympiques />} />
         <Route path="/wikidi/:storyId" element={<SingleWikidi />} /> 
+        <Route path='/savoir-lab'element={<SavoirLab />} />
+        <Route path='//for-you/annuaire-ong'element={<Annuaire />} />
         <Route path="/" element={<Home />} />
-        <Route path="/resources/media/audio" element={audioFiles.map((file, index) => (
-          <Audio key={index} audioSrc={file.url} name={file.name} description={file.description}/>
-        ))} />
+        <Route path="/resources/media/audio" element={ <AudioPage />} />
         <Route path="/resources/media/video" element={<VideoPlayerList />} />
         <Route path="/resources/media/podcasts" element={<Podcast />} />
         <Route path="/press-corner" element={<PressCorner />} />
@@ -104,7 +93,7 @@ function App() {
       </Routes>
       <Footer />
     </Router>
-     )}
+     
     </div>
     </>
   );

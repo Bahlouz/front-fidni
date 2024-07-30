@@ -1,7 +1,8 @@
 import React, { useRef, useState, useEffect } from 'react';
 import './audio.css';
+import { audioFiles } from './audiofiles';
 
-const Audio = ({ audioSrc, name,description }) => {
+const Audio = ({ audioSrc, name, description }) => {
   const audioRef = useRef(null);
   const volumeSliderRef = useRef(null);
   const sliderDotRef = useRef(null);
@@ -13,7 +14,7 @@ const Audio = ({ audioSrc, name,description }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const [previousVolume, setPreviousVolume] = useState(0.75);
-  const [sliderDotPosition, setSliderDotPosition] = useState(75); // Default position in percentage
+  const [sliderDotPosition, setSliderDotPosition] = useState(75);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -80,7 +81,7 @@ const Audio = ({ audioSrc, name,description }) => {
 
     const onMouseDown = (e) => {
       e.preventDefault();
-      onMouseMove(e); // Update dot position immediately on click
+      onMouseMove(e);
       document.addEventListener('mousemove', onMouseMove);
       document.addEventListener('mouseup', onMouseUp);
     };
@@ -169,7 +170,7 @@ const Audio = ({ audioSrc, name,description }) => {
   return (
     <div className="audio-container">
       <div className="audio-info">
-        <div className="audio-title">{name}</div>
+        <div className="audio-title">{audioFiles.name}</div>
         <div className="audio-description">{description}</div>
       </div>
       <div className="audio-player">

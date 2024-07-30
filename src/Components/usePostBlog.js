@@ -9,7 +9,7 @@ const usePostBlog = () => {
     const fetchBlogs = async () => {
       setLoading(true);
       try {
-        const response = await fetch('https://fidni.tn/api/media-uploads'); // Adjust to your API endpoint
+        const response = await fetch('http://localhost:1337/api/post-blogs'); // Adjust to your API endpoint
 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);

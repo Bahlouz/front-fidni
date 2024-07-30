@@ -1,37 +1,41 @@
 import React from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import './Podcast.css';
-
+import backpodcast from"../../../Assets/backpodcast.jpg";
 const podcastEpisodes = [
     {
         id: 1,
-        title: 'Épisode 1: Introduction au Podcasting',
-        date: '1 Juillet 2024',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        title: 'Épisode 1: Briser les Préjugés sur le Handicap',
+        date: '1 Août 2024',
+        description: 'Dans cet épisode, nous explorons les préjugés courants liés au handicap et comment les déconstruire pour créer une société plus inclusive.',
         audioUrl: '/path/to/episode1.mp3',
         downloadUrl: '/path/to/episode1.mp3'
     },
     {
         id: 2,
-        title: 'Épisode 2: Plongée Profonde dans les Crochets React',
-        date: '7 Juillet 2024',
-        description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+        title: 'Épisode 2: Témoignages de Vie: Surmonter les Obstacles',
+        date: '8 Août 2024',
+        description: 'Écoutez les histoires inspirantes de personnes vivant avec un handicap et comment elles ont surmonté les défis quotidiens.',
         audioUrl: '/path/to/episode2.mp3',
         downloadUrl: '/path/to/episode2.mp3'
     },
     {
         id: 3,
-        title: 'Épisode 3: Interview avec un Invité Spécial',
-        date: '14 Juillet 2024',
-        description: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        title: 'Épisode 3: Accessibilité Numérique: Quoi de Neuf?',
+        date: '15 Août 2024',
+        description: 'Nous discutons des dernières avancées en matière d’accessibilité numérique et des outils qui facilitent la vie des personnes en situation de handicap.',
         audioUrl: '/path/to/episode3.mp3',
         downloadUrl: '/path/to/episode3.mp3'
-    }
-];
-
+    },
+]
 const Podcast = () => {
     return (
+        <>
+         <div className="audio-image">
+        <img src={backpodcast}></img>
+        </div>
         <Container className="mt-4">
+            
             <Row>
                 <Col>
                     <h1 className="podcasts-title">Derniers Épisodes de Podcast</h1>
@@ -56,6 +60,7 @@ const Podcast = () => {
                 ))}
             </Row>
         </Container>
+        </> 
     );
 };
 

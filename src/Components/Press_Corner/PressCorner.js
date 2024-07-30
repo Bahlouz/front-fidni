@@ -1,6 +1,8 @@
 import React, { useEffect,useState } from 'react';
 import './PressCorner.css';
 import PressCornerData from './PressCornerData';
+import backnavhead from "../../Assets/back navhead.jpg";
+import { Row } from 'react-bootstrap';
 const PressCorner = () => {
   const [pressReleases, setPressReleases] = useState([]);
 
@@ -46,6 +48,10 @@ const PressCorner = () => {
   }, []);
 
   return (
+    <>
+    <Row>
+        <img className="backnavhead" src={backnavhead} aria-hidden="true" />
+    </Row>
     <div className="wrap" role="main">
       {[
         {
@@ -84,6 +90,7 @@ const PressCorner = () => {
         </article>
       ))}
     </div>
+    </>
   );
 };
 

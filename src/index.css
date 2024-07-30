@@ -1,12 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
 body {
-  margin-top: 120px;
-  font-family: "Roboto", sans-serif !important;
+  font-family: 'raleway';
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-}
-:root {
-  margin-top: 8.75em;
+  background:white;
+  overflow-x: hidden;
 }
 

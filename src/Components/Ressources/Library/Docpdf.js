@@ -5,16 +5,16 @@ import './Docpdf.css';
 
 const pdfDocuments = [
     {
-        title: 'Document 1',
-        url: '/path/to/document1.pdf'
+        title: 'الأشخاص ذوات وذوي الإعاقة فى تونس وتوفير مناخ سليم للحياة',
+        url: '../Assets/documents/الأشخاص ذوات وذوي الإعاقة فى تونس وتوفير مناخ سليم للحياة.pdf'
     },
     {
-        title: 'Document 2',
-        url: '/path/to/document2.pdf'
+        title: 'بلدية دامجة ومتاحة للأشخاص ذوي الإعاقة',
+        url: '../Assets/documents/بلدية دامجة ومتاحة للأشخاص ذوي الإعاقة.pdf'
     },
     {
-        title: 'Document 3',
-        url: '/path/to/document3.pdf'
+        title: 'تقرير الدولة التونسية حول العهد الدولي للحقوق الاقتصادية والاجتماعية والثقافية',
+        url: '../Assets/documents/تقرير الدولة التونسية حول العهد الدولي للحقوق الاقتصادية والاجتماعية والثقافية.pdf'
     }
 ];
 
@@ -35,7 +35,7 @@ const Docpdf = () => {
         <Container className="mt-4">
             <Row>
                 <Col>
-                    <h1 className="pdf-title">PDF Documents</h1>
+                    <h1 className="pdf-title">Documents PDF</h1>
                     <ListGroup>
                         {pdfDocuments.map((doc, index) => (
                             <ListGroup.Item key={index} action onClick={() => handleSelectDocument(doc)}>

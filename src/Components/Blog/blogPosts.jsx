@@ -1,18 +1,18 @@
 const blogPosts = [
   {
     id: '1',
-    title: "La vie avec la cécité : surmonter les défis quotidiens",
-    image: "https://via.placeholder.com/1200x500?text=Blindness",
-    alt: "Personne aveugle utilisant une canne pour marcher",
-    date: "23 juillet 2019",
-    postedBy: "Marie Dupont",
-    body: "Vivre avec la cécité présente de nombreux défis, mais avec les bons outils et le bon état d'esprit, on peut mener une vie pleine et satisfaisante. Dans cet article, nous explorons des stratégies pour surmonter les obstacles quotidiens et vivre pleinement.",
+    title: "Tunisie : Success-story face au défi du handicap",
+    image: "https://cdnuploads.aa.com.tr/uploads/Contents/2020/12/03/thumbs_b_c_a4645eb491475e7ce2ba1fc57e46d2da.jpg?v=134256",
+    alt: "Tunisie : Success-story face au défi du handicap",
+    date: "3 Décembre 2020",
+    postedBy: "Hend Abdessamad",
+    body: "Le Tunisien Walid Ktila, est un athlète handisport spécialisé dans la discipline course sur fauteuil roulant, pas seulement ! Le sportif tunisien a déclaré à l’Agence Anadolu (AA) « j\’ai ressenti mon handicap au lycée, quand je n’arrivais pas à participer aux activités comme tous mes camarades, j’étais dispensé de la discipline scolaire d’éducation physique, ce qui m’a beaucoup affecté, l’adolescence est un âge critique ! »",
     category: "featured"
   },
   {
     id: '2', 
     title: "S'adapter à une vie en fauteuil roulant",
-    image: "https://via.placeholder.com/300?text=Wheelchair",
+    image: "https://tunisiepara.com/wp-content/uploads/2023/10/fauteuil-roulant-manuel-pour-obese.jpg   ",
     alt: "Personne en fauteuil roulant se déplaçant dans un parc",
     date: "19 juillet 2019",
     postedBy: "Luc Martin",
@@ -22,7 +22,7 @@ const blogPosts = [
   {
     id: '3',
     title: "Surdité et communication : trouver de nouvelles façons de se connecter",
-    image: "https://via.placeholder.com/300?text=Deaf",
+    image: "https://fr.eztalks.com/res/2021/03-16/14/26fda684f4a423401cb4293614f9b592.jpg",
     alt: "Personne sourde utilisant la langue des signes pour communiquer",
     date: "12 juillet 2019",
     postedBy: "Sophie Lemoine",
@@ -32,33 +32,14 @@ const blogPosts = [
   {
     id: '4',
     title: "Trouver des opportunités de travail en tant que personne handicapée",
-    image: "https://via.placeholder.com/300?text=Work",
+    image: "data:image/png;base64,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",
     alt: "Personne handicapée travaillant à un bureau",
     date: "3 juillet 2019",
     postedBy: "Jean-Pierre Durand",
     body: "Trouver un emploi peut être difficile pour les personnes handicapées, mais il existe de nombreuses ressources et opportunités disponibles. Cet article offre des conseils pour rechercher des emplois, se préparer aux entretiens et utiliser les ressources communautaires.",
     category: "recent"
   },
-  {
-    id: '5',
-    title: "Sport et loisirs pour les personnes handicapées",
-    image: "https://via.placeholder.com/300?text=Sports",
-    alt: "Personnes handicapées participant à une course de sport",
-    date: "28 juin 2019",
-    postedBy: "Emma Lefevre",
-    body: "Participer à des activités sportives et de loisirs est important pour la santé et le bien-être de tous. Cet article examine les différentes options disponibles pour les personnes handicapées, y compris les sports adaptés et les programmes de loisirs.",
-    category: "recent"
-  },
-  {
-    id: '6',
-    title: "Titre d'article exemple",
-    image: "https://via.placeholder.com/300?text=Example",
-    alt: "Exemple d'image",
-    date: "20 juin 2019",
-    postedBy: "Auteur Exemple",
-    body: "Ceci est un exemple d'article pour remplir l'espace. Vous pouvez remplacer ce contenu par des informations réelles.",
-    category: "recent"
-  }
+  
 ];
 
 export default blogPosts;

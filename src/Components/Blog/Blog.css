@@ -4,45 +4,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora&family=Ubuntu:wght@300;400;700&display=swap');
 
-body {
-  margin: 0;
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 1.125rem;
-  font-weight: 300;
-}
-
-h1, 
-h2,
-h3 {
-  font-family: 'Lora', serif;
-  font-weight: 400;
-  color: #143774;
-  margin-top: 0;
-}
-
-h1 {
-  font-size: 2rem;
-  margin: 0;
-}
-
-a {
-  color: #1792d2;
-}
-
-a:hover,
-a:focus {
-  color: #143774;
-}
-
-strong {
-  font-weight: 700;
-}
 
 .subtitle {
   font-size: 0.85rem;
   font-weight: 700;
   margin: 0;
-  color: #1792d2;
+  color: #1792d2; /* Bright blue for subtitles */
   letter-spacing: 0.05em;
   font-family: 'Ubuntu Bold', sans-serif;
 }
@@ -57,14 +24,14 @@ strong {
 }
 
 .blog-article-read-more {
-  color: #1792d2;
+  color: #1792d2; /* Bright blue for read more links */
   text-decoration: none;
   font-weight: 700;
 }
 
 .blog-article-read-more:hover,
 .blog-article-read-more:focus {
-  color: #143774;
+  color: #143774; /* Dark blue on hover/focus */
   text-decoration: underline;
 }
 
@@ -74,15 +41,15 @@ strong {
 
 .button-add-post {
   margin-bottom: 2em;
-  background-color:#1792d2;
+  width: 100%;
+  background-color: #044b71; /* Bright blue background */
   color: white;
   border-radius: 15px;
   border-color: transparent;
   padding: 1em;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+  font-family: raleway;
   font-size: 1.1em;
 }
-
 
 .blog-form {
   margin-top: 20px;
@@ -93,7 +60,6 @@ strong {
 
 .blog-form div {
   margin: 10px;
-
 }
 
 .blog-form label {
@@ -105,13 +71,12 @@ strong {
 .blog-form textarea {
   width: 80%;
   padding: 8px;
-  
   margin-bottom: 1em;
-  border-radius:15px
+  border-radius: 15px;
 }
 
 .blog-form button {
-  background-color: #28a745;
+  background-color: #28a745; /* Green background for submit button */
   color: white;
   border: none;
   padding: 10px 20px;
@@ -119,29 +84,25 @@ strong {
   border-radius: 5px;
 }
 
-.blog-container{
-  background-color: white;
-  padding: 5em !important;
-  border-radius: 50px !important;
+.blog-container {
+  background-color: rgba(255,255,255,0.4); /* White background for the blog container */
+  padding: 3em;
+  border-radius: 50px;
   margin-bottom: 50px;
+  width: 75vw;
 }
+
 .blog-container-flex {
-  max-width: 80vw;
+  max-width: 75vw;
   margin: 0 auto;
-  padding: 5em auto !important;
   display: flex;
   justify-content: space-between;
-  margin-bottom:1em;
- 
+  margin-bottom: 1em;
 }
 
 img {
   max-width: 100%;
   display: block;
-}
-
-main {
-  max-width: 75%;
 }
 
 .blog-article-body {
@@ -153,7 +114,7 @@ main {
   max-width: 23%;
 }
 
-
+/* Responsive Design */
 @media (max-width: 1050px) {
   .blog-container-flex {
     flex-direction: column;
@@ -172,8 +133,7 @@ main {
   }
 }
 
-
-/* articles */
+/* Articles */
 .blog-article-featured {
   border-bottom: #707070 1px solid;
   padding-bottom: 2em;

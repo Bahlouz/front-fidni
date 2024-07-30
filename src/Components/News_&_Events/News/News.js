@@ -2,15 +2,27 @@ import React from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import './News.css';
 import { newsItems } from './newsItems';
-
+import backnavhead from "../../../Assets/back navhead.jpg"
 
 const News = () => {
     const latestNews = newsItems[0]; // En supposant que le premier élément est la dernière nouvelle
     return (
-        <Container className="mt-4">
+        <Container fluid className="news-container">
+        <Container fluid className="news-content">
             <Row>
                 <Col>
-                    <h1 className="news-title">Dernières Nouvelles</h1>
+                    <h1 className="news-title">Actualités</h1>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <p className="news-description">Explorez les dernières mises à jour sur l'intégration et l'accessibilité des personnes handicapées en Tunisie. Tenez-vous informé des récentes politiques, actions du gouvernement, événements à venir, initiatives locales, et histoires motivantes. Découvrez des outils pratiques et des conseils pour accéder aux différents soutiens disponibles.
+                    </p>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <h2 className="news-une">A La Une</h2>
                 </Col>
             </Row>
             <Row>
@@ -41,6 +53,7 @@ const News = () => {
                     </Col>
                 ))}
             </Row>
+        </Container>
         </Container>
     );
 };

@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Blog.css';
 import blogPosts from './blogPosts.jsx';
-import { Container } from 'react-bootstrap';
-
+import { Container,Row } from 'react-bootstrap';
+import backnavhead from "../../Assets/back navhead.jpg";
 const Blog = ({ onSubmit }) => {
   const [featuredPost, setFeaturedPost] = useState({});
   const [recentPosts, setRecentPosts] = useState([]);
@@ -12,7 +12,8 @@ const Blog = ({ onSubmit }) => {
     occupation: '',
     age: '',
     email: '',
-    content: ''
+    content: '',
+    media:null
   });
   const [showForm, setShowForm] = useState(false);
 
@@ -39,7 +40,8 @@ const Blog = ({ onSubmit }) => {
       occupation: '',
       age: '',
       email: '',
-      content: ''
+      content: '',
+      media:null
     });
     setShowForm(false);
   };
@@ -50,8 +52,37 @@ const Blog = ({ onSubmit }) => {
 
   return (
     <div>
-      <Container className="blog-container">
-      <button className="button-add-post" onClick={handleAddPostClick}>Ajouter un post</button>
+      <Row>
+        <img className="backnavhead" src={backnavhead} aria-hidden="true" />
+        </Row> 
+      <Container fluid className="p-0 blog-main">     
+      <Container fluid className="blog-container">
+      
+        <div className="blog-container-flex">
+          <main role="main">
+            <article className="blog-article-featured">
+              <h2 className="blog-article-title">{featuredPost.title}</h2>
+              <img src={featuredPost.image} alt={featuredPost.alt} className="blog-article-image" />
+              <p className="blog-article-info">{featuredPost.date} | {featuredPost.postedBy}</p>
+              <p className="blog-article-body">{featuredPost.body}</p>
+              <Link to={`/post/${featuredPost.id}`} className="blog-article-read-more">CONTINUER LA LECTURE</Link>
+            </article>
+            {recentPosts.map((post, index) => (
+              <article className="blog-article-recent" key={index}>
+                <div className="blog-article-recent-main">
+                  <h2 className="blog-article-title">{post.title}</h2>
+                  <p className="blog-article-body">{post.body}</p>
+                  <Link to={`/post/${post.id}`} className="blog-article-read-more">CONTINUER LA LECTURE</Link>
+                </div>
+                <div className="blog-article-recent-secondary">
+                  <img src={post.image} alt={post.alt} className="blog-article-image" />
+                  <p className="blog-article-info">{post.date} | {post.postedBy}</p>
+                </div>
+              </article>
+            ))}
+          </main>
+        </div>
+        <button className="button-add-post" onClick={handleAddPostClick}>Ajouter un post</button>
       {showForm && (
         <form className="blog-form" onSubmit={handleSubmit}>
           <input
@@ -67,7 +98,7 @@ const Blog = ({ onSubmit }) => {
             name="occupation"
             value={formData.occupation}
             onChange={handleChange}
-            placeholder="Occupation"
+            placeholder="Votre domaine d’expertise ou votre occupation"
             required
           />
           <input
@@ -93,34 +124,17 @@ const Blog = ({ onSubmit }) => {
             placeholder="Contenu"
             required
           />
+          <input
+            type="file"
+            name="media"
+            onChange={handleChange}
+            accept="image/*,video/*" // Adjust accepted file types as needed
+          />
           <button type="submit">Envoyer</button>
         </form>
       )}
-        <div className="blog-container-flex">
-          <main role="main">
-            <article className="blog-article-featured">
-              <h2 className="blog-article-title">{featuredPost.title}</h2>
-              <img src={featuredPost.image} alt={featuredPost.alt} className="blog-article-image" />
-              <p className="blog-article-info">{featuredPost.date} | {featuredPost.postedBy}</p>
-              <p className="blog-article-body">{featuredPost.body}</p>
-              <Link to={`/post/${featuredPost.id}`} className="blog-article-read-more">CONTINUER LA LECTURE</Link>
-            </article>
-            {recentPosts.map((post, index) => (
-              <article className="blog-article-recent" key={index}>
-                <div className="blog-article-recent-main">
-                  <h2 className="blog-article-title">{post.title}</h2>
-                  <p className="blog-article-body">{post.body}</p>
-                  <Link to={`/post/${post.id}`} className="blog-article-read-more">CONTINUER LA LECTURE</Link>
-                </div>
-                <div className="blog-article-recent-secondary">
-                  <img src={post.image} alt={post.alt} className="blog-article-image" />
-                  <p className="blog-article-info">{post.date} | {post.postedBy}</p>
-                </div>
-              </article>
-            ))}
-          </main>
-        </div>
       </Container>
+      </Container>   
     </div>
   );
 };
