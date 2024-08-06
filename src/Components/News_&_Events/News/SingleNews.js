@@ -1,8 +1,9 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { Container, Card, Button } from 'react-bootstrap';
+import { Container, Card, Button,Row } from 'react-bootstrap';
 import './SingleNews.css'; // Import the CSS for single news page
 import { newsItems } from './newsItems.jsx'; // Assuming you have this data imported
+import backnavhead from "../../../Assets/back navhead.jpg";
 
 const SingleNews = () => {
     const { newsId } = useParams();
@@ -18,7 +19,9 @@ const SingleNews = () => {
     }
 
     return (
-        <Container className="single-news-container mt-4">
+        <>
+        <img className="backnavhead" src={backnavhead} aria-hidden="true" />
+        <Container className=" p-0 single-news-container mt-4">
             <Card className="mb-4">
                 <Card.Img variant="top" src={newsItem.imageUrl} className="single-news-image" />
                 <Card.Body>
@@ -29,6 +32,7 @@ const SingleNews = () => {
                 </Card.Body>
             </Card>
         </Container>
+        </>
     );
 };
 

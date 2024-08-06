@@ -100,7 +100,7 @@ function Footer() {
         <div className="footer-content">
           <div className="footer-content-column">
             <div className="footer-logo">
-              <a className="footer-logo-link" href="#">
+              <a className="footer-logo-link" href="/">
                 <span className="hidden-link-text">LOGO</span>
               </a>
             </div>
@@ -118,16 +118,13 @@ function Footer() {
           </div>
           <div className="footer-content-column">
             <div className="footer-menu">
-              <h2 className="footer-menu-name">Media tech</h2>
+              <h2 className="footer-menu-name">Mediathèque</h2>
               <ul id="menu-company" className="footer-menu-list">
                 <li className="menu-item menu-item-type-post_type menu-item-object-page">
-                  <a href="/resources/media/audio">Audio</a>
+                  <a href="/resources/media/audio-podcast">Audio & Podcast</a>
                 </li>
                 <li className="menu-item menu-item-type-taxonomy menu-item-object-category">
                   <a href="/resources/media/video">Vidéo</a>
-                </li>
-                <li className="menu-item menu-item-type-post_type menu-item-object-page">
-                  <a href="/resources/media/podcast">Podcast</a>
                 </li>
               </ul>
             </div>
@@ -140,22 +137,22 @@ function Footer() {
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="/for-you/useful-links"
+                    href="/services-et-droits/services"
                   >
-                    Liens Utiles
+                    Services
                   </a>
                 </li>
                 <li className="menu-item menu-item-type-custom menu-item-object-custom">
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="/for-you/useful-addresses"
+                    href="/services-et-droits/droits"
                   >
-                    Adresses utiles
+                    Droits
                   </a>
                 </li>
                 <li className="menu-item menu-item-type-post_type menu-item-object-page">
-                  <a href="/for-you/useful-documents">Documents utiles</a>
+                  <a href="/services-et-droits/opportunites">Opportunités</a>
                 </li>
                 <li className="menu-item menu-item-type-post_type menu-item-object-page">
                   <a href="/blog">Blog</a>
@@ -182,6 +179,9 @@ function Footer() {
               >
                 Contactez-nous
               </a>
+              <p>
+              Disclaimer : Les idées et les opinions exprimées dans cette plateforme sont celles des auteurs ; elles ne reflètent pas nécessairement les points de vue de l’Association IBSAR ou de l’UNESCO et n’engagent en aucune façon ces organisations.
+              </p>
             </div>
             
           </div>

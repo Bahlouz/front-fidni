@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Events.css'; // Import the CSS file for styling
 import backnavhead from "../../../Assets/back navhead.jpg";
 import { Container, Row, Col } from 'react-bootstrap';
@@ -66,41 +67,43 @@ const Events = () => {
       </Row>
       <Container className="py-5">
         <h1 className="events-title">Nos Événements</h1>
+        <p>Explorez les activités et les rassemblements axés sur l'inclusion et l'accessibilité pour les personnes handicapées en Tunisie. Consultez les conférences, ateliers, séminaires et événements communautaires à venir. Engagez-vous dans des conversations pertinentes, rencontrez des spécialistes et participez à des projets locaux.
+        </p>
         <Row className="row-cols-1 row-cols-md-3 g-4">
           {events.map(event => (
             <Col key={event.id}>
-              <div className="custom-card h-100" style={{ position: 'relative' }}>
-                <div className="custom-bottom-right">{event.date}</div>
-                <div className="custom-top-right">
-                  <div className="custom-tags-list mb-2">
-                    <span className="custom-tags-list-town text-uppercase">{event.location.split(',')[0]}</span>
-                    <span className="custom-free-tag">FREE</span>
-                  </div>
-                </div>
-                <div className="custom-image-container">
-                  <div className="custom-bottom-left">
-                    <div className="custom-thumbnail" style={{ backgroundColor: '#ffa5009e' }}>
-                      <div className="custom-thumbnail-date">
-                        <span className="custom-thumbnail-date-day">{new Date(event.date).getDate()}</span>
-                        <span className="custom-thumbnail-date-month">{new Date(event.date).toLocaleString('default', { month: 'short' })}</span>
-                      </div>
+              <Link to={`/event/${event.id}`} className="text-decoration-none">
+                <div className="custom-card h-100" style={{ position: 'relative' }}>
+                  <div className="custom-bottom-right">{event.date}</div>
+                  <div className="custom-top-right">
+                    <div className="custom-tags-list mb-2">
+                      <span className="custom-tags-list-town text-uppercase">{event.location.split(',')[0]}</span>
+                      <span className="custom-free-tag">FREE</span>
                     </div>
                   </div>
-                  <a href="#">
+                  <div className="custom-image-container">
+                    <div className="custom-bottom-left">
+                      <div className="custom-thumbnail" style={{ backgroundColor: '#ffa5009e' }}>
+                        <div className="custom-thumbnail-date">
+                          <span className="custom-thumbnail-date-day">{new Date(event.date).getDate()}</span>
+                          <span className="custom-thumbnail-date-month">{new Date(event.date).toLocaleString('default', { month: 'short' })}</span>
+                        </div>
+                      </div>
+                    </div>
                     <img 
                       src={event.imageUrl} 
                       onLoad={imageLoaded} 
                       className="custom-card-img-top" 
                       alt="Image" 
                     />
-                  </a>
-                  <div className="custom-image-overlay custom-text-over text-center d-flex justify-content-center align-items-center text-uppercase">
-                    <div>
-                      {event.title}
+                    <div className="custom-image-overlay custom-text-over text-center d-flex justify-content-center align-items-center text-uppercase">
+                      <div>
+                        {event.title}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             </Col>
           ))}
         </Row>

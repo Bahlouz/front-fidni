@@ -9,7 +9,15 @@ const Wikidi = () => {
     const latestStory = wikiditems[0];
 
     return (
+        <>
+        <div className="background-image-wikiphedia">
+        <div className="overlay-text-wikiphedia">
+          <h1 className="wikiphedia-titre">Wikiphedia</h1>
+          <p className="p-5 wikiphedia-description"> Découvrez des profils détaillés d'artistes, d'athlètes paralympiques, et d'entrepreneurs de scientifiques et d'autres profils de personnes en situation de handicap , Explorez leurs réalisations, parcours et contributions dans divers domaines pour vous inspirer et vous informer.</p>
+        </div>
+      </div>
         <Container className="mt-4">
+           
             <Row>
                 <Col>
                     <h1 className="wikidi-title">Histoires de Réussite</h1>
@@ -48,6 +56,7 @@ const Wikidi = () => {
                 ))}
             </Row>
         </Container>
+        </>
     );
 };
 

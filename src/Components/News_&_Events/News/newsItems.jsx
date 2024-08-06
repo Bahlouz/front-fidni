@@ -1,10 +1,10 @@
 export const newsItems = [
     {
         id: 1,
-        title: "Nouveau projet de loi pour améliorer l'accessibilité des espaces publics aux personnes handicapées",
+        title: "La Tunisie préside la 17e conférence des états parties à la convention relative aux droits des personnes handicapées qui se tient à New York du 11 au 13 juin 2024",
         date: "1 Août 2024",
-        content: "Le gouvernement annonce un projet de loi visant à rendre les espaces publics plus accessibles aux personnes handicapées, avec des mesures pour améliorer l'accès aux transports en commun et aux lieux culturels.",
-        imageUrl: "https://www.cerema.fr/sites/default/files/styles/uas_medium/public/media/images/2021/11/access.png?h=ed61d18e&itok=JdZxLlz4",
+        content: "Le ministre des affaires sociales Kamel Maddouri a présenté Mardi 11 Juin 2024 la déclaration de la Tunisie, au cours de la séance inaugurale des travaux de la 17e conférence des états parties à la convention relative aux droits des personnes handicapées, présidée par la Tunisie, qui se tient du 11 au 13 juin 2024 à New-York.",
+        imageUrl: "https://www.social.gov.tn/sites/default/files/2024-06/%D8%AA%D9%88%D9%86%D8%B3%20%D8%AA%D8%AA%D8%B1%D8%A3%D8%B3%20%D8%A7%D9%84%D8%AF%D9%88%D8%B1%D8%A9%2017%20%D9%84%D9%85%D8%A4%D8%AA%D9%85%D8%B1%20%D8%A7%D9%84%D8%AF%D9%88%D9%84%20%D8%A7%D9%84%D8%A3%D8%B7%D8%B1%D8%A7%D9%81%20%D9%81%D9%8A%20%D8%A5%D8%AA%D9%81%D8%A7%D9%82%D9%8A%D8%A9%20%D8%AD%D9%82%D9%88%D9%82%20%D8%A7%D9%84%D8%A3%D8%B4%D8%AE%D8%A7%D8%B5%20%D8%B0%D9%88%D9%8A%20%D8%A7%D9%84%D8%A5%D8%B9%D8%A7%D9%82%D8%A9%20%28%D9%86%D9%8A%D9%88%D9%8A%D9%88%D8%B1%D9%83%D8%8C%2011-13%20%D8%AC%D9%88%D8%A7%D9%86%202024%29_0.jpg",
     },
     {
         id: 2,
@@ -29,17 +29,17 @@ export const newsItems = [
     },
     {
         id: 5,
-        title: "Ouverture d'un café inclusif géré par des personnes handicapées",
+        title: "Le ministre des affaires sociales s'entretient à Rome avec la ministre italienne du travail et des politiques sociales",
         date: "20 Août 2024",
-        content: "Un nouveau café ouvre ses portes avec une équipe entièrement composée de personnes handicapées, offrant un espace accueillant et inclusif pour tous les clients.",
-        imageUrl: "https://via.placeholder.com/350x200",
+        content: "Le ministre des affaires sociales, Malek Ezzahi s’est entretenu, Mardi 05 Mars 2024 à Rome, avec la ministre italienne du Travail et des Politiques sociales, Marina Elvira Calderone, au sujet des perspectives de coopération entre la Tunisie et l’Italie dans le domaine de l’accueil de la main-d’œuvre et des compétences.Le ministre a proposé de renforcer les opportunités pour les Tunisiens issus de familles pauvres et à faible revenu",
+        imageUrl: "https://www.social.gov.tn/sites/default/files/2024-03/%D9%88%D8%B2%D9%8A%D8%B1%20%D8%A7%D9%84%D8%B4%D8%A4%D9%88%D9%86%20%D8%A7%D9%84%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%D9%8A%D8%A9%20%D9%8A%D9%84%D8%AA%D9%82%D9%8A%20%D8%A8%D9%88%D8%B2%D9%8A%D8%B1%D8%A9%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%20%D9%88%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B3%D8%A7%D8%AA%20%D8%A7%D9%84%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%D9%8A%D8%A9%20%D8%A7%D9%84%D8%A5%D9%8A%D8%B7%D8%A7%D9%84%D9%8A%D8%A9.jpg",
     },
     {
         id: 6,
-        title: "Programme de mentorat pour les étudiants handicapés dans les universités",
+        title: "Traitement médiatique des questions liées aux handicapés : Etre objectif, c’est toujours relatif !",
         date: "25 Août 2024",
-        content: "Un programme de mentorat est lancé pour soutenir les étudiants handicapés dans leur parcours universitaire, offrant un accompagnement personnalisé pour favoriser leur réussite académique.",
-        imageUrl: "https://via.placeholder.com/350x200",
+        content: "Clichés, métaphores mal filées, désignations erronées, voire dévalorisantes, se glissent vite au fil de la plume, il y a de quoi appeler les médias à un juste traitement des questions liées aux personnes handicapées, loin des stigmates et jugements de valeur.",
+        imageUrl: "https://i0.wp.com/lapresse.tn/wp-content/uploads/2024/05/handicap.jpg?w=850&ssl=1",
         readMoreUrl: "/news/2"
     },
     {

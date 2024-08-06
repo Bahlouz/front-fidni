@@ -1,20 +1,20 @@
-import React,{useEffect,useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import './Preloader.css'; // Import preloader styles
 
 const Preloader = () => {
-  const [isLoading, setIsLoading] = useState(true);
-    useEffect(() => {
-        // Simulate loading delay (replace with actual data fetching logic)
-        const timer = setTimeout(() => {
-          setIsLoading(false); // Set loading to false after delay
-        }, 2000);
-    
-        return () => clearTimeout(timer); // Cleanup timer on component unmount
-      }, []);
+  const [loading, setLoading] = useState(true);
+
   return (
-    <div className="preloader-container">
-      <div className="preloader"></div>
-    </div>
+    <>
+      {loading && (
+        <div className="preloader-container">
+          <span className="tile-1"></span>
+          <span className="tile-2"></span>
+          <span className="tile-3"></span>
+          <span className="tile-4"></span>
+        </div>
+      )}
+    </>
   );
 };
 

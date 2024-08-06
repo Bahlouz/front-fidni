@@ -19,7 +19,7 @@ const SavoirLab = () => {
 
   return (
     <Container fluid className="savoirlab-container">
-      <div className="background-image">
+      <div className="background-image-savoir-lab">
         <div className="overlay-text">
           <h1 className="savoirlab-titre">SavoirLab</h1>
           <p className="savoirlab-description">Explorez notre collection de PDF</p>

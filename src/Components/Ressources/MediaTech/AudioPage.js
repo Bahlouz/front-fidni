@@ -1,16 +1,18 @@
 import React from "react";
 import Audio from "./Audio";
-import backaudio from"../../../Assets/backaudio.jpg";
 import { audioFiles } from "./audiofiles";
 import "./audio.css"
-import { Container } from "react-bootstrap";
+import { Container,Row,Col } from "react-bootstrap";
 function AudioPage(){
     return(
-            <>
-            <div className="audio-page">
-                <div className="audio-image">
-                <img src={backaudio}></img>
-                </div> 
+            <div>
+            <Container className="mt-4">
+            <Row>
+                <Col>
+                    <h1 className="podcasts-title">Derniers Épisodes d'audio</h1>
+                </Col>
+            </Row>
+            </Container>
                 <Container fluid className="p-0 audio-list">
       {audioFiles.map((file, index) => (
         <Audio
@@ -22,7 +24,6 @@ function AudioPage(){
       ))}
     </Container>
     </div>
-            </>
     );
 }
 export default AudioPage;

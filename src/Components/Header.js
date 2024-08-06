@@ -36,7 +36,7 @@ function Header() {
     };
   }, []);
   return (
-    <header className={`header ${isScrolled ? 'scrolled' : 'visible'} ${theme}`}>
+    <header id='header' className={`header ${isScrolled ? 'scrolled' : 'visible'} ${theme}`}>
       <div className="header-links">
         <a href="#content" onClick={() => window.scrollBy(0, 50)}>Aller au contenu [1]</a>
         <a href="#navbar" onClick={() => handleScrollTo('navbar')} style={{ cursor: 'pointer' }}>Aller au menu [2]</a>

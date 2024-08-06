@@ -1,3 +1,4 @@
+
 .custom-container {
   width: 100vw;
 }
@@ -8,6 +9,10 @@
 
 .custom-thumbnail-date-month {
   color: rgb(255, 255, 255);
+}
+.custom-card-img-top{
+  width: 30em;
+  height:auto;
 }
 
 .custom-thumbnail {

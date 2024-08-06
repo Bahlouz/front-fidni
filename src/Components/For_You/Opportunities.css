@@ -1,15 +1,73 @@
-/* Opportunities.css */
-
 .opportunities-title {
-    margin-top: 20px;
-    color: #333;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.liens-utiles-description {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 .card {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
 
 .card-body {
-    background-color: #fff;
-    border-radius: 5px;
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .opportunities-title {
+        font-size: 1.5rem;
+    }
+
+    .liens-utiles-description {
+        font-size: 0.875rem;
+    }
+
+    .card-title {
+        font-size: 1.125rem;
+    }
+
+    .card-text {
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .opportunities-title {
+        font-size: 1.25rem;
+    }
+
+    .liens-utiles-description {
+        font-size: 0.75rem;
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .card-text {
+        font-size: 0.75rem;
+    }
 }

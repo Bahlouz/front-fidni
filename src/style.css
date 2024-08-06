@@ -1,6 +1,330 @@
 /* styles.css */
 
 
+
+
+.accessibility-container {
+  position: fixed;
+  right: 0;
+  top: 28%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the content */
+  transition: all 0.5s ease;
+  background: linear-gradient(to right, #454545, #282828); /* Gray gradient background */
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50px 0 0 50px;
+  width: 80px;
+  height: 80px; /* Match the size of the icon */
+  z-index: 9998; /* Ensure it stays above other components */
+  filter: none !important;
+}
+
+.accessibility-container::before {
+  content: '';
+  display: block;
+  width: 3.75em;
+  height: 3.75em;
+  background: url('./accessibility_icon.svg') no-repeat center;
+  background-size: contain;
+  position: absolute;
+  left: 15px; /* Adjust to fit the container */
+  z-index: 1; /* Ensure it is on top of the gray background */
+  filter: invert(100%);
+}
+
+.accessibility-container:hover {
+  width: 100px;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
+.asw-menu {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 20px #00000080;
+    opacity: 1;
+    transition: .3s;
+    z-index: 9999;
+    overflow: hidden;
+    background-color:rgba(0,0,0,0.8);
+    width: 500px;
+    line-height: 1;
+    font-size: 16px;
+    letter-spacing: 0.015em;
+    height: calc(100% - 40px - 75px);
+    color: #000 ;
+}
+
+.asw-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 18px;
+    height: 60px;
+    font-size: 18px;
+    font-weight: 700;
+    border-bottom: 1px solid #dedede;
+    color: white;
+}
+
+.asw-menu-header > div {
+    display: flex;
+}
+
+.asw-menu-header div[role="button"] {
+    padding: 12px;
+    cursor: pointer;
+    color: white;
+}
+
+.asw-menu-header div[role="button"]:hover {
+    opacity: 0.8;
+    color: white;
+}
+
+.asw-card {
+    margin: 0 15px 30px;
+}
+
+.asw-items {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.asw-btn {
+    aspect-ratio: 6 / 5;
+    border-radius: 0.25em;
+    padding: 0 0.9em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: #333;
+    font-size: 1em !important;
+    background: linear-gradient(from bottom, #FFFFFF, #CCCCCC);
+    border: 1px solid #dedede;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    line-height: 1.4;
+    font-family: raleway;
+}
+
+.asw-btn .asw-translate {
+    font-size: 15px !important;
+    
+}
+
+.asw-btn .material-icons {
+    margin-bottom: 16px;
+}
+
+.asw-btn:hover {
+    border-color: #005d9b;
+}
+
+.asw-btn.asw-selected {
+    background-color:rgba(0,0,0,0.9);
+    color: white;
+    border-color: #41949d;
+}
+
+.asw-menu-content {
+    overflow-y: scroll;
+    max-height: calc(100% - 80px);
+    color: #333;
+    padding: 15px 0;
+}
+
+.asw-widget,
+.asw-menu {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+}
+
+.asw-widget *,
+.asw-menu * {
+    box-sizing: border-box;
+}
+
+.asw-menu-btn {
+    position: fixed;
+    z-index: 500000;
+    right: 20px;
+    bottom: 20px;
+    background: #419D4A ;
+    box-shadow: 0 5px 15px 0 rgb(37 44 97 / 15%), 0 2px 4px 0 rgb(93 100 148 / 20%);
+    transition: .3s;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    transform: scale(1);
+    width: 54px;
+    height: 54px;
+    display: flex;
+    cursor: pointer;
+    border: 4px solid white ;
+    outline: 4px solid #419D4A;
+    text-decoration: none;
+}
+
+.asw-menu-btn:hover {
+    transform: scale(1);
+}
+.material-icons.md-36.white { font-size: 36px; color: #f9f9f9; }
+
+.asw-title-card{
+  font-family: raleway;
+  color: white !important;
+  font-size: 1.2em;
+}
+@font-face {
+        font-family: 'OpenDyslexic3';
+        src: url("https://website-widgets.pages.dev/fonts/OpenDyslexic3-Regular.woff") format("woff"), url("https://website-widgets.pages.dev/fonts/OpenDyslexic3-Regular.ttf") format("truetype");
+    }
+
+@media only screen and (max-width: 768px) {
+  .accessibility-container {
+      position: fixed;
+      right: 0;
+      top: 28%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      transition: all 0.5s ease;
+      padding: 10px;
+      border-radius: 50px 0 0 50px;
+      width: 80px;
+      z-index: 9999; /* Ensure it stays above other components */
+    }
+    
+    .accessibility-icon {
+      position:fixed;
+      width: 60px;
+      height: 60px;
+      background: url('./accessibility_icon.svg') ;
+      background-size: contain;
+      cursor: pointer;
+      filter: invert(100%);
+      transition: all 0.5s ease;
+      z-index: 9999;
+    }
+    
+    .accessibility-container:hover {
+      width: 100px;
+      z-index: 9999;
+    }
+      .asw-menu-btn {
+        width: 38px;
+        height: 38px;
+    }
+
+    .asw-menu-btn svg {
+        width: 24px;
+        height: 24px;
+        min-height: 24px;
+        min-width: 24px;
+        max-width: 24px;
+        max-height: 24px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .asw-menu {
+        width: calc(100% - 20px);
+        left: 10px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .asw-items {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.5rem;
+    }
+
+    .asw-menu {
+        width: calc(100% - 20px);
+        left: 10px;
+    }
+}
+#saturation-button {
+  position: relative;
+  padding: 10px;
+  display: inline-block;
+}
+
+.saturation-indicator {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  padding: 0 5px;
+}
+
+.indicator-line {
+  width: 30%;
+  height: 4px;
+  background-color: #ccc; /* Default color for inactive lines */
+  transition: background-color 0.3s;
+}
+
+.indicator-line.active {
+  background-color: orange !important; /* Color for active state */
+}
+
+
+
+/* Add outline on hover */
+.active-reader *:hover {
+  outline: 3px solid var(--outline-color, rgba(255, 255, 255, 0.8)); /* Use CSS variable or fallback color */
+}
+
+/* General overlay that dims the background */
+/* General overlay that dims the background */
+/* General overlay that dims the background */
+/* Full-screen overlay */
+/* Full-screen overlay */
+#unique-overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+display: none; /* Hidden by default */
+z-index: 8000; /* Ensure it's below the guide */
+pointer-events: none; /* Ensure it doesn't block interactions */
+}
+
+/* Transparent horizontal guide banner */
+#unique-guide {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 20%; /* Height of the banner */
+background-color: transparent; /* Fully transparent background */
+display: none; /* Hidden by default */
+z-index: 8001; /* Ensure it's above the overlay */
+pointer-events: none; /* Ensure it doesn't block interactions */
+border-top: 5px solid #006fb9;
+border-bottom: 5px solid #006fb9;
+}
+
+
 body {
   background-color: var(--main-bg-color);
   color: var(--main-text-color);
@@ -242,17 +566,18 @@ body {
 .navbar.scrolled {
   width: 100%;
   display: flex;
-  margin-top: 2.75em;  
+  margin-top: 2.51em;  
   transition: all 0.3s ease-in-out;
   left: 0;
   right: 0;
   padding: 0rem  !important;
-  font-size: 0.9em !important;
+  font-size: 1em !important;
   font-family: raleway;
   background-color: rgba(0, 0, 0, 0.8);
   background-position: top center;
   z-index: 7000;
   border-bottom: 2px solid white;
+  filter: none !important;
 }
 
 
@@ -264,13 +589,14 @@ body {
     left: 0;
     right: 0;
     padding: 0rem  !important;
-    font-size: 0.9em !important;
+    font-size: 1em !important;
     font-family:raleway;
     background-color: transparent;
     background-position: top center;
     transition: all 0.3s ease-in-out;
     margin-top: 3.32em;  
     z-index: 7000;
+    filter: none !important;
   }
   
   .navbar-toggler {
@@ -407,24 +733,24 @@ body {
  
   
   /* Dropdown Menu Styles */
-  .navbar-nav .dropdown-menu {
-    background-color:rgba(0, 0, 0, 0.8);
-    color: white !important;
-  }
-  
-  .navbar-nav .dropdown-item {
-    color: white !important;
-  }
-  
-  .navbar-nav .dropdown-item:hover,
-  .navbar-nav .dropdown-item:focus {
-    background-color: #474747;
-  }
-  
-  .navbar-nav .nav-link.dropdown-toggle::after {
-    margin-left: 0.5rem;
-    color: white;
-  }
+    .navbar-nav .dropdown-menu {
+      background-color:rgba(0, 0, 0, 0.8);
+      color: white !important;
+    }
+    
+    .navbar-nav .dropdown-item {
+      color: white !important;
+    }
+    
+    .navbar-nav .dropdown-item:hover,
+    .navbar-nav .dropdown-item:focus {
+      background-color: #474747;
+    }
+    
+    .navbar-nav .nav-link.dropdown-toggle::after {
+      margin-left: 0.5rem;
+      color: white;
+    }
   
   
   /* --------- */
@@ -500,9 +826,7 @@ body {
     font-size:2.5em;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
-  .home-intro {
-    font-size:11em;
-  }
+  
   .home_img {
     position: relative;
     top: -30px;
@@ -517,7 +841,7 @@ body {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.7); /* Adjust the alpha value for more or less tint */
+    background: rgba(3, 2, 2, 0.7); /* Adjust the alpha value for more or less tint */
     z-index: 2;
   }
   
@@ -539,6 +863,7 @@ body {
     max-width: 100%;
     z-index: 888;
   }
+  
   @media (max-width: 768px) {
     .home_img{
       border-radius: 0;

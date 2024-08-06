@@ -1,9 +1,9 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation, Link } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import logo from "../Assets/logo.svg";
-import { Link } from "react-router-dom";
 import { NavDropdown, Form, FormControl, Button } from "react-bootstrap";
 import ScrollHandler from './ScrollHandler';
 import Header from "./Header";
@@ -21,6 +21,7 @@ function NavBar() {
   const { toggleTheme, theme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
   const { loading, error, categories } = useCategoriesAndSubCategories();
+  const location = useLocation();
 
   const handleSearchToggle = () => setSearchOpen(!searchOpen);
 
@@ -57,9 +58,10 @@ function NavBar() {
     setSuggestions([]);
     setSearchOpen(false);
   };
+
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) { // Adjust this value based on when you want the color change to happen
+      if (window.scrollY > 50) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -68,13 +70,17 @@ function NavBar() {
 
     window.addEventListener('scroll', handleScroll);
 
-    // Cleanup event listener on component unmount
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   return (
-    <>
+    <div className="navigation">
       <Header />
       <Navbar 
         expanded={expand}
@@ -114,31 +120,23 @@ function NavBar() {
               <NavDropdown title="Services et Droits" id="for-you-dropdown">
                 <NavDropdown.Item
                   as={Link}
-                  to="/for-you/useful-links"
+                  to="/services-et-droits/services"
                   onClick={() => updateExpanded(false)}
-                  aria-label="Liens utiles"
+                  aria-label="Services"
                 >
-                  Liens utiles
+                  Services
                 </NavDropdown.Item>
                 <NavDropdown.Item
                   as={Link}
-                  to="/for-you/useful-documents"
+                  to="/services-et-droits/droits"
                   onClick={() => updateExpanded(false)}
-                  aria-label="Documents utiles"
+                  aria-label="Droits"
                 >
-                  Documents pour vous
+                  Droits
                 </NavDropdown.Item>
                 <NavDropdown.Item
                   as={Link}
-                  to="/for-you/annuaire-ong"
-                  onClick={() => updateExpanded(false)}
-                  aria-label="Opportunités"
-                >
-                  Annuaire ONGs
-                </NavDropdown.Item> 
-                <NavDropdown.Item
-                  as={Link}
-                  to="/for-you/opportunities"
+                  to="/services-et-droits/opportunites"
                   onClick={() => updateExpanded(false)}
                   aria-label="Opportunités"
                 >
@@ -155,42 +153,40 @@ function NavBar() {
                   Blog
                 </Nav.Link>
               </Nav.Item>
-              <NavDropdown title="WikiPhidia" id="wikiphidia-dropdown">
-                <NavDropdown.Item
+              <NavDropdown title="Savoir lab" id="savoir-lab-dropdown">
+              <NavDropdown.Item
                   as={Link}
-                  to="/wikiphidia/artistes"
+                  to="/savoir-lab/accessibilite"
                   onClick={() => updateExpanded(false)}
-                  aria-label="artistes"
+                  aria-label="Savoir lab"
                 >
-                  Artistes
+                Accessibilité
                 </NavDropdown.Item>
                 <NavDropdown.Item
                   as={Link}
-                  to="/wikiphidia/para-lympiques"
+                  to="/savoir-lab/communication-inclusive"
                   onClick={() => updateExpanded(false)}
-                  aria-label="para-lympiques"
+                  aria-label="Savoir lab"
                 >
-                  Para-lympiques
+                  Communication inclusive
                 </NavDropdown.Item>
                 <NavDropdown.Item
                   as={Link}
-                  to="/wikiphidia/entrepreneurs"
+                  to="/savoir-lab/wikiphedia"
                   onClick={() => updateExpanded(false)}
-                  aria-label="entrepreneurs"
+                  aria-label="WikiPhédia"
                 >
-                  Entrepreneurs
+                  WikiPhedia
+                </NavDropdown.Item>
+                <NavDropdown.Item
+                  as={Link}
+                  to="/savoir-lab/documents-de-plaidoyer"
+                  onClick={() => updateExpanded(false)}
+                  aria-label="Savoir lab"
+                >
+                  Documents de plaidoyer
                 </NavDropdown.Item>
                 </NavDropdown>
-              <Nav.Item>
-                <Nav.Link
-                  as={Link}
-                  to="/savoir-lab"
-                  onClick={() => updateExpanded(false)}
-                  aria-label="Savoir Lab"
-                >
-                  Savoir Lab
-                </Nav.Link>
-              </Nav.Item>
               <NavDropdown title="Actualités et Événements" id="news-events-dropdown">
                 <NavDropdown.Item
                   as={Link}
@@ -209,80 +205,62 @@ function NavBar() {
                   Événements
                 </NavDropdown.Item>
               </NavDropdown>
-              <Nav.Item>
-                <Nav.Link
+              <NavDropdown title=" Médiathèque" id="media-dropdown">
+                <NavDropdown.Item
                   as={Link}
-                  to="/press-corner"
+                  to="/resources/media/audio-podcast"
                   onClick={() => updateExpanded(false)}
-                  aria-label="Coin de presse"
+                  aria-label="Audio & Podcast"
                 >
-                  Coin de presse
-                </Nav.Link>
-              </Nav.Item>
-              <NavDropdown title="Media Tech" id="media-dropdown">
-                  <NavDropdown.Item
-                    as={Link}
-                    to="/resources/media/audio"
-                    onClick={() => updateExpanded(false)}
-                    aria-label="Audio"
-                  >
-                    Audio
-                  </NavDropdown.Item>
-                  <NavDropdown.Item
-                    as={Link}
-                    to="/resources/media/video"
-                    onClick={() => updateExpanded(false)}
-                    aria-label="Vidéo"
-                  >
-                    Vidéo
-                  </NavDropdown.Item>
-                  <NavDropdown.Item
-                    as={Link}
-                    to="/resources/media/podcasts"
-                    onClick={() => updateExpanded(false)}
-                    aria-label="Podcast"
-                  >
-                    Podcast
-                  </NavDropdown.Item>
-                </NavDropdown>
+                  Audio & Podcast
+                </NavDropdown.Item>
+                <NavDropdown.Item
+                  as={Link}
+                  to="/resources/media/video"
+                  onClick={() => updateExpanded(false)}
+                  aria-label="Vidéo"
+                >
+                  Vidéo
+                </NavDropdown.Item>
+              </NavDropdown>
               <Nav.Item>
                 <Nav.Link onClick={handleSearchToggle} aria-label="Rechercher">
-                <AiOutlineSearch />
+                  <AiOutlineSearch />
                 </Nav.Link>
               </Nav.Item>
             </Nav>
-      {searchOpen && (
-        <div className="search-dropdown">
-          <Container>
-            <Form onSubmit={handleSearchSubmit} className="position-relative">
-              <FormControl
-                type="search"
-                placeholder="Rechercher..."
-                className="me-2"
-                aria-label="Rechercher"
-                value={searchQuery}
-                onChange={handleSearchInputChange}
-              />
-              <Button variant="outline-success" type="search">
-              Rechercher
-              </Button>
-            </Form>
-            {suggestions.length > 0 && (
-              <ul className="suggestions-list">
-                {suggestions.map((suggestion, index) => (
-                  <li key={index} onClick={() => handleSuggestionClick(suggestion)}>
-                    {suggestion}
-                  </li>
-                ))}
-              </ul>
+            {searchOpen && (
+              <div className="search-dropdown">
+                <Container>
+                  <Form onSubmit={handleSearchSubmit} className="position-relative">
+                    <FormControl
+                      type="search"
+                      placeholder="Rechercher..."
+                      className="me-2"
+                      aria-label="Rechercher"
+                      value={searchQuery}
+                      onChange={handleSearchInputChange}
+                    />
+                    <Button variant="outline-success" type="search">
+                      Rechercher
+                    </Button>
+                  </Form>
+                  {suggestions.length > 0 && (
+                    <ul className="suggestions-list">
+                      {suggestions.map((suggestion, index) => (
+                        <li key={index} onClick={() => handleSuggestionClick(suggestion)}>
+                          {suggestion}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </Container>
+              </div>
             )}
-          </Container>
-        </div>
-      )}
-    </Navbar.Collapse>
-  </Container>
-</Navbar>
-    </>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </div>
   );
 }
 
