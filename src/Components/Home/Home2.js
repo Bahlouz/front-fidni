@@ -39,25 +39,25 @@ function Home2() {
   const latestNews = newsItems[0]; // Assuming the first item is the latest news
 
   return (
-    <Container fluid className="p-0">
+    <Container fluid className="d-flex justify-content-center align-items-center p-0" style={{ minHeight: '100vh' }}>
       <section>
-        <section className="statistics-section">
+        <section className="statistics-section text-center">
           <h1 className="home-chiffre">Chiffres Clés</h1>
           <Row className="justify-content-center">
-            <Col >
-              <div className="align-items-center stat-circle">
+            <Col className="d-flex flex-column align-items-center">
+              <div className="stat-circle">
                 <Counter targetNumber={20422} />
                 <p>Personnes handicapées</p>
               </div>
             </Col>
-            <Col >
-              <div className=" align-items-center stat-circle">
+            <Col className="d-flex flex-column align-items-center">
+              <div className="stat-circle">
                 <Counter targetNumber={302} />
                 <p>Gouvernances locales</p>
               </div>
             </Col>
-            <Col >
-              <div className=" align-items-center stat-circle">
+            <Col className="d-flex flex-column align-items-center">
+              <div className="stat-circle">
                 <Counter targetNumber={103} />
                 <p>Violations reportées</p>
               </div>

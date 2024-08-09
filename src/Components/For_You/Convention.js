@@ -1,49 +1,14 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
 import { Container ,Row,Col,Image} from 'react-bootstrap';
-import './SingleDroit.css';
+import './Convention.css';
 
-const SingleDroit = () => {
-  const { id } = useParams();
-  const cardData = {
-    Convention_relative_aux_Droits_des_Personnes_Handicapées: {
-      title: "Convention relative aux Droits des Personnes Handicapées (CDPH)",
-      fullDescription: `
-      La Convention relative aux droits des personnes handicapées (CDPH), adoptée le 13 décembre 2006 par l’Assemblée générale des Nations Unies à New York, a pour objet de « promouvoir, protéger et assurer la pleine et égale jouissance de tous les droits de l’homme et de toutes les libertés fondamentales par les personnes handicapées et de promouvoir le respect de leur dignité intrinsèque ».<br />
-
-      La Convention est un engagement universel pour transformer les sociétés dans le sens de l’inclusion, de manière que les personnes handicapées y jouissent des mêmes opportunités, des mêmes possibilités de participation que les autres. Dans ce sens, elle vise la non-discrimination. Elle appelle à ce que les personnes handicapées ne soient plus considérées comme des objets de charité mais bien comme des sujets de droit.
-
-      La CDPH fait le lien entre le handicap et les personnes détentrices de droits, et se focalise sur l’interaction des déficiences avec les obstacles de l’environnement qui entravent la participation pleine et entière dans la société.
-
-      Parmi les changements les plus significatifs, il faut retenir que cette Convention :
-      • Ne crée pas de nouveaux droits pour les personnes handicapées : elle exprime l’ensemble des droits humains en prenant en compte les besoins spécifiques et la situation des personnes handicapées, et énumère les étapes et actions nécessaires à leur réalisation pleine et entière ;
-      
-      • Est juridiquement contraignante pour les États parties : les Etats doivent régulièrement faire un rapport des mesures entreprises pour l’appliquer ;
-      
-      • Est un outil de développement et un instrument des droits humains ;
-      
-      • Avalise le changement de paradigme sur la question du handicap en appliquant le modèle social du handicap à la totalité du texte de la Convention ;
-      
-      • Est un instrument s’appliquant à tous les types d’incapacités et tous les secteurs ;
-      
-      • Représente « un grand pas en avant pour la promotion de l’accès aux services destinés aux personnes handicapées, dans tout contexte et tout environnement » ;
-      
-      • Stipule clairement le rôle des organisations représentatives des personnes handicapées comme élément moteur dans la promotion des droits des personnes handicapées, exigeant par conséquent leur participation systématique.
-    `
-    },
-    Cadre_réglementaire_concernant_le_handicap_en_Tunisie: {
-      title: 'Cadre réglementaire concernant le handicap en Tunisie',
-      fullDescription: "Full information about the regulatory framework concerning disability in Tunisia..."
-    }
-  };
-
-  const card = cardData[id];
-
+const Convention = () => {
+  
   return (
     <>
     <div className="background-image-droits">
     <div className="overlay-text-droits-singlepage">
-      <h1 className="p-5 droits-titre-singlepage">{card.title}</h1>
+      <h1 className="p-5 droits-titre-singlepage">Convention relative aux Droits des Personnes Handicapées (CDPH)</h1>
     </div>
   </div>
   
@@ -141,4 +106,4 @@ const SingleDroit = () => {
   );
 };
 
-export default SingleDroit;
+export default Convention;

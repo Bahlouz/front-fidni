@@ -118,6 +118,12 @@ const AccessibilityIcon = () => {
   const toggleFontWeight = () => {
     setIsBold((prev) => !prev);
   };
+
+
+  if (localStorage.getItem('isHighlightHeadings') === null) {
+    localStorage.setItem('isHighlightHeadings', '1');
+  }
+
   const [isHighlightHeadings, setIsHighlightHeadings] = useState(() => {
     return localStorage.getItem('isHighlightHeadings') === '1';
   });
@@ -153,6 +159,10 @@ const AccessibilityIcon = () => {
     setIsHighlightHeadings((prev) => !prev);
   };
 
+
+  if (localStorage.getItem('highlightLinks') === null) {
+    localStorage.setItem('highlightLinks', 'true');
+  }
 
   const [isHighlightLinks, setIsHighlightLinks] = useState(() => {
     const savedState = localStorage.getItem('highlightLinks');
@@ -225,6 +235,10 @@ const AccessibilityIcon = () => {
     setIsBigCursorEnabled((prev) => !prev);
   };
 
+
+  if (localStorage.getItem('isDyslexicFontEnabled') === null) {
+    localStorage.setItem('isDyslexicFontEnabled', 'true');
+  }
 
   const [isDyslexicFontEnabled, setIsDyslexicFontEnabled] = useState(() => {
     return localStorage.getItem('isDyslexicFontEnabled') === 'true';

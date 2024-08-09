@@ -7,12 +7,12 @@ const Droits = () => {
     {
       title: "Convention relative aux Droits des Personnes Handicapées (CDPH)",
       description: "La Convention relative aux droits des personnes handicapées (CDPH), adoptée le 13 décembre 2006 par l’Assemblée générale des Nations Unies à New York, a pour objet de « promouvoir, protéger et assurer la pleine et égale jouissance de tous les droits de l’homme et de toutes les libertés fondamentales par les personnes handicapées et de promouvoir le respect de leur dignité intrinsèque ».",
-      link: '/savoir-lab/droits/Convention_relative_aux_Droits_des_Personnes_Handicapées'
+      link: '/services-et-droits/droits/convention'
     },
     {
       title: 'Cadre réglementaire concernant le handicap en Tunisie ',
       description: "En ratifiant la Convention relative aux droits des personnes handicapées le 2 avril 2008, la Tunisie affirmait un engagement fort envers la protection et la promotion des droits des personnes en situation de handicap. Des avancées significatives ont ensuite été enregistrées avec l'intégration de ces principes dans la Constitution tunisienne, en 2014 et réaffirmée en 2022, consacrant ainsi la protection des personnes handicapées contre toute forme de discrimination, conformément à l'article 54 qui stipule que « l’État protège les personnes handicapées contre toute discrimination et prend toutes les mesures propres à leur garantir une entière intégration au sein de la société ». ",
-      link: '/savoir-lab/droits/Cadre_réglementaire_concernant_le_handicap_en_Tunisie'
+      link: '/services-et-droits/droits/cadre'
     },
 
   ];

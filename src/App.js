@@ -40,7 +40,22 @@ import Annuaire from './Components/For_You/Annuaire';
 import Services from './Components/For_You/Services';
 import Droits from './Components/For_You/Droits';
 import AccessibilityIcon from './Components/AccessibilitySettings/AccessibilitySettings';
-import SingleDroit from './Components/For_You/SingleDroit';
+import Convention from './Components/For_You/Convention';
+import Accessibility from './Components/SavoirLab/Accessibility/Accessibility';
+import Communication from './Components/SavoirLab/Communication/Communication';
+import DocumentPl from './Components/SavoirLab/DocumentsPl/DocumentPl';
+import ActeurScPl from './Components/Wikid/ActeurScPl';
+import Artistes from './Components/Wikid/Artistes';
+import Chercheurs from './Components/Wikid/Chercheurs';
+import Sportifs from './Components/Wikid/Sportifs';
+import Entrepreneurs from './Components/Wikid/Entrepreneurs';
+import Cadre from './Components/For_You/Cadre';
+import AccessMedia from './Components/SavoirLab/Accessibility/AccessMedia/AccessMedia';
+import AppuiActeurs from './Components/SavoirLab/Accessibility/AppuiActeurs/AppuiActeurs';
+import Guide from './Components/SavoirLab/Communication/Guide/Guide';
+import Lexique from './Components/SavoirLab/Communication/Lexique/Lexique';
+import Charte from './Components/SavoirLab/Communication/Charte/Charte';
+import Recommandation from './Components/SavoirLab/Communication/Recommandation/Recommandation';
 
 function App() {
   const { toggleTheme, theme } = useTheme();
@@ -59,19 +74,32 @@ function App() {
 
   return (
     <div className={`app ${theme}`}>
-      {isLoading ? (
-        <Preloader />
-      ) : (
+
         <Router>
           <AccessibilityIcon />
           <NavBar />
           <Routes>
             <Route path="/accessibility" element={<AccessibilityFeatures />} />
             <Route path='/savoir-lab/wikiphedia' element={<Wikid />} />
+            <Route path="/savoir-lab/wikiphedia/acteurs-sociaux-politiques" element={<ActeurScPl />} />
+            <Route path="/savoir-lab/wikiphedia/artistes" element={<Artistes />} />
+            <Route path="/savoir-lab/wikiphedia/chercheurs" element={<Chercheurs />} />
+            <Route path="/savoir-lab/wikiphedia/entrepreneurs" element={<Entrepreneurs />} />
+            <Route path="/savoir-lab/wikiphedia/sportifs" element={<Sportifs />} />
             <Route path="/savoir-lab/wikiphedia/:storyId" element={<SingleWikidi />} />
             <Route path='/savoir-lab/savoir-lab' element={<SavoirLab />} />
+            <Route path='/savoir-lab/accessibilite' element={<Accessibility />} />
+            <Route path='/savoir-lab/Accessibilite/Accessibilité aux médias et à l’information' element={<AccessMedia />} />
+            <Route path='/savoir-lab/Accessibilite/Appui des acteurs médiatiques au processus d accessibilité' element={<AppuiActeurs />} />
+            <Route path='/savoir-lab/communication-inclusive' element={<Communication />} />
+            <Route path='/savoir-lab/communication-inclusive/guide' element={<Guide />} />
+            <Route path='/savoir-lab/communication-inclusive/lexique' element={<Lexique />} />
+            <Route path='/savoir-lab/communication-inclusive/charte-nationale' element={<Charte />} />
+            <Route path='/savoir-lab/communication-inclusive/recommandations' element={<Recommandation />} />
+            <Route path='/savoir-lab/documents-de-plaidoyer' element={<DocumentPl />} />
             <Route path='/services-et-droits/droits' element={<Droits />} />
-            <Route path="/savoir-lab/droits/:id" element={<SingleDroit />} />
+            <Route path="/services-et-droits/droits/convention" element={<Convention />} />
+            <Route path="/services-et-droits/droits/cadre" element={<Cadre />} />
             <Route path='/for-you/annuaire-ong' element={<Annuaire />} />
             <Route path="/" element={<Home />} />
             <Route path="/resources/media/video" element={<VideoPlayerList />} />
@@ -92,7 +120,7 @@ function App() {
           </Routes>
           <Footer />
         </Router>
-      )}
+
     </div>
   );
 }

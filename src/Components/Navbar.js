@@ -154,39 +154,40 @@ function NavBar() {
                 </Nav.Link>
               </Nav.Item>
               <NavDropdown title="Savoir lab" id="savoir-lab-dropdown">
-              <NavDropdown.Item
-                  as={Link}
-                  to="/savoir-lab/accessibilite"
-                  onClick={() => updateExpanded(false)}
-                  aria-label="Savoir lab"
-                >
-                Accessibilité
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  as={Link}
-                  to="/savoir-lab/communication-inclusive"
-                  onClick={() => updateExpanded(false)}
-                  aria-label="Savoir lab"
-                >
-                  Communication inclusive
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  as={Link}
-                  to="/savoir-lab/wikiphedia"
-                  onClick={() => updateExpanded(false)}
-                  aria-label="WikiPhédia"
-                >
-                  WikiPhedia
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  as={Link}
-                  to="/savoir-lab/documents-de-plaidoyer"
-                  onClick={() => updateExpanded(false)}
-                  aria-label="Savoir lab"
-                >
-                  Documents de plaidoyer
-                </NavDropdown.Item>
-                </NavDropdown>
+  <NavDropdown.Item
+    as={Link}
+    to="/savoir-lab/accessibilite"
+    onClick={() => updateExpanded(false)}
+    aria-label="Savoir lab"
+  >
+    Accessibilité
+  </NavDropdown.Item>
+  <NavDropdown.Item
+    as={Link}
+    to="/savoir-lab/communication-inclusive"
+    onClick={() => updateExpanded(false)}
+    aria-label="Savoir lab"
+  >
+    Communication inclusive
+  </NavDropdown.Item>
+  <NavDropdown.Item
+    as={Link}
+    to="/savoir-lab/wikiphedia"
+    onClick={() => updateExpanded(false)}
+    aria-label="WikiPhédia"
+  >
+    WikiPhédia
+  </NavDropdown.Item>
+  <NavDropdown.Item
+    as={Link}
+    to="/savoir-lab/documents-de-plaidoyer"
+    onClick={() => updateExpanded(false)}
+    aria-label="Savoir lab"
+  >
+    Documents de plaidoyer
+  </NavDropdown.Item>
+</NavDropdown>
+
               <NavDropdown title="Actualités et Événements" id="news-events-dropdown">
                 <NavDropdown.Item
                   as={Link}
