@@ -89,17 +89,17 @@ function App() {
             <Route path="/savoir-lab/wikiphedia/:storyId" element={<SingleWikidi />} />
             <Route path='/savoir-lab/savoir-lab' element={<SavoirLab />} />
             <Route path='/savoir-lab/accessibilite' element={<Accessibility />} />
-            <Route path='/savoir-lab/Accessibilite/Accessibilité aux médias et à l’information' element={<AccessMedia />} />
-            <Route path='/savoir-lab/Accessibilite/Appui des acteurs médiatiques au processus d accessibilité' element={<AppuiActeurs />} />
-            <Route path='/savoir-lab/communication-inclusive' element={<Communication />} />
-            <Route path='/savoir-lab/communication-inclusive/guide' element={<Guide />} />
-            <Route path='/savoir-lab/communication-inclusive/lexique' element={<Lexique />} />
-            <Route path='/savoir-lab/communication-inclusive/charte-nationale' element={<Charte />} />
-            <Route path='/savoir-lab/communication-inclusive/recommandations' element={<Recommandation />} />
+            <Route path='/savoir-lab/Accessibilité aux médias et à l’information' element={<AccessMedia />} />
+            <Route path='/savoir-lab/Appui des acteurs médiatiques au processus d accessibilité' element={<AppuiActeurs />} />
+            <Route path='/savoir-lab//communication-inclusive' element={<Communication />} />
+            <Route path='/savoir-lab/guide' element={<Guide />} />
+            <Route path='/savoir-lab/lexique' element={<Lexique />} />
+            <Route path='/savoir-lab/charte-nationale' element={<Charte />} />
+            <Route path='/savoir-lab/recommandations' element={<Recommandation />} />
             <Route path='/savoir-lab/documents-de-plaidoyer' element={<DocumentPl />} />
             <Route path='/services-et-droits/droits' element={<Droits />} />
-            <Route path="/services-et-droits/droits/convention" element={<Convention />} />
-            <Route path="/services-et-droits/droits/cadre" element={<Cadre />} />
+            <Route path="/services-et-droits/convention" element={<Convention />} />
+            <Route path="/services-et-droits/cadre" element={<Cadre />} />
             <Route path='/for-you/annuaire-ong' element={<Annuaire />} />
             <Route path="/" element={<Home />} />
             <Route path="/resources/media/video" element={<VideoPlayerList />} />

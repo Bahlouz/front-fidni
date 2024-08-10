@@ -7,17 +7,17 @@ const Accessibility = () => {
     {
       title: "Accessibilité aux droits et services ",
       description: "Le lien entre handicap et accessibilité est indissociable. Comprendre les défis quotidiens des personnes en situation de handicap est essentiel pour le rôle crucial de l’accessibilité. Celle-ci influence de nombreux aspects de la vie quotidienne, incluant l’éducation, la santé, le travail, le transport et la culture. Rendre le monde accessible est une nécessité pour promouvoir l’inclusion des personnes handicapées, un objectif qui bénéficie à l’ensemble de la société, quels que soient les capacités individuelles.",
-      link: '/savoir-lab/Accessibilite/Accessibilité aux droits et services'
+      link: '/savoir-lab/Accessibilité aux droits et services'
     },
     {
       title: 'Accessibilité aux médias et à l’information',
       description: "L’accessibilité des médias pour les personnes handicapées est centrale, non seulement pour leur droit à l’information, mais aussi pour leur capacité à participer pleinement dans la société. De ce fait, les acteurs médiatiques ont un rôle a joué dans le cadre du processus d’accessibilité.En effet, ils se doivent de respecter des normes inclusives et respectueuses des personnes en situation de handicap. Pour ce faire, ils peuvent adopter une série de mesures tels qu’une nouvelle manière de structurer un communiqué de presse pour qu’il soit plus impactant et en faveur de l’inclusion des personnes handicapées ou encore à travers l’organisation d’une conférence de presse pour sensibiliser et mobiliser autour des enjeux des personnes en situation de handicap. Des défis persistent dans la création de contenus médiatiques accessibles. Nous proposons des solutions concrètes pour surmonter ces obstacles garantissant que personne ne soit laissé pour compte.",
-      link: '/savoir-lab/Accessibilite/Accessibilité aux médias et à l’information'
+      link: '/savoir-lab/Accessibilité aux médias et à l’information'
     },
     {
         title: "Appui des acteurs médiatiques au processus d'accessibilité",
         description: "Le lien entre handicap et accessibilité est indissociable. Comprendre les défis quotidiens des personnes en situation de handicap est essentiel pour saisi le rôle crucial de l’accessibilité. Celle-ci influence de nombreux aspects de la vie quotidienne, incluant l’éducation, la santé, le travail, le transport et la culture. Rendre le monde accessible est une nécessité pour promouvoir l’inclusion des personnes handicapées, un objectif qui bénéficie à l’ensemble de la société, quels que soient les capacités individuelles.L’appui des acteurs médiatiques à ce processus est indispensable, notamment à travers la réalisation de reportage sur des aspects cruciaux de la vie des personnes handicapées, comme l’accès aux espaces publics ou urbains ou à travers une méthodologie journalistique rigoureuse.",
-        link: '/savoir-lab/Accessibilite/Appui des acteurs médiatiques au processus d accessibilité'
+        link: '/savoir-lab/Appui des acteurs médiatiques au processus d accessibilité'
       },
 
   ];

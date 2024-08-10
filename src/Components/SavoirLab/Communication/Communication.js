@@ -7,10 +7,10 @@ const Communication = () => {
   const location = useLocation();
   const currentPath = location.pathname.split('/').pop(); // Extract current page from URL
   const commlinks = [
-    { title: 'Le guide de bonnes pratiques éditoriales et éthiques', link: '/savoir-lab/communication-inclusive/guide', page: 'guide' },
-    { title: 'Le lexique de communication inclusive des personnes handicapées', link: '/savoir-lab/communication-inclusive/lexique', page: 'lexique' },
-    { title: 'La charte nationale pour des médias inclusifs et accessibles aux personnes handicapées en Tunisie', link: '/savoir-lab/communication-inclusive/charte-nationale', page: 'charte-nationale' },
-    { title: 'Les recommandations pour les médias et les acteurs médiatiques', link: '/savoir-lab/communication-inclusive/recommandations', page: 'recommendations' },
+    { title: 'Le guide de bonnes pratiques éditoriales et éthiques', link: '/savoir-lab/guide', page: 'guide' },
+    { title: 'Le lexique de communication inclusive des personnes handicapées', link: '/savoir-lab/lexique', page: 'lexique' },
+    { title: 'La charte nationale pour des médias inclusifs et accessibles aux personnes handicapées en Tunisie', link: '/savoir-lab/charte-nationale', page: 'charte-nationale' },
+    { title: 'Les recommandations pour les médias et les acteurs médiatiques', link: '/savoir-lab/recommandations', page: 'recommendations' },
   ];
 
   return (
