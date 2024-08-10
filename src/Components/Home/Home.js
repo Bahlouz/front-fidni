@@ -24,7 +24,7 @@ function Home() {
               Parlons Accessibilité
             </h1>
             <p tabIndex="3" className="home-intro">
-              Fidni est un carrefour multipartite et accessible qui regroupe les personnes handicapées et les acteurs engagés pour la promotion de leurs droits et services en Tunisie. 
+            Fidni est un carrefour multipartite et accessible qui regroupe les personnes handicapées et les acteurs engagés pour la promotion de leurs droits et services en Tunisie, pour un changement des mentalités sur le handicap.
             </p>
           </div>
         </div>
