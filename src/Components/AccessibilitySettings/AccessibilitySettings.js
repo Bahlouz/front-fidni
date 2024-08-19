@@ -508,14 +508,7 @@ const AccessibilityIcon = () => {
           <div className="asw-menu-header">
             <div className="asw-translate">Paramètres d'accessibilité</div>
             <div>
-              <div 
-                role="button" 
-                className="asw-menu-reset" 
-                aria-label="Réinitialiser les paramètres" 
-                onClick={reset}
-              >
-                <span className="material-icons">restart_alt</span>
-              </div>
+
               <div 
                 role="button" 
                 className="asw-menu-close" 
