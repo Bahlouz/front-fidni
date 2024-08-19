@@ -88,19 +88,12 @@
     width: 100%; /* This should be twice the width of the container */
     height: 70vh;
     background-image: url('../../Assets/beforefooter.svg');
-    background-repeat: repeat-x;
+    background-repeat: no-repeat;
     background-size: contain; /* Ensure the image scales properly */
-    animation: scroll 10s linear infinite;
+
   }
   
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
+
   
 /* Responsive adjustments */
 @media (max-width: 768px) {
