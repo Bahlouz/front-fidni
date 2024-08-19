@@ -3,7 +3,7 @@
   }
   
   .background-image-Accessibility {
-    background: url('../../../Assets/backaccessibility.png') no-repeat center center;
+    background: url('../../../Assets/backaccessibility1.jpg') no-repeat center center;
     background-attachment: fixed;
     background-size: cover;
     width: 100vw;
@@ -109,4 +109,58 @@
 .droit-card-button:hover .Accessibility-button-icon {
     right: 20px;
     
+}
+@media (max-width: 768px) {
+  .Accessibility-titre{
+    font-size: 2.5em !important;
+  }
+  .Accessibility-description{
+    font-size: 1.3em !important;
+  }
+  .droit-card-title{
+    font-size: 1.5em !important;
+  }
+  .droit-card-description{
+    font-size: 1.2em !important;
+  }
+  .Accessibility-button-text{
+    font-size: 1.2em !important;
+  }
+  .Accessibility-button-icon{
+    display: none;
+  }
+  .droit-card{
+    padding:10px !important;
+  }
+  .droit-card-button {
+    background-color: #007bff;
+    color: white;
+    position: relative;
+    width: 50vw !important; 
+  }
+
+}
+@media (max-width: 425px) {
+  .Accessibility-titre{
+    font-size: 2.2em !important;
+  }
+  .Accessibility-description{
+    font-size: 1.2em !important;
+  }
+  .droit-card-title{
+    font-size: 1.2em !important;
+  }
+  .droit-card-description{
+    font-size: 1em !important;
+  }
+  .Accessibility-button-text{
+    font-size: 1em !important;
+    white-space: nowrap;
+  }
+  .Accessibility-button-icon{
+    display: none;
+  }
+  .droit-card{
+    padding:0 !important;
+  }
 }

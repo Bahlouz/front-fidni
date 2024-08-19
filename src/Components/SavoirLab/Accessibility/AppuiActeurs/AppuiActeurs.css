@@ -3,7 +3,7 @@
 }
 
 .appui-acteurs-background {
-    background: url('../../../../Assets/backaccessibility.png') no-repeat center center;
+    background: url('../../../../Assets/backaccessibility1.jpg') no-repeat center center;
     background-attachment: fixed;
     background-size: cover;
     width: 100vw;
@@ -64,8 +64,13 @@
     background-color: #e9ecef;
     text-align: center;
     font-weight: bold;
+    border: solid 1px black;
 }
 
 .appui-acteurs-table td {
     vertical-align: middle;
+    border: solid 1px black;
+}
+.fiche9-table{
+    border: solid 1px black;
 }

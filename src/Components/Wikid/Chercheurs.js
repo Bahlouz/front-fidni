@@ -1,19 +1,39 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
-import { Artistesitems } from './Artistesitems'; // Import Artistesitems data
+import { Chercheursitems } from './Chercheursitems'; // Import Chercheursitems data
 import "./Wikid.css";
 import "./Chercheurs.css";
 
-const Artistes = () => {
+const Chercheurs = () => {
     const location = useLocation();
     const currentPath = location.pathname.split('/').pop(); // Extract current page from URL
-    const latestStory = Artistesitems[0];
+    const latestStory = Chercheursitems[0];
+
+    // Function to format description content
+    const formatDescription = (content) => {
+        return content
+            .replace(/<b>/g, '<strong>')
+            .replace(/<\/b>/g, '</strong>')
+            .replace(/<br\s*\/?>/g, '<br />');
+    };
+
+    // Function to extract the first line of formatted content
+    const getFirstLine = (content) => {
+        // Format the description
+        const formattedContent = formatDescription(content);
+        // Create a temporary div to use its textContent property
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = formattedContent;
+        // Get the first line
+        const firstLine = tempDiv.textContent.split('\n')[0];
+        return firstLine;
+    };
 
     // Updated links based on your provided categories
     const wikidlinks = [
         { title: 'Les acteurs sociaux et politiques', link: '/savoir-lab/wikiphedia/acteurs-sociaux-politiques', page: 'acteurs-sociaux-politiques' },
-        { title: 'Les artistes', link: '/savoir-lab/wikiphedia/artistes', page: 'artistes' },
+        { title: 'Les artistes', link: '/savoir-lab/wikiphedia/artistes', page: 'Artistes' },
         { title: 'Les chercheurs', link: '/savoir-lab/wikiphedia/chercheurs', page: 'chercheurs' },
         { title: 'Les entrepreneurs', link: '/savoir-lab/wikiphedia/entrepreneurs', page: 'entrepreneurs' },
         { title: 'Les sportifs', link: '/savoir-lab/wikiphedia/sportifs', page: 'sportifs' }
@@ -25,7 +45,7 @@ const Artistes = () => {
                 <div className="overlay-text-chercheurs">
                     <h1 className="chercheurs-titre">Les chercheurs</h1>
                     <p className="p-5 chercheurs-description">
-                        Découvrez des profils détaillés d'artistes, d'athlètes paralympiques, et d'entrepreneurs de scientifiques et d'autres profils de personnes en situation de handicap, Explorez leurs réalisations, parcours et contributions dans divers domaines pour vous inspirer et vous informer.
+                        Découvrez des profils détaillés de chercheurs innovants, explorez leurs travaux, découvertes et contributions dans le domaine de la science et de la recherche. Informez-vous sur leurs contributions significatives à la connaissance et à l'innovation.
                     </p>
                 </div>
 
@@ -45,34 +65,38 @@ const Artistes = () => {
             <Container className="mt-4">
                 <Row>
                     <Col>
-                        <h1 className="Artistes-title">Histoires des chercheurs</h1>
+                        <h1 className="Chercheurs-title">Histoires des chercheurs</h1>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
                         {/* Display the latest success story */}
-                        <Card className="mb-4">
+                        <Card className="mb-4 ">
                             <Card.Img variant="top" src={latestStory.imageUrl} />
                             <Card.Body>
                                 <Card.Title>{latestStory.title}</Card.Title>
                                 <Card.Subtitle className="mb-2 text-muted">{latestStory.date}</Card.Subtitle>
-                                <Card.Text>{latestStory.content}</Card.Text>
-                                <Button variant="primary" href={`/Artistes/${latestStory.id}`}>Lire plus</Button>
+                                <Card.Text className="truncate-text">
+                                    {getFirstLine(latestStory.content)}
+                                </Card.Text>
+                                <Button variant="primary" href={`/savoir-lab/wikiphedia/${latestStory.title}`}>Lire plus</Button>
                             </Card.Body>
                         </Card>
                     </Col>
                 </Row>
                 <Row>
                     {/* Display remaining success stories */}
-                    {Artistesitems.slice(1).map(item => (
+                    {Chercheursitems.slice(1).map(item => (
                         <Col key={item.id} md={4} className="mb-4">
                             <Card className="h-100">
                                 <Card.Img variant="top" src={item.imageUrl} />
                                 <Card.Body>
                                     <Card.Title>{item.title}</Card.Title>
                                     <Card.Subtitle className="mb-2 text-muted">{item.date}</Card.Subtitle>
-                                    <Card.Text>{item.content}</Card.Text>
-                                    <Button variant="primary" href={`/Artistes/${item.id}`}>Lire plus</Button>
+                                    <Card.Text className="truncate-text">
+                                        {getFirstLine(item.content)}
+                                    </Card.Text>
+                                    <Button variant="primary" href={`/savoir-lab/wikiphedia/${item.title}`}>Lire plus</Button>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -83,4 +107,4 @@ const Artistes = () => {
     );
 };
 
-export default Artistes;
+export default Chercheurs;

@@ -3,11 +3,32 @@ import { useLocation } from 'react-router-dom';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { Sportifsitems } from './Sportifsitems'; // Import Sportifsitems data
 import "./Wikid.css";
-import "./Sportifs.css"
+import "./Sportifs.css";
+
 const Sportifs = () => {
     const location = useLocation();
     const currentPath = location.pathname.split('/').pop(); // Extract current page from URL
     const latestStory = Sportifsitems[0];
+
+    // Function to format description content
+    const formatDescription = (content) => {
+        return content
+            .replace(/<b>/g, '<strong>')
+            .replace(/<\/b>/g, '</strong>')
+            .replace(/<br\s*\/?>/g, '<br />');
+    };
+
+    // Function to extract the first line of formatted content
+    const getFirstLine = (content) => {
+        // Format the description
+        const formattedContent = formatDescription(content);
+        // Create a temporary div to use its textContent property
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = formattedContent;
+        // Get the first line
+        const firstLine = tempDiv.textContent.split('\n')[0];
+        return firstLine;
+    };
 
     // Updated links based on your provided categories
     const wikidlinks = [
@@ -22,9 +43,9 @@ const Sportifs = () => {
         <>
             <div className="background-image-sportifs">
                 <div className="overlay-text-sportifs">
-                    <h1 className="sportifs-titre">Les Sportifs </h1>
+                    <h1 className="sportifs-titre">Les Sportifs</h1>
                     <p className="p-5 sportifs-description">
-                        Découvrez des profils détaillés d'artistes, d'athlètes paralympiques, et d'Sportifs de scientifiques et d'autres profils de personnes en situation de handicap, Explorez leurs réalisations, parcours et contributions dans divers domaines pour vous inspirer et vous informer.
+                        Découvrez des profils détaillés de sportifs d'exception, explorez leurs performances, parcours et contributions dans le domaine du sport. Informez-vous sur leurs réussites et leur influence dans le monde du sport.
                     </p>
                 </div>
 
@@ -55,8 +76,10 @@ const Sportifs = () => {
                             <Card.Body>
                                 <Card.Title>{latestStory.title}</Card.Title>
                                 <Card.Subtitle className="mb-2 text-muted">{latestStory.date}</Card.Subtitle>
-                                <Card.Text>{latestStory.content}</Card.Text>
-                                <Button variant="primary" href={`/Sportifs/${latestStory.id}`}>Lire plus</Button>
+                                <Card.Text className="truncate-text">
+                                    {getFirstLine(latestStory.content)}
+                                </Card.Text>
+                                <Button variant="primary" href={`/savoir-lab/wikiphedia/${latestStory.title}`}>Lire plus</Button>
                             </Card.Body>
                         </Card>
                     </Col>
@@ -70,8 +93,10 @@ const Sportifs = () => {
                                 <Card.Body>
                                     <Card.Title>{item.title}</Card.Title>
                                     <Card.Subtitle className="mb-2 text-muted">{item.date}</Card.Subtitle>
-                                    <Card.Text>{item.content}</Card.Text>
-                                    <Button variant="primary" href={`/Sportifs/${item.id}`}>Lire plus</Button>
+                                    <Card.Text className="truncate-text">
+                                        {getFirstLine(item.content)}
+                                    </Card.Text>
+                                    <Button variant="primary" href={`/savoir-lab/wikiphedia/${item.title}`}>Lire plus</Button>
                                 </Card.Body>
                             </Card>
                         </Col>

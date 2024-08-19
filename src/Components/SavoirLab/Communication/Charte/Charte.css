@@ -1,5 +1,5 @@
-.background-image-Communication {
-    background: url('../../../../Assets/backcommunication.png') no-repeat center center;
+.background-image-charte {
+    background: url('../../../../Assets/backcharte.jpg') no-repeat center center;
     background-attachment: fixed;
     background-size: cover;
     width: 100vw;
@@ -11,7 +11,7 @@
     color: white;
     text-align: center;
   }
-  .background-image-Communication::before {
+  .background-image-charte::before {
     content: "";
     position: absolute;
     top: 0;

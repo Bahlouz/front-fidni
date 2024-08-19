@@ -1,7 +1,9 @@
 import React from 'react';
-import { Container,Button } from 'react-bootstrap';
+import { Container, Button } from 'react-bootstrap'
+;
 import { useLocation } from 'react-router-dom';
 import './Communication.css';
+import CommPreview from './CommPreview';
 
 const Communication = () => {
   const location = useLocation();
@@ -28,6 +30,8 @@ const Communication = () => {
           </div>
         </Container>
       </div>
+
+      {/* Button container */}
       <div className="button-container-comm">
         {commlinks.map((item, index) => (
           <Button
@@ -37,6 +41,20 @@ const Communication = () => {
           >
             {item.title}
           </Button>
+        ))}
+      </div>
+      <CommPreview />
+
+      {/* Links container */}
+      <div className="links-container">
+        {commlinks.map((item, index) => (
+          <button
+          key={index}
+          className="link-item-comm"
+          onClick={() => window.location.href = item.link}
+        >
+          {item.title}
+        </button>
         ))}
       </div>
     </div>

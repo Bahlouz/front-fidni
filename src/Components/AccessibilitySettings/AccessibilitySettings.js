@@ -6,6 +6,21 @@ const AccessibilityIcon = () => {
   const overlayRef = useRef(null);
   const guideRef = useRef(null);
 
+
+  useEffect(() => {
+    onPageLoad();
+  }, []);
+
+  const onPageLoad = () => {
+
+
+  };
+
+  const reset = () => {
+    localStorage.clear();
+    onPageLoad();
+  };
+
   const [contrastLevel, setContrastLevel] = useState(() => {
     return parseInt(localStorage.getItem('contrastLevel')) || 0;
   });
@@ -153,6 +168,7 @@ const AccessibilityIcon = () => {
 
     
     localStorage.setItem('isHighlightHeadings', isHighlightHeadings ? '1' : '0');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isHighlightHeadings]);
 
   const toggleHighlightHeadings = () => {
@@ -160,21 +176,20 @@ const AccessibilityIcon = () => {
   };
 
 
-  if (localStorage.getItem('highlightLinks') === null) {
-    localStorage.setItem('highlightLinks', 'true');
+    if (localStorage.getItem('highlightLinks') === null) {
+    localStorage.setItem('highlightLinks', '1'); // Default to no highlighting
   }
 
+  // Initialize state based on localStorage
   const [isHighlightLinks, setIsHighlightLinks] = useState(() => {
-    const savedState = localStorage.getItem('highlightLinks');
-    return savedState === 'true'; 
+    return localStorage.getItem('highlightLinks') === '1';
   });
 
   useEffect(() => {
-    
-    const elements = document.querySelectorAll('a,button');
+    const elements = document.querySelectorAll('a, button');
     elements.forEach((element) => {
       if (isHighlightLinks) {
-        // Apply highlight effect
+        // Restore original styles
         const orgTextDecoration = element.getAttribute('data-asw-orgLinkTextDecoration');
         const orgFontWeight = element.getAttribute('data-asw-orgLinkFontWeight');
         const orgFontSize = element.getAttribute('data-asw-orgLinkFontSize');
@@ -185,7 +200,7 @@ const AccessibilityIcon = () => {
         if (orgFontSize) element.style.fontSize = orgFontSize;
         if (orgLinkColor) element.style.color = orgLinkColor;
       } else {
-        
+        // Save current styles and apply new highlight styles
         const computedStyle = window.getComputedStyle(element);
         const orgTextDecoration = computedStyle.getPropertyValue('text-decoration');
         const orgFontWeight = computedStyle.getPropertyValue('font-weight');
@@ -199,18 +214,20 @@ const AccessibilityIcon = () => {
 
         element.style.textDecoration = 'underline';
         element.style.fontWeight = '700';
-        element.style.fontSize = `${parseInt(orgFontSize) * 1.1}px`;
+        element.style.fontSize = `${parseFloat(orgFontSize) * 1.1}px`;
         element.style.color = '#ff0000';
       }
     });
 
-    
-    localStorage.setItem('highlightLinks', isHighlightLinks);
+    // Store the current state in localStorage
+    localStorage.setItem('highlightLinks', isHighlightLinks ? '1' : '0');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isHighlightLinks]);
 
   const toggleHighlightLinks = () => {
     setIsHighlightLinks((prev) => !prev);
   };
+
 
   const [isBigCursorEnabled, setIsBigCursorEnabled] = useState(() => {
     return Boolean(parseInt(localStorage.getItem('isBigCursorEnabled'))) || false;
@@ -235,43 +252,42 @@ const AccessibilityIcon = () => {
     setIsBigCursorEnabled((prev) => !prev);
   };
 
-
-  if (localStorage.getItem('isDyslexicFontEnabled') === null) {
-    localStorage.setItem('isDyslexicFontEnabled', 'true');
-  }
-
   const [isDyslexicFontEnabled, setIsDyslexicFontEnabled] = useState(() => {
+    // Return true if localStorage is 'true', otherwise false
     return localStorage.getItem('isDyslexicFontEnabled') === 'true';
-  });
+});
 
-  useEffect(() => {
-    
+// Effect to apply or remove dyslexic font
+useEffect(() => {
     const elements = document.querySelectorAll('*');
     elements.forEach((el) => {
-      if (!el.classList.contains('material-icons')) {
-        if (isDyslexicFontEnabled) {
-          let orgFontFamily = el.getAttribute('data-asw-orgFontFamily');
-          if (orgFontFamily) {
-            el.style.fontFamily = orgFontFamily;
-            el.removeAttribute('data-asw-orgFontFamily');
-          } else {
-            el.style.removeProperty('font-family');
-          }
-        } else {
-          let orgFontFamily = el.style.fontFamily;
-          el.setAttribute('data-asw-orgFontFamily', orgFontFamily);
-          el.style.fontFamily = 'OpenDyslexic3';
+        if (!el.classList.contains('material-icons')) {
+            if (isDyslexicFontEnabled) {
+                // Apply dyslexic font
+                let orgFontFamily = el.style.fontFamily;
+                el.setAttribute('data-asw-orgFontFamily', orgFontFamily);
+                el.style.fontFamily = 'OpenDyslexic3';
+            } else {
+                // Revert to original font
+                let orgFontFamily = el.getAttribute('data-asw-orgFontFamily');
+                if (orgFontFamily) {
+                    el.style.fontFamily = orgFontFamily;
+                    el.removeAttribute('data-asw-orgFontFamily');
+                } else {
+                    el.style.removeProperty('font-family');
+                }
+            }
         }
-      }
     });
 
-    
+    // Update localStorage
     localStorage.setItem('isDyslexicFontEnabled', isDyslexicFontEnabled ? 'true' : 'false');
-  }, [isDyslexicFontEnabled]);
+}, [isDyslexicFontEnabled]);
 
-  const toggleDyslexicFont = () => {
+// Toggle function
+const toggleDyslexicFont = () => {
     setIsDyslexicFontEnabled((prev) => !prev);
-  };
+};
 
   const fontSizeLevels = [1, 1.1, 1.2, 1.3]; 
   const [currentFontSizeIndex, setCurrentFontSizeIndex] = useState(0);
@@ -542,9 +558,7 @@ const AccessibilityIcon = () => {
       });
   };
 
-  const reset = () => {
-    localStorage.clear();
-  };
+
 
   useEffect(() => {
     // Set up event listeners
@@ -640,7 +654,7 @@ const AccessibilityIcon = () => {
       >
         <span className="material-icons">spellcheck</span>
         <span className="asw-translate">
-          {isDyslexicFontEnabled ? "Activer la police dyslexique" : "Désactiver la police dyslexique"}
+          {isDyslexicFontEnabled ? "Désactiver la police dyslexique" : "Activer la police dyslexique"}
         </span>
       </button>
       <button
@@ -717,49 +731,6 @@ const AccessibilityIcon = () => {
             <div className="asw-card">
               <p className="asw-title-card">Contrôle des couleurs</p>
               <div className="asw-items content">
-              <button 
-            id="saturation-button" 
-            className="asw-btn" 
-            type="button" 
-            aria-label="Saturation"
-            onClick={cycleSaturation}
-        >
-            <span 
-                id="saturation-icon" 
-                className="material-icons" 
-                ref={iconRef}
-            >
-                invert_colors
-            </span>
-            <span 
-                id="saturation-text" 
-                className="asw-translate" 
-                ref={textRef}
-            >
-                Saturation par défaut
-            </span>
-            <div 
-                id="saturation-indicator" 
-                className="saturation-indicator"
-            >
-                {[...Array(3)].map((_, index) => (
-                    <div
-                        key={index}
-                        className="indicator-line"
-                        ref={el => indicatorLinesRef.current[index] = el}
-                    ></div>
-                ))}
-            </div>
-        </button>
-                <button 
-                  id="brightness-button" 
-                  className="asw-btn" 
-                  type="button" 
-                  aria-label="Luminosité"
-                >
-                  <span id="brightness-icon" className="material-icons">brightness_medium</span>
-                  <span id="brightness-text" className="asw-translate">Luminosité par défaut</span>
-                </button>
                 <button
       className="asw-btn"
       type="button"

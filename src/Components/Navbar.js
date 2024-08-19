@@ -31,7 +31,7 @@ function NavBar() {
 
     try {
       if (query.trim() !== '') {
-        const response = await axios.get(`https://jsonplaceholder.typicode.com/users?username_like=${query}`);
+        const response = await axios.get(``);
         const users = response.data;
         const userSuggestions = users.map(user => user.email);
         setSuggestions(userSuggestions);
@@ -85,7 +85,7 @@ function NavBar() {
       <Navbar 
         expanded={expand}
         fixed="top"
-        expand="md"
+        expand="lg"
         id="navbar"
         className={`${isScrolled ? 'scrolled' : 'visible'}`}
         aria-label="Navigation principale"
@@ -143,51 +143,40 @@ function NavBar() {
                   Opportunités
                 </NavDropdown.Item>
               </NavDropdown>
-              <Nav.Item>
-                <Nav.Link
-                  as={Link}
-                  to="/blog"
-                  onClick={() => updateExpanded(false)}
-                  aria-label="Blog"
-                >
-                  Blog
-                </Nav.Link>
-              </Nav.Item>
               <NavDropdown title="Savoir lab" id="savoir-lab-dropdown">
-  <NavDropdown.Item
-    as={Link}
-    to="/savoir-lab/accessibilite"
-    onClick={() => updateExpanded(false)}
-    aria-label="Savoir lab"
-  >
-    Accessibilité
-  </NavDropdown.Item>
-  <NavDropdown.Item
-    as={Link}
-    to="/savoir-lab/communication-inclusive"
-    onClick={() => updateExpanded(false)}
-    aria-label="Savoir lab"
-  >
-    Communication inclusive
-  </NavDropdown.Item>
-  <NavDropdown.Item
-    as={Link}
-    to="/savoir-lab/wikiphedia"
-    onClick={() => updateExpanded(false)}
-    aria-label="WikiPhédia"
-  >
-    WikiPhédia
-  </NavDropdown.Item>
-  <NavDropdown.Item
-    as={Link}
-    to="/savoir-lab/documents-de-plaidoyer"
-    onClick={() => updateExpanded(false)}
-    aria-label="Savoir lab"
-  >
-    Documents de plaidoyer
-  </NavDropdown.Item>
-</NavDropdown>
-
+                <NavDropdown.Item
+                  as={Link}
+                  to="/savoir-lab/accessibilite"
+                  onClick={() => updateExpanded(false)}
+                  aria-label="Savoir lab"
+                >
+                  Accessibilité
+                </NavDropdown.Item>
+                <NavDropdown.Item
+                  as={Link}
+                  to="/savoir-lab/communication-inclusive"
+                  onClick={() => updateExpanded(false)}
+                  aria-label="Savoir lab"
+                >
+                  Communication inclusive
+                </NavDropdown.Item>
+                <NavDropdown.Item
+                  as={Link}
+                  to="/savoir-lab/wikiphedia"
+                  onClick={() => updateExpanded(false)}
+                  aria-label="WikiPhédia"
+                >
+                  WikiPhédia
+                </NavDropdown.Item>
+                <NavDropdown.Item
+                  as={Link}
+                  to="/savoir-lab/documents-de-plaidoyer"
+                  onClick={() => updateExpanded(false)}
+                  aria-label="Savoir lab"
+                >
+                  Documents de plaidoyer
+                </NavDropdown.Item>
+              </NavDropdown>
               <NavDropdown title="Actualités et Événements" id="news-events-dropdown">
                 <NavDropdown.Item
                   as={Link}
@@ -224,6 +213,16 @@ function NavBar() {
                   Vidéo
                 </NavDropdown.Item>
               </NavDropdown>
+              <Nav.Item>
+                <Nav.Link
+                  as={Link}
+                  to="/blog"
+                  onClick={() => updateExpanded(false)}
+                  aria-label="Blog"
+                >
+                  Blog
+                </Nav.Link>
+              </Nav.Item>
               <Nav.Item>
                 <Nav.Link onClick={handleSearchToggle} aria-label="Rechercher">
                   <AiOutlineSearch />

@@ -16,12 +16,16 @@ const AccessMedia = () => {
     <div>
       <h2>i.	Créer un contenu accessible</h2>
       <p>
-      L’accessibilité « permet à une personne en situation de handicap de bénéficier des informations, des interactions et des services dont dispose une personne sans handicap de manière compréhensible, pertinente et exploitable. En résumé, il s’agit d’une pratique inclusive visant à supprimer toutes les barrières à l’apprentissage pour le plus grand nombre de personnes » .
-Bien qu’on puisse penser « que l’accessibilité s’oriente principalement vers l’aide aux personnes en situation de handicap physique, comme la perte de l’audition ou de la vue (…), l’accessibilité bénéficie également aux personnes atteintes de troubles temporaires, parmi lesquels la perte d’audition ou de vision en raison d’une pathologie (…) ou d’une chirurgie » . Malgré cela, l’accessibilité est souvent mise de côté en raison de l’idée reçue selon laquelle cette démarche serait coûteuse et compliquée à mettre en œuvre . 
+      L’accessibilité « permet à une personne en situation de handicap de bénéficier des informations, des interactions et des services dont dispose une personne sans handicap de manière compréhensible, pertinente et exploitable. En résumé, il s’agit d’une pratique inclusive visant à supprimer toutes les barrières à l’apprentissage pour le plus grand nombre de personnes »<sup>3</sup> .
+Bien qu’on puisse penser « que l’accessibilité s’oriente principalement vers l’aide aux personnes en situation de handicap physique, comme la perte de l’audition ou de la vue (…),
+          <p style={{borderTop: '1px solid',marginTop:"2em"}}>
+            <sup>3</sup><small>« Création de contenu d’apprentissage accessible et inclusif », Udemy ? Teaching center, 2024. [En ligne] Création de contenu d’apprentissage accessible et inclusif (udemy.com) (Page consultée le 11 mai 2024)</small><br />
+           
+          </p> l’accessibilité bénéficie également aux personnes atteintes de troubles temporaires, parmi lesquels la perte d’audition ou de vision en raison d’une pathologie (…) ou d’une chirurgie »<sup>4</sup> . Malgré cela, l’accessibilité est souvent mise de côté en raison de l’idée reçue selon laquelle cette démarche serait coûteuse et compliquée à mettre en œuvre <sup>5</sup>. 
 
       </p>
       <p>
-      Nous préconisons ci-après quelques pratiques concernant l’accessibilité des images et des écrits  :
+      Nous préconisons ci-après quelques pratiques concernant l’accessibilité des images et des écrits  <sup>6</sup>:
       </p>
   <ul style={{ paddingLeft: "5em" }}>
     <li>
@@ -43,6 +47,12 @@ Bien qu’on puisse penser « que l’accessibilité s’oriente principalement 
   </p>
   <p>
   Malgré les clauses dans les cahiers des charges exigeant la prise en compte de l'aspect des droits humains, des groupes vulnérables et des personnes handicapées, il existe encore d'importantes lacunes. Il est donc essentiel d'établir des directives spécifiques concernant l'accessibilité aux médias, de les présenter comme des lignes directrices claires sur la manière de traiter ces questions et de poser les bases de leur prise en compte.
+  <p style={{borderTop: '1px solid',marginTop:"2em"}}>
+            <sup>4</sup><small>Idem.</small><br />
+            <sup>5</sup><small>Idem.</small><br />
+            <sup>6</sup><small>Nations Unies, « Lignes directrices pour l’inclusion du handicap dans la langue écrite et orale », Nations Unies et en concertation avec l’International Disability Alliance, Mars 2022, pp 24-28 pages. [En ligne]disability-inclusive_language_guidelines_fr.pdf (un.org) (Page consultée le 03 mai 2024)</small><br />
+           
+          </p>
   </p>
   <p>
   À travers cette étude et les recommandations qui y sont formulées, en particulier dans ce document, nous exhortons la HAICA à élaborer une stratégie visant à promouvoir l'intégration des personnes en situation de handicap dans les médias. Elle devrait également fournir des conseils et des moyens pour l'autorégulation, tout en assurant le suivi de la mise en œuvre.  

@@ -174,7 +174,7 @@ function Footer() {
               </p>
               <a
                 className="footer-call-to-action-button button"
-                href="#"
+                href="/contactez-nous"
                 target="_self"
               >
                 Contactez-nous

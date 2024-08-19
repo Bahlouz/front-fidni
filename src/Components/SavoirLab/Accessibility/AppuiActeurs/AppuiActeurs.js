@@ -167,105 +167,105 @@ const AppuiActeurs = () => {
       <td className="fiche9-table-cell">Le contenu important du site est-il accessible sans avoir besoin d'utiliser des scripts?</td>
       <td className="fiche9-table-cell"><input type="checkbox" className="fiche9-checkbox" /></td>
       <td className="fiche9-table-cell"><input type="checkbox" className="fiche9-checkbox" /></td>
-      <td className="fiche9-table-cell"></td>
+      <td className="fiche9-table-cell"> <input type="number" className="fiche9-number-input" min="0" max="10" /></td>
     </tr>
     <tr>
       <td className="fiche9-table-cell">2</td>
       <td className="fiche9-table-cell">Les liens sur le site ont-ils un sens hors contexte, en évitant les expressions génériques comme «Cliquez ici»?</td>
       <td className="fiche9-table-cell"><input type="checkbox" className="fiche9-checkbox" /></td>
       <td className="fiche9-table-cell"><input type="checkbox" className="fiche9-checkbox" /></td>
-      <td className="fiche9-table-cell"></td>
+      <td className="fiche9-table-cell"> <input type="number" className="fiche9-number-input" min="0" max="10" /></td>
     </tr>
     <tr>
       <td className="fiche9-table-cell">3</td>
       <td className="fiche9-table-cell">Y a-t-il des descriptions alternatives (alt text) pour toutes les images et graphiques?</td>
       <td className="fiche9-table-cell"><input type="checkbox" className="fiche9-checkbox" /></td>
       <td className="fiche9-table-cell"><input type="checkbox" className="fiche9-checkbox" /></td>
-      <td className="fiche9-table-cell"></td>
+      <td className="fiche9-table-cell"> <input type="number" className="fiche9-number-input" min="0" max="10" /></td>
     </tr>
     <tr>
       <td className="fiche9-table-cell">4</td>
       <td className="fiche9-table-cell">Des sous-titres sont-ils fournis pour toutes les vidéos et des transcriptions pour les fichiers audios?</td>
       <td className="fiche9-table-cell"><input type="checkbox" className="fiche9-checkbox" /></td>
       <td className="fiche9-table-cell"><input type="checkbox" className="fiche9-checkbox" /></td>
-      <td className="fiche9-table-cell"></td>
+      <td className="fiche9-table-cell"> <input type="number" className="fiche9-number-input" min="0" max="10" /></td>
     </tr>
     <tr>
       <td className="fiche9-table-cell">5</td>
       <td className="fiche9-table-cell">Le texte du site utilise-t-il des contrastes de couleurs suffisamment élevés?</td>
       <td className="fiche9-table-cell"><input type="checkbox" className="fiche9-checkbox" /></td>
       <td className="fiche9-table-cell"><input type="checkbox" className="fiche9-checkbox" /></td>
-      <td className="fiche9-table-cell"></td>
+      <td className="fiche9-table-cell"> <input type="number" className="fiche9-number-input" min="0" max="10" /></td>
     </tr>
     <tr>
       <td className="fiche9-table-cell">6</td>
       <td className="fiche9-table-cell">Toutes les pages web peuvent-elles être naviguées avec un clavier, sans utiliser la souris?</td>
       <td className="fiche9-table-cell"><input type="checkbox" className="fiche9-checkbox" /></td>
       <td className="fiche9-table-cell"><input type="checkbox" className="fiche9-checkbox" /></td>
-      <td className="fiche9-table-cell"></td>
+      <td className="fiche9-table-cell"> <input type="number" className="fiche9-number-input" min="0" max="10" /></td>
     </tr>
     <tr>
       <td className="fiche9-table-cell">7</td>
       <td className="fiche9-table-cell">Les formulaires sont-ils clairement étiquetés et peuvent-ils être utilisés avec un lecteur d'écran ?</td>
       <td className="fiche9-table-cell"><input type="checkbox" className="fiche9-checkbox" /></td>
       <td className="fiche9-table-cell"><input type="checkbox" className="fiche9-checkbox" /></td>
-      <td className="fiche9-table-cell"></td>
+      <td className="fiche9-table-cell"> <input type="number" className="fiche9-number-input" min="0" max="10" /></td>
     </tr>
     <tr>
       <td className="fiche9-table-cell">8</td>
       <td className="fiche9-table-cell">Le site évite-t-il d'utiliser uniquement des couleurs pour transmettre de l'information?</td>
       <td className="fiche9-table-cell"><input type="checkbox" className="fiche9-checkbox" /></td>
       <td className="fiche9-table-cell"><input type="checkbox" className="fiche9-checkbox" /></td>
-      <td className="fiche9-table-cell"></td>
+      <td className="fiche9-table-cell"> <input type="number" className="fiche9-number-input" min="0" max="10" /></td>
     </tr>
     <tr>
       <td className="fiche9-table-cell">9</td>
       <td className="fiche9-table-cell">Le site fournit-il un moyen de sauter directement au contenu principal de la page ?</td>
       <td className="fiche9-table-cell"><input type="checkbox" className="fiche9-checkbox" /></td>
       <td className="fiche9-table-cell"><input type="checkbox" className="fiche9-checkbox" /></td>
-      <td className="fiche9-table-cell"></td>
+      <td className="fiche9-table-cell"> <input type="number" className="fiche9-number-input" min="0" max="10" /></td>
     </tr>
     <tr>
       <td className="fiche9-table-cell">10</td>
       <td className="fiche9-table-cell">Les documents téléchargeables (comme les PDF) sont-ils accessibles, avec des balises et une structure correcte des titres et sections?</td>
       <td className="fiche9-table-cell"><input type="checkbox" className="fiche9-checkbox" /></td>
       <td className="fiche9-table-cell"><input type="checkbox" className="fiche9-checkbox" /></td>
-      <td className="fiche9-table-cell"></td>
+      <td className="fiche9-table-cell"> <input type="number" className="fiche9-number-input" min="0" max="10" /></td>
     </tr>
     <tr>
       <td className="fiche9-table-cell">11</td>
       <td className="fiche9-table-cell">Les lecteurs d'écran peuvent-ils lire correctement les tableaux de données grâce à l'utilisation des en-têtes de ligne et de colonne?</td>
       <td className="fiche9-table-cell"><input type="checkbox" className="fiche9-checkbox" /></td>
       <td className="fiche9-table-cell"><input type="checkbox" className="fiche9-checkbox" /></td>
-      <td className="fiche9-table-cell"></td>
+      <td className="fiche9-table-cell"> <input type="number" className="fiche9-number-input" min="0" max="10" /></td>
     </tr>
     <tr>
       <td className="fiche9-table-cell">12</td>
       <td className="fiche9-table-cell">Le site offre-t-il des alternatives pour les contenus dynamiques, comme les animations et les carrousels, pour les utilisateurs qui ne peuvent pas les voir ou les utiliser ?</td>
       <td className="fiche9-table-cell"><input type="checkbox" className="fiche9-checkbox" /></td>
       <td className="fiche9-table-cell"><input type="checkbox" className="fiche9-checkbox" /></td>
-      <td className="fiche9-table-cell"></td>
+      <td className="fiche9-table-cell"> <input type="number" className="fiche9-number-input" min="0" max="10" /></td>
     </tr>
     <tr>
       <td className="fiche9-table-cell">13</td>
       <td className="fiche9-table-cell">Le site est-il compatible avec les technologies d'assistance, comme les lecteurs d'écran et les navigateurs spécialisés?</td>
       <td className="fiche9-table-cell"><input type="checkbox" className="fiche9-checkbox" /></td>
       <td className="fiche9-table-cell"><input type="checkbox" className="fiche9-checkbox" /></td>
-      <td className="fiche9-table-cell"></td>
+      <td className="fiche9-table-cell"> <input type="number" className="fiche9-number-input" min="0" max="10" /></td>
     </tr>
     <tr>
       <td className="fiche9-table-cell">14</td>
       <td className="fiche9-table-cell">Le site évite-t-il les fenêtres contextuelles (pop-ups) qui peuvent être difficiles à fermer pour certains utilisateurs?</td>
       <td className="fiche9-table-cell"><input type="checkbox" className="fiche9-checkbox" /></td>
       <td className="fiche9-table-cell"><input type="checkbox" className="fiche9-checkbox" /></td>
-      <td className="fiche9-table-cell"></td>
+      <td className="fiche9-table-cell"> <input type="number" className="fiche9-number-input" min="0" max="10" /></td>
     </tr>
     <tr>
       <td className="fiche9-table-cell">15</td>
       <td className="fiche9-table-cell">Les éléments de navigation sont-ils cohérents sur toutes les pages du site?</td>
       <td className="fiche9-table-cell"><input type="checkbox" className="fiche9-checkbox" /></td>
       <td className="fiche9-table-cell"><input type="checkbox" className="fiche9-checkbox" /></td>
-      <td className="fiche9-table-cell"></td>
+      <td className="fiche9-table-cell"> <input type="number" className="fiche9-number-input" min="0" max="10" /></td>
     </tr>
   </tbody>
 </table>

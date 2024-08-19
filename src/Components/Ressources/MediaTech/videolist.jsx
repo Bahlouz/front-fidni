@@ -2,25 +2,70 @@
 
 const videos = [
   {
-    url: 'https://www.youtube.com/watch?v=K0njxKN0Ts0',
-    title: 'Vers une ville inclusive',
-    description: ''
+    url: 'https://youtu.be/BGtCaVhtQ20',
+    title: 'Différents mais Créatifs ',
+    description: "La vidéo 'مختلفون لكن مبدعون' (Différents mais Créatifs) met en avant le pouvoir de la diversité et de l'originalité en présentant des exemples inspirants de personnes ayant surmonté leurs différences pour exceller dans leurs domaines respectifs. À travers les histoires de Mohamed Salah, un footballeur malgré un handicap visuel, de Sara Ahmed, une artiste avec une paralysie partielle, et de Youssef Al-Sayed, un innovateur technologique avec des difficultés d'apprentissage, la vidéo illustre comment les talents uniques peuvent mener à des réussites remarquables. Elle démontre que la diversité dans les environnements de travail et les équipes stimule la créativité et l'innovation, encourageant ainsi une culture d'inclusion et de valorisation des capacités individuelles."
   },
   {
     url: 'https://www.youtube.com/watch?v=qlh6fNZRFS8',
-    title: 'De la persévérance et de la créativité au sommet du succès : l\'histoire d\'un entrepreneur inspirant',
-    description: ''
+    title: 'Maroua feki :DIWAN Épisode 1 : De la Persévérance et de la Créativité au Sommet du Succès ',
+    description: ": L'Histoire d'un Entrepreneur Inspirant) raconte le parcours d'un entrepreneur ayant surmonté divers défis pour atteindre le succès. Elle décrit comment, malgré des débuts difficiles marqués par le manque de ressources financières et une forte concurrence, l'entrepreneur a innové, établi des partenariats stratégiques et utilisé les technologies numériques pour transformer son entreprise. La vidéo met en lumière la persévérance, l'innovation, et le leadership inspirant comme clés de son succès, et encourage les futurs entrepreneurs à croire en leurs capacités et à ne pas abandonner face aux obstacles"
   },
   {
-    url: 'https://fb.watch/tDQGccO_w5/',
-    title: 'Dignité pour les personnes en situation de handicap',
-    description: ''
+    url: 'https://www.youtube.com/watch?v=NMah18ma_jQ',
+    title: "Maroua feki :DIWAN Épisode 2 : Durra et le fait que je sois sans mains mais que j'enseigne à mes élèves",
+    description: "présente l'histoire inspirante de Durra, une enseignante qui, malgré la perte de ses mains, continue de transmettre son savoir et sa passion pour l'éducation à ses élèves. La vidéo met en lumière comment Durra a surmonté ses défis personnels en utilisant des méthodes d'enseignement créatives et adaptées pour inspirer et motiver ses étudiants. Son exemple illustre la force de la détermination et de l'engagement dans l'éducation, montrant que les limitations physiques ne doivent pas être un obstacle à l'impact positif sur la vie des autres."
   },
   {
-    url: 'https://www.youtube.com/watch?v=WywwL4Ff0Nw',
-    title: 'La différence est une miséricorde et un droit',
-    description: ''
-  }
+    url: 'https://www.instagram.com/reel/C9fNbX5oNBj/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
+    title: 'Syrine abidi',
+    description: "Le reel Instagram annonce que kortable Media a été sélectionné pour participer à une formation sur 'Les médias et l'intégration des personnes en situation de handicap' organisée par l'UNESCO sous la supervision de Dr. Lamia Ben Hassine. Suite à cette formation, leur proposition a été acceptée et financée par l'UNESCO et l'Association Ibsar. Le message encourage les spectateurs à participer à des formations similaires et à rechercher des opportunités de financement pour des projets liés à l'inclusion des personnes handicapées"
+  },
+  {
+    url: 'https://www.instagram.com/reel/C9fxAF4IS3_/?igsh=MWh1a3I0aHI4d3d2Yg==',
+    title: 'Syrine abidi',
+    description: "Le reel Instagram annonce que kortable Media a été sélectionné pour participer à une formation sur 'Les médias et l'intégration des personnes en situation de handicap' organisée par l'UNESCO sous la supervision de Dr. Lamia Ben Hassine. Suite à cette formation, leur proposition a été acceptée et financée par l'UNESCO et l'Association Ibsar. Le message encourage les spectateurs à participer à des formations similaires et à rechercher des opportunités de financement pour des projets liés à l'inclusion des personnes handicapées"
+  },
+  {
+    url: `${process.env.PUBLIC_URL}/videos/نحو مدينة شاملة ep 01.mp4`,
+    title: 'Dhafer : (H art):Vers une ville inclusive Épisode 1',
+    description: "L'épisode intitulé 'Vers une ville inclusive' explore les initiatives visant à rendre les villes plus accessibles et inclusives pour les personnes en situation de handicap. Il examine les défis actuels en matière d'accessibilité urbaine, les politiques mises en place pour améliorer l'infrastructure et les services publics, ainsi que les innovations qui contribuent à créer des environnements urbains plus équitables. L'épisode met en avant des exemples de bonnes pratiques et des témoignages de personnes handicapées, tout en soulignant l'importance d'une approche collaborative pour atteindre une véritable inclusion dans les villes."
+  },
+  {
+    url:`${process.env.PUBLIC_URL}/videos/نحو مدينة شاملة ep 02.mp4`,
+    title: 'Dhafer : (H art):Vers une ville inclusive Épisode 2',
+    description: "Dans une petite ville magique, une jeune fille curieuse nommée Noura vit des aventures captivantes avec son chien magique, Bobby. Ensemble, ils explorent les mystères de la ville. Parallèlement, Dalila, qui se prépare pour son premier jour de travail, rencontre des obstacles lors de son trajet à cause des trottoirs encombrés et des signaux de circulation non adaptés aux personnes handicapées. Grâce à la magie de Bobby, ils imaginent des solutions innovantes comme l'élargissement des trottoirs, l'ajout de lignes texturées pour guider les piétons, et des signaux sonores qui indiquent quand traverser en toute sécurité. Une fois arrivée à l'arrêt de bus, Dalila utilise un dispositif sonore pour connaître l'heure de son bus. À la fin de son voyage, Dalila réalise combien ces adaptations ont rendu son parcours plus sûr et plus facile. Noura et Bobby comprennent l'importance de rendre les espaces publics plus accessibles pour aider les personnes avec des besoins spéciaux, illustrant ainsi l'impact positif de l'inclusion et de l'innovation sur la vie quotidienne"
+  },
+  {
+    url: `${process.env.PUBLIC_URL}/videos/Sensibilisation.mp4`,
+    title: 'TOPAZ :Vidéo Sensibilisation',
+    description: "La vidéo aborde le sujet de l'autisme en soulignant l'importance d'un soutien collectif pour les enfants autistes, impliquant la famille, l'école et les spécialistes. Elle décrit l'autisme comme un trouble neuro-développemental diagnostiqué par des difficultés de communication sociale et linguistique, souvent visible dès un an et demi. Les symptômes incluent un manque de contact visuel, une interaction sociale réduite et un jeu atypique. La vidéo explore divers facteurs contributifs comme les aspects génétiques, environnementaux, nutritionnels et les complications à la naissance. Elle met en avant le 'choc du diagnostic' pour les parents, nécessitant un soutien psychologique, et insiste sur la nécessité d'un programme d'inclusion scolaire rigoureux. La sensibilisation des parents et une approche éducative adéquate sont cruciales pour faciliter l'intégration des enfants autistes dans la société.."
+  },
+  {
+    url: `${process.env.PUBLIC_URL}/videos/Paralympique final.mp4`,
+    title: 'TOPAZ :Evenement ',
+    description:"La vidéo met en avant l'importance de l'éducation des parents sur les étapes de développement des enfants autistes, soulignant la nécessité de reconnaître les retards de langage et de compétences. Elle explique que des ateliers de formation avec des experts aident les parents à comprendre la différence entre l'âge chronologique et l'âge mental des enfants autistes, permettant ainsi d'adapter les méthodes éducatives. Le soutien parental est essentiel pour l'inclusion scolaire et sociale, avec des stratégies basées sur la patience et une approche scientifique pour améliorer les compétences des enfants tout en respectant leurs capacités individuelles."
+  },
+  {
+    url:  `${process.env.PUBLIC_URL}/videos/Anas.mp4`,
+    title: 'Histoire de anas ',
+    description: "Dans cette vidéo, un père partage son expérience avec son enfant autiste. Il décrit comment le diagnostic a été fait lorsqu'il avait un an et demi et comment il a observé des comportements répétitifs et un manque de communication. Grâce à une aide spécialisée et un suivi constant, il constate des améliorations significatives chaque année. Le père souligne l'importance du soutien familial et de l'accompagnement adéquat, en notant que son fils a progressé dans ses compétences et ses interactions sociales. Il encourage les parents à ne pas abandonner leurs enfants, à persévérer et à croire en leur potentiel. Selon lui, l'espoir et l'engagement peuvent conduire à des améliorations notables et un développement positif."
+  },
+  {
+    url: `${process.env.PUBLIC_URL}/videos/Farah.mp4`,
+    title: 'Histoire de Farah',
+    description: "Dans ce témoignage, Madame Aziza Othmani parle de son expérience en tant que mère d'un enfant autiste, découvert à l'âge d'un an et demi. Elle décrit les difficultés initiales, la confusion face au diagnostic, et les défis rencontrés lors de l'intégration de son enfant dans la vie quotidienne. Malgré les obstacles, elle met en avant les progrès réalisés grâce à une prise en charge spécialisée et un soutien approprié. Elle insiste sur l'importance de l'éducation et de l'intégration, soulignant que chaque petite réussite est un pas vers une meilleure compréhension et acceptation de l'autisme. Selon elle, la patience, le soutien des parents et les efforts continus sont essentiels pour aider l'enfant à s'épanouir et réussir."
+  },
+  {
+    url: `${process.env.PUBLIC_URL}/videos/Haroun.mp4`,
+    title: 'Histoire de Haroun ',
+    description: "Dans ce témoignage, Ibrahim Dridi parle de son fils Haroun, diagnostiqué avec un trouble du spectre autistique. Il explique que Haroun, bien qu'ayant eu une naissance normale, a montré des signes de développement atypique dès son jeune âge, comme des difficultés à marcher ou à interagir avec les autres enfants. Après avoir consulté des spécialistes, Ibrahim a pris des mesures pour limiter l'exposition de son fils aux écrans et l'a inscrit dans des activités comme la natation, qui ont beaucoup contribué à son développement physique et à son bien-être général. Il souligne que les progrès de Haroun dans des activités comme la natation ont été significatifs, et il exprime l'espoir que son fils pourrait un jour travailler dans des domaines comme la protection civile grâce à ses compétences acquises. Il recommande aux autres parents de se concentrer sur les forces de leurs enfants et de les soutenir sans se focaliser uniquement sur leurs difficultés."
+  },
+  {
+    url: `${process.env.PUBLIC_URL}/videos/Koussai.mp4`,
+    title: 'Histoire de Koussai  ',
+    description: "Dans ce témoignage, une mère explique les défis auxquels elle est confrontée avec son enfant, qui a été diagnostiqué avec un trouble du spectre autistique. Au début, elle n'avait pas remarqué de problèmes majeurs avec son développement. Cependant, à l'âge de deux ans, elle a commencé à s'inquiéter lorsque son fils ne progressait pas comme les autres enfants et ne parlait pas. Après avoir consulté plusieurs spécialistes, elle a fait passer des tests médicaux pour mieux comprendre la condition de son fils. Malgré les difficultés initiales, elle a constaté des améliorations significatives grâce à des interventions spécialisées et une intégration scolaire adaptée. Elle souligne l'importance du soutien familial et professionnel et exprime son soulagement en voyant les progrès de son enfant dans un environnement scolaire favorable."
+  },
 ];
 
 export default videos;

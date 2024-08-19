@@ -41,4 +41,8 @@
 .acteursc-description{
     font-size:1.3em;
 }
-
+.card-text-truncatedd {
+    white-space: nowrap;       /* Prevents text from wrapping */
+    overflow: hidden;          /* Hides overflow text */
+    text-overflow: ellipsis;   /* Adds ellipsis (...) for overflow text */
+  }

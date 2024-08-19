@@ -21,8 +21,9 @@
   z-index: 1;
 }
 .audio-list{
-  margin-top: 170px;
+  margin-top:0;
   background-color: transparent !important;
+  border-top: solid 10px #0056b3  ;
 }
 .audio-page{
   background-color: transparent !important;
@@ -60,9 +61,12 @@
 }
 
 .audio-title {
-  font-size: 1.5rem;
-  color: #333;
-  margin-bottom: 0.5rem;
+  margin: 1em 0 1em 0;
+  color: #0056b3;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+  font-size:4em;
 }
 
 .audio-description {
@@ -121,3 +125,37 @@ button:hover {
   color: #333;
 }
 
+.audio-player-podcast-audio {
+  width: 100%; /* Adjust the width as needed */
+}
+
+/* Smaller screen sizes */
+@media (max-width: 768px) {
+  .audio-player-podcast-audio {
+      width: 100%;
+      transform: scale(0.9);
+  }
+  .audio-title {
+    margin: 1em 0 1em 0;
+    color: #0056b3;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    font-size:2.5em !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .audio-player-podcast-audio {
+      width:100%;
+      transform: scale(0.9);
+  }
+  .audio-title {
+    margin: 1em 0 1em 0;
+    color: #0056b3;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    font-size:1em ;
+  }
+}

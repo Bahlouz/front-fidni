@@ -19,6 +19,9 @@
   line-height: 1.6;
   margin-bottom: 2em;
 }
+.single-post-image{
+  width: 70vw !important;
+}
 
 @media (max-width: 768px) {
   .single-post-body {

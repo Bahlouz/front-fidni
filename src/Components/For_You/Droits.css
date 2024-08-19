@@ -79,10 +79,8 @@
   .droit-card-button {
     background-color: #007bff;
     color: white;
-    overflow: hidden;
     position: relative;
     width: 30vw;
-    
   }
   
   .droit-card-button:hover {
@@ -109,4 +107,58 @@
 .droit-card-button:hover .droits-button-icon {
     right: 20px;
     
+}
+@media (max-width: 768px) {
+  .droits-titre{
+    font-size: 2.5em !important;
+  }
+  .droits-description{
+    font-size: 1.3em !important;
+  }
+  .droit-card-title{
+    font-size: 1.5em !important;
+  }
+  .droit-card-description{
+    font-size: 1.2em !important;
+  }
+  .droits-button-text{
+    font-size: 1.2em !important;
+  }
+  .droits-button-icon{
+    display: none;
+  }
+  .droit-card{
+    padding:10px !important;
+  }
+  .droit-card-button {
+    background-color: #007bff;
+    color: white;
+    position: relative;
+    width: 50vw !important; 
+  }
+
+}
+@media (max-width: 425px) {
+  .droits-titre{
+    font-size: 2.2em !important;
+  }
+  .droits-description{
+    font-size: 1.2em !important;
+  }
+  .droit-card-title{
+    font-size: 1.2em !important;
+  }
+  .droit-card-description{
+    font-size: 1em !important;
+  }
+  .droits-button-text{
+    font-size: 1em !important;
+    white-space: nowrap;
+  }
+  .droits-button-icon{
+    display: none;
+  }
+  .droit-card{
+    padding:0 !important;
+  }
 }

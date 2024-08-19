@@ -10,6 +10,28 @@ const Artistes = () => {
     const currentPath = location.pathname.split('/').pop(); // Extract current page from URL
     const latestStory = Artistesitems[0];
 
+    // Function to format description content
+    const formatDescription = (content) => {
+        // Replace <b> tags with <strong> tags for better semantics
+        // Replace <br> and <br /> with line breaks
+        return content
+            .replace(/<b>/g, '<strong>')
+            .replace(/<\/b>/g, '</strong>')
+            .replace(/<br\s*\/?>/g, '<br />');
+    };
+
+    // Function to extract the first line of formatted content
+    const getFirstLine = (content) => {
+        // Format the description
+        const formattedContent = formatDescription(content);
+        // Create a temporary div to use its textContent property
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = formattedContent;
+        // Get the first line
+        const firstLine = tempDiv.textContent.split('\n')[0];
+        return firstLine;
+    };
+
     // Updated links based on your provided categories
     const wikidlinks = [
         { title: 'Les acteurs sociaux et politiques', link: '/savoir-lab/wikiphedia/acteurs-sociaux-politiques', page: 'acteurs-sociaux-politiques' },
@@ -25,7 +47,7 @@ const Artistes = () => {
                 <div className="overlay-text-artistes">
                     <h1 className="artistes-titre">Les artistes</h1>
                     <p className="p-5 artistes-description">
-                        Découvrez des profils détaillés d'artistes, d'athlètes paralympiques, et d'entrepreneurs de scientifiques et d'autres profils de personnes en situation de handicap, Explorez leurs réalisations, parcours et contributions dans divers domaines pour vous inspirer et vous informer.
+                    Découvrez des profils détaillés d'artistes talentueux, explorez leurs œuvres, parcours créatifs et contributions au monde de l'art. Laissez-vous inspirer par leurs réalisations et leurs approches uniques.
                     </p>
                 </div>
 
@@ -51,13 +73,15 @@ const Artistes = () => {
                 <Row>
                     <Col>
                         {/* Display the latest success story */}
-                        <Card className="mb-4">
+                        <Card className="mb-4 ">
                             <Card.Img variant="top" src={latestStory.imageUrl} />
                             <Card.Body>
                                 <Card.Title>{latestStory.title}</Card.Title>
                                 <Card.Subtitle className="mb-2 text-muted">{latestStory.date}</Card.Subtitle>
-                                <Card.Text>{latestStory.content}</Card.Text>
-                                <Button variant="primary" href={`/Artistes/${latestStory.id}`}>Lire plus</Button>
+                                <Card.Text className="single-line-text">
+                                    {getFirstLine(latestStory.content)}
+                                </Card.Text>
+                                <Button variant="primary" href={`/savoir-lab/wikiphedia/${latestStory.title}`}>Lire plus</Button>
                             </Card.Body>
                         </Card>
                     </Col>
@@ -71,8 +95,10 @@ const Artistes = () => {
                                 <Card.Body>
                                     <Card.Title>{item.title}</Card.Title>
                                     <Card.Subtitle className="mb-2 text-muted">{item.date}</Card.Subtitle>
-                                    <Card.Text>{item.content}</Card.Text>
-                                    <Button variant="primary" href={`/Artistes/${item.id}`}>Lire plus</Button>
+                                    <Card.Text className="single-line-text">
+                                        {getFirstLine(item.content)}
+                                    </Card.Text>
+                                    <Button variant="primary" href={`/savoir-lab/wikiphedia/${item.title}`}>Lire plus</Button>
                                 </Card.Body>
                             </Card>
                         </Col>

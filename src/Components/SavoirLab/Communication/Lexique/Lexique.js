@@ -1,7 +1,7 @@
 import React from 'react';
 import './Lexique.css';
 import lexiquedoc1 from "../../../../Assets/lexiquedoc1.png";
-
+import downloadimg from '../../../../Assets/download.png'
 const Lexique = () => {
   return (
     <>
@@ -19,16 +19,26 @@ const Lexique = () => {
             className="lexique-image" 
           />
           <a 
-            href="path-to-lexique" 
-            className="download-button" 
+            href={`${process.env.PUBLIC_URL}/pdfs/undis_communication_guidelines.pdf` }
             download
+            target="_blank" 
+            rel="noopener noreferrer"
           >
-            Télécharger
+            <img 
+              className="download-button-guide" 
+              href={`${process.env.PUBLIC_URL}/pdfs/undis_communication_guidelines.pdf` }
+              target="_blank"
+              src={downloadimg} 
+              alt="Télécharger" 
+              rel="noopener noreferrer"
+            />
           </a>
         </div>
         <a 
-          href="path-to-french-version" 
+          href={`${process.env.PUBLIC_URL}/pdfs/undis_communication_guidelines.pdf` }
           className="french-link"
+          terget="_blank"
+          rel="noopener noreferrer"
         >
           Accéder au lexique en français
         </a>

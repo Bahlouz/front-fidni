@@ -42,3 +42,8 @@
     font-size:1.3em;
 }
 
+.truncate-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

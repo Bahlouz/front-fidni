@@ -1,44 +1,185 @@
 const blogPosts = [
   {
     id: '1',
-    title: "Tunisie : Success-story face au défi du handicap",
-    image: "https://cdnuploads.aa.com.tr/uploads/Contents/2020/12/03/thumbs_b_c_a4645eb491475e7ce2ba1fc57e46d2da.jpg?v=134256",
-    alt: "Tunisie : Success-story face au défi du handicap",
-    date: "3 Décembre 2020",
-    postedBy: "Hend Abdessamad",
-    body: "Le Tunisien Walid Ktila, est un athlète handisport spécialisé dans la discipline course sur fauteuil roulant, pas seulement ! Le sportif tunisien a déclaré à l’Agence Anadolu (AA) « j\’ai ressenti mon handicap au lycée, quand je n’arrivais pas à participer aux activités comme tous mes camarades, j’étais dispensé de la discipline scolaire d’éducation physique, ce qui m’a beaucoup affecté, l’adolescence est un âge critique ! »",
+    title: "La résilience et l'espoir d'une famille porteuse d'handicap auditif",
+    image: "https://www.unicef.org/tunisia/sites/unicef.org.tunisia/files/styles/hero_extended/public/UNI598192.JPG.webp?itok=2oUpEKRz",
+    alt: "La résilience et l'espoir d'une famille porteuse d'handicap auditif",
+    date: "09 juillet 2024",
+    postedBy: "Roland Zongo",
+    body: `Nassima, 39 ans, est mère de deux enfants. Toute sa famille est en situation de handicap auditif de naissance. Son fils aîné, Ahmed, qui vient d’avoir ses 10 ans, est scolarisé au Centre des Handicapés Auditifs au Kef, une association Tunisienne d’aide aux enfants sourds, où il apprend à écrire en arabe. Le benjamin de la famille, Youssef, âgé de 4 ans, est inscrit dans un Centre de Réhabilitation et d'Education Spécialisée, appartenant au Ministère des Affaires Sociales. Nassima et son mari, Nourredine, portant également le même handicap, se sont rencontrés dans un centre dédié aux personnes avec handicaps auditifs dans le gouvernorat du Kef. Contrairement à son mari, Nassima a un handicap auditif léger, ce qui lui permet de communiquer plus aisément. Le handicap de Nassima et de son mari les empêche d’avoir un emploi stable. Nourredine trouve souvent du travail comme maçon mais il est peu payé par rapport aux autres travailleurs de chantier à cause de son handicap. Ils ont été identifiés comme famille vulnérable depuis 2020 et bénéficient du Programme National d’Assistance Sociale aux Familles Nécessiteuses (PNAFN) du programme national de protection sociale (AMEN Social) à travers lequel ils reçoivent un transfert monétaire permanent mensuel de 280 DT. En complément, ils reçoivent l'allocation enfant de 30DT par mois pour chaque enfant, ainsi qu’une allocation pour les enfants avec handicap de 20 DT par enfant par mois. Ces allocations spécifiques pour leurs enfants leur permettent de subvenir principalement aux besoins alimentaires, de couvrir les frais médicaux et éducatifs, de rembourser leurs crédits auprès de l’épicier du village, ainsi que d’autres dépenses familiales. En raison de leur handicap, les enfants bénéficient de la scolarité gratuite jusqu’à l’âge de 20 ans, ainsi que du transport gratuit.`,
     category: "featured"
   },
   {
     id: '2', 
-    title: "S'adapter à une vie en fauteuil roulant",
-    image: "https://tunisiepara.com/wp-content/uploads/2023/10/fauteuil-roulant-manuel-pour-obese.jpg   ",
+    title: "Échos d'autonomisation à travers la formation TRANSFORM",
+    image: "https://www.unicef.org/tunisia/sites/unicef.org.tunisia/files/styles/media_large_image/public/image00025.webp?itok=WGIBNO2r   ",
     alt: "Personne en fauteuil roulant se déplaçant dans un parc",
-    date: "19 juillet 2019",
-    postedBy: "Luc Martin",
-    body: "Vivre en fauteuil roulant nécessite des ajustements significatifs dans la vie quotidienne. Cet article partage des conseils pratiques pour s'adapter à cette nouvelle réalité, améliorer l'accessibilité à domicile et rester actif.",
+    date: "02 mai 2024",
+    postedBy: "UNICEF Tunisie",
+    body: `L'histoire d'aujourd'hui nous vient de Jamila, une travailleuse sociale conseillère originaire de Menzel Temime, dans le gouvernorat de Nabeul, qui a participé à la session de mars 2024 de la formation TRANSFORM en Tunisie. Son parcours professionnel de 21 ans dans le domaine de la protection sociale en Tunisie a renforcé son engagement à être la porte-parole de ceux qui n'ont pas de voix. Malgré son propre handicap physique, Jamila a découvert sa capacité à autonomiser, soutenir et défendre les enfants handicapés de sa communauté.Selon les statistiques les plus récentes du ministère des Affaires Sociales, le gouvernorat de Nabeul compte 404 cas d'enfants porteurs de handicap âgés de 6 à 18 ans. Menzel Temime, où vit et travaille Jamila, présente le taux le plus élevé d'enfants porteurs de handicap parmi les communautés locales de Nabeul.
+
+DIFFICULTÉS D'ACCÈS À L'ÉDUCATION
+Jamila a commencé son traitement médical à l'âge de 3 ans et a dû interrompre ses études à plusieurs reprises, un défi commun rencontré par de nombreux enfants porteurs de handicap.
+
+"À l'âge de 13 ans, alors que j'étais en dernière année de l'école primaire, j'ai subi une intervention chirurgicale aux jambes, suivie d'un traitement intensif de quatre mois à l'hôpital Al Kassab de Tunis", a-t-elle révélé. L'expérience de Jamila met en lumière la dure réalité à laquelle sont souvent confrontés les enfants porteurs de handicap pour accéder à l'éducation, en particulier lorsque leurs conditions nécessitent des soins intenses. "Les familles, contraintes par des moyens économiques limités, privilégient souvent le traitement médical de leurs enfants au détriment de l'éducation", a-t-elle expliqué. Jamila elle-même était sur le point d'abandonner l'école, jusqu'à ce que son médecin découvre qu'elle était l'une des rares enfants porteurs de handicap qu'il traitait à savoir lire. Il a insisté pour qu'elle rejoigne une association pour les mineurs atteints de troubles du mouvement organique, située à côté de l'hôpital et offrant une éducation aux enfants dans des circonstances similaires à celles de Jamila.
+
+Sa forte détermination l'a amenée à suivre un emploi du temps strict de cours du matin et de traitements l'après-midi. Malgré les défis auxquels elle a été confrontée, elle était résiliente et persévérante, réussissant finalement à poursuivre ses études secondaires et universitaires, une étape souvent considérée comme inatteignable pour les enfants porteurs de handicap, en particulier ceux issus de milieux vulnérables.`,
     category: "recent"
   },
   {
     id: '3',
-    title: "Surdité et communication : trouver de nouvelles façons de se connecter",
-    image: "https://fr.eztalks.com/res/2021/03-16/14/26fda684f4a423401cb4293614f9b592.jpg",
+    title: "Vacances d’été: Et si nos plages étaient accessibles aux personnes handicapées ?",
+    image: "https://i0.wp.com/lapresse.tn/wp-content/uploads/2024/07/plage.jpg?w=845&ssl=1",
     alt: "Personne sourde utilisant la langue des signes pour communiquer",
-    date: "12 juillet 2019",
-    postedBy: "Sophie Lemoine",
-    body: "La surdité peut rendre la communication difficile, mais il existe de nombreuses façons de rester connecté avec les autres. Dans cet article, nous explorons l'utilisation de la langue des signes, des appareils auditifs et des technologies assistées pour améliorer la communication.",
+    date: "07 Juillet 2024",
+    postedBy: "Kamel FERCHICHI ",
+    body: `Si la Tunisie offre une longue liste des plus belles plages, toutes ou presque ne sont pas accessibles aux personnes à mobilité réduite. En France, une association, créée en 1999, avait développé un label éponyme répondant à des critères objectifs d’accessibilité et de sécurité.
+
+La grande campagne de nettoyage et d’aménagement des plages bat son plein, en prélude à la saison de baignade et les flux massifs des vacanciers, ceux qui aiment l’été au soleil brillant de joie, d’amusement et de passions. De quoi se faire plaisir et se réjouir, installé sous un parasol ou allongé dans un lit de sable fin et chaud. Soit une échappée belle sur nos beaux rivages étendus sur un littoral pittoresque de plus de 1300 km.
+
+Un droit qui n’existe pas !
+
+Alors, chacun peut en profiter à sa manière  certes, mais nous n’avons pas tous  l’entière faculté de nous déplacer à notre gré et le choix de prédilection pour aller se baigner. Et là où le bât blesse, c’est que les personnes à mobilité réduite (PMR) n’ont pas, jusqu’ici, l’autonomie d’accès aux espaces publics et encore moins à nos plages. Ces dernières, à quelques exceptions près, ne sont pas aménagées à cet effet. Ce droit n’est pas tellement respecté à tel point qu’il n’existe presque pas, pourtant l’arsenal juridique et législatif tunisien regorge de lois garantissant la protection et la promotion des droits des personnes en situation de handicap. L’accessibilité de l’environnement et la facilitation des déplacements en font, d’ailleurs, partie intégrante.
+
+De même, la Convention relative aux droits des personnes handicapées (Crdph), que notre pays avait ratifiée en 2008, ne manque pas d’instructions et de dispositions en faveur de cette catégorie à besoins spécifiques. Tout pour rendre les transports, les communications et les services accessibles à tous, en consacrant l’obligation d’éliminer les obstacles et d’assurer l’accès au milieu physique, sur quoi  insiste ladite convention. « L’Etat protège les personnes handicapées contre toute discrimination et prend toutes les mesures propres à leur garantir une entière intégration au sein de la société », ainsi stipule l’article 54 de la Constitution du 25 juillet 2022. Or, comment s’y intégrer aussi facilement si rien n’est fait, du moins au niveau de l’accès aux plages.
+
+Une initiative fut lancée, mais !
+
+Nos communes n’y pensent même pas, semble-t-il, d’autant qu’elles n’inscrivent pas la demande d’accès aux plages sur leur agenda estival. Leurs préparatifs engagés pour l’été se limitent, à vrai dire, au même plan d’action rudimentaire, mettant souvent en avant le fameux volet propreté et nettoyage du littoral. L’accès à la mer n’est pas toujours à la portée des handicapés, faute de moyens d’indication et d’orientation physique. Agir de la sorte est de nature à changer la donne et redonner l’espoir à une population comptant plus de 240 mille personnes en situation de handicap.
+
+Et si la Tunisie offre une longue liste des plus belles plages, toutes ou presque ne sont pas, loin s’en faut, accessibles aux personnes à mobilité réduite. En France, une association, créée en 1999, avait développé un label éponyme répondant à des critères objectifs d’accessibilité et de sécurité. Cela requiert une infrastructure de bonne facture et des équipements spécifiques facilitant le passage de ces personnes et leur garantissant une certaine autonomie.Sous nos cieux, cette idée d’accessibilité a commencé à tenir la route et incarner l’œuvre associative. Lancée en 2015, l’association Tunisian Smart Cities s’est fixé l’objectif d’aider les handicapés à avoir droit d’accès à nos plages. Faisant suite à l’appel, Nawfel Guerfeli, acteur indépendant de la société civile, a pris le relais. Son initiative démarra, alors, à Bizerte, puis à Monastir, à Djerba, à Gabès et à La Marsa, dans la perspective  de prendre une dimension nationale et d’être dupliquée dans d’autres villes côtières tunisiennes.
+
+Ce qu’il faut aménager
+
+Par ailleurs, rendre accessible une plage implique, forcément, des actions d’appoint. Soit  l’aménagement du front de mer et l’installation d’équipements adaptés sur la plage et ses alentours : parc de stationnement, roulement aménagé du parking à la baignade, un sanitaire dédié aux PMR, panneaux d’information et de signalisation compréhensibles par tous les usagers, mise à disposition de  fauteuils de plage et fauteuils tout terrain permettant de rouler dans l’eau et sur tous les sols … Le but étant de permettre aux personnes porteuses de handicap de se baigner en toute sécurité.
+
+Toutefois, cette initiative n’a pas fait du chemin. Elle aurait pu, si volonté il y avait, gagner du terrain et servir  de modèle à suivre et  transposable dans l’ensemble de nos plages. Pour donner à cette action une base légale et améliorer la prise en charge des personnes à mobilité réduite, il y a lieu de solliciter les décideurs pour la mise en vigueur des textes de loi sur l’accessibilité des établissements et tous les espaces publics, y compris les plages.
+
+Pour aller plus loin, des voix associatives se sont élevées, proposant une loi liée à l’accessibilité des PMR aux plages.
+
+Du reste, faut-il recourir à des campagnes de plaidoyer pour avoir gain de cause ? Pas plus tard que le mois dernier, le président de l’Association « Ibsar », Mohamed Mansouri, a appelé à la nécessité de mettre en place une stratégie nationale permettant l’accessibilité des plages aux personnes handicapées. Espérons que son appel ne sera pas voué à l’abandon.`,
     category: "recent"
   },
   {
     id: '4',
-    title: "Trouver des opportunités de travail en tant que personne handicapée",
-    image: "data:image/png;base64,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",
-    alt: "Personne handicapée travaillant à un bureau",
-    date: "3 juillet 2019",
-    postedBy: "Jean-Pierre Durand",
-    body: "Trouver un emploi peut être difficile pour les personnes handicapées, mais il existe de nombreuses ressources et opportunités disponibles. Cet article offre des conseils pour rechercher des emplois, se préparer aux entretiens et utiliser les ressources communautaires.",
+    title: "الماشون على طريق الاشواك",
+    image: "https://mithaq.info/media/k2/items/cache/ff0e413c76eac8451119233b41621edd_L.jpg",
+    alt: "Personne sourde utilisant la langue des signes pour communiquer",
+    date: "07 Juillet 2024",
+    postedBy: " Hssan nebti ",
+    body: `تختلف الإعاقات ما بين إعاقات نفسية وجسدية، وقد تمكن العديد من متحدي الإعاقة من إبهارنا  وخطوا أسماءهم بأحرف من ذهب في الذاكرة العالمية في مجال السينما والتلفزيون والرسم والأدب والموسيقى وغيرها من الفنون فتحولوا إلى نجوم ساطعة في سماء الإبداع  مثل  بيتر دينكلاج، منيبة مزاري، بيتهوفن، فريدا كاهلو وطه حسين.
+
+شمس هي شابة تونسية من ذوات الإعاقة البصرية  فقدت بصرها  في سن مبكرة من مرحلة الطفولة لكن ذلك  لم  يمنعها من البروز كشخص مؤثر، حيث درست الموسيقى والمسرح وأبدعت في العزف على البيانو فخلقت  لنفسها مساحة خاصة واوجدت  مكانا لها في الوسط الثقافي التونسي.
+
+كان هذا حوارنا معها
+
+-          من تكون شمس ؟ حدثينا عن نفسك.
+
+ 
+
+-          أنا شمس فتاة  18 سنة تعرضت في طفولتي وتحديدا في سن 5 إلى صدمة عاطفية أفقدتني البصر لكنني لم أجعل هذا الفقدان يكون عائقا لمواصلة حياتي كما أن حبي للفن طغى على كل شيء وجعلني متفردة في محيط عيشي وكذلك حبي للدراسة وتحصلي على معدلات متميزة جعلني أتحدى كل شيء وأنسى كل ماهو جارح حين أسعد أمي
+
+-          ماهي التحديات التي واجهتها داخل  المجتمع التونسي بإعتبارك من ذوات الإعاقة ؟
+
+-          يواجه ذوو الإعاقة تحديات عديدة  في حياتهم اليومي وعلى سبيل المثال فالإنسان من ذوي الإعاقة البصرية يجد صعوبة في عبور الطريق أوالبحث عن سيارة أجرة مما يجعله بحاجة للأخرين وهناك تحديات حتى في الوسط العائلي للتعامل مع ضرورياته المعيشية أو القيام ببعض الأشياء التي لا يمكنه فعلها و من خلال تجربتي فان  الإنسان من ذوي الاعاقة لا بد من التأقلم مع محيطه والعمل على ايجاد حلول للتحديات التي يواجهها  حتى يعيش حياة عادية مثل الانسان السوي
+
+-          في مثل حالتك يحتاج التصالح مع واقعك وتقبله والانخراط في علاقات اجتماعية موسعة داخل محيطك دون الإنغماس في العزلة أو التقوقع على الذات إلى قوة ومجهود مضاعف ، حدثينا عن تجربتك ؟
+
+-          نعم من الضروري الإنخراط في المجتمع وتقبل مختلف جوانبه وعدم الإنغماس والتقوقع على الذات ليكون مجالا لفرض الذات وإنشاء علاقات مختلفة مع الأخرين المباشرة وغير المباشرة لكسر الحواجز التي تعتقد أن الإنسان ذو إعاقة بصرية غير قادر على التعامل مع مختلف الناس لأنه في بعض الأحيان يحتاج إلى الأخرين لقضاء  الضروريات و قد تكون يومية بالأساس و بالتالي تؤدي إلى رفض العنصرية أو إنعدامها من محيط عيشه و تجربتي بالأساس أحتوت على كل هذه الوسائل لفرض وجودي
+
+-          ماهي علاقتك بالإبداع والفنون وخصوصا الموسيقى ؟
+
+ 
+
+- الفن بالنسبة لي هو فكر واحساس، فمن خلال الموسيقى أستطيع التعبير عن ما يخالج نفسي من مشاعر قد تكون مختلفة أو متناقضة،  كذلك المسرح الذي يعتبر عالمي الثاني الخالي من كل التأثيرات السلبية  وبالتالي فالإبداع هو دافعي للحياة وللاستمرار . 
+
+- من خلال  نظرتك للجانب المبدع في شخصيتك، هل تعتبرين العزف على البيانو الوسيلة الملائمة للتعبير عن دواخلك وفرض مكانتك في الوسط  الفني أم هو ملجأ     تبثين فيه آلامك ومشاعرك ؟
+
+- نعم العزف على البيانو وسيلة لفرض مكانتي الفنية وللتعبير عن دواخلي الذاتية والمقطوعات التي اعزفها تجسد ما يخالجني  من أحاسيس ومشاعر
+
+- إلى ماذا تطمحين مستقبلا دراسيا وفنيا ؟
+
+-أطمح مستقبلا إلى نيل شهادة الاحتراف في الموسيقى وتطوير قدراتي الفنية في المسرح ودراسة الفلسفة في الجامعة لأنني أعشق عالم الفلسفة، فالموسيقى فلسفة في حد ذاتها
+
+- بيتهوفن كان أيضا من ذوي الإعاقة  لكنه أبدع في مجال الموسيقى وألف العديد من السمفونيات الهامة والرائعة  مكنته من تخليد إسمه، فهل تعتبرينه قدوتك و مُلهمك؟
+
+- نعم بيتهوفن هو قدوتي لكونه شخصا حقق  انجازات موسيقية رائعة رغم إعاقته فقد تحدى كل الصعاب ولم يجعلها مانعا لممارسة العزف والموسيقى
+
+-هل هناك اشخاص دعموك في بداية مشوارك ؟
+
+- أمي  كانت من الأشخاص الأوائل  الذين قاموا  بدعمي وبمساعدتي على ايجاد فضاء  لتعلم  العزف وتطوير موهبتي وكذلك الفنان الكبير محمد الجبالي الذي كان مشرفا على تأطيري ومنحني عديد الفرص لإبراز قدراتي الفنية وكان حريصا على تحفيزي لصقل مواهبي  دون أن أنسي أساتذتي في الموسيقى أو في المسرح مثل لطفي العكرمي الذي كان شديد الحرص على إخراج ما بداخلي من أحاسيس فنية وأبداعية وأسامة عبد القادر الذي اكتشف فيّ حب المسرح وسعى الى تطوير هذه الموهبة وكذلك الممثلة نورهان بوزيان التي جعلتني أعشق المسرح وأتجاوز اعاقتي .
+
+- لا يخلو الوسط الثقافي بكل أصنافه الأدبية منها والتشكيلية والموسيقية والمسرحية عموما من النقد والتجريح وحتى التنمر في بعض الأحيان، هل كانت لهذه الإنتقادات  اي تاثيرات  سلبية عليك  او عائقا امامك  لتحقيق  حلمك ؟
+
+-لا تمثل الانتقادات السلبية مانعا لمواصلة الابداع لأنني كنت اعتبرها حافزا ايجابيا  للتطور والتقدم
+
+-هل تعتبرين الفن وسيلة للنجاح والشهرة وكسب المال أم أنه قيمة ثابتة تُبرزين به مكانتك وتفردك داخل المجتمع ؟
+
+-أنا أهوى الفن منذ نعومة أظافري وأطمح أن يكون لي مستقبل واعد في الموسيقى لتحقيق الشهرة وكسب المال  بما يضمن لي العيش الكريم 
+
+-الدوافع الخفية وراء اختيارك للعزف على البيانو ؟
+
+- اختياري العزف على البيانو له دوافع نفسية بالأساس لأن  البيانو  يشبهني فأنسجام الأوتار البيضاء والسوداء يشكل لحنا جميلا كذلك حياتي فبالرغم من تنوع ألوانها تبقى رائعة وجميلة
+
+- تميزك في الدراسة وحصولك على معدل ممتاز في آخر السنة الدراسية رغم أنك من ذوات الإعاقة البصرية يعكس ذكاء وفطنة وتحدّ منقطع النظير تتحلى به شمس، كما أن تجاوزك لهذا العائق يؤكد قوة بصيرة تجاوزت   فقدان البصر، ماهو تعليقك ؟
+
+-نعم من الضروري التشبث والتمسك بالامل لأن الأصرار والعزيمة هي  السبيل الوحيد لتحقيق النجاح والتميز وطبعا فالبصيرة ودواخل الأنسان وعدم اليأس أقوى من البصر وخاصة التخلص من قوى الجذب للوراء  فانا إنسانة طموحة أسعى دائما للأفضل ونجاحي الدراسي  يعكس  اصراري  على التميز
+
+- هل تعرضت للتنمر في مرحلة عمرية معينة ؟ إن كان الجواب نعم ما مدى تأثير ذلك عليك ؟
+
+- تعرضت للتنمر في الطفولة كأي شخص من ذوي الإعاقة وتأثرت أيما تأثر، لكن ذلك كان في السابق أما الان فقد تجاوزت تلك الأحاسيس وتعايشت  مع اعاقتي  بشكل عادي
+
+-خلال تجربتك الفنية ماهو أجمل موقف حصل معك ؟
+
+- أجمل موقف حصل معي عندما منحني الفنان الكبير والمتألق محمد الجبالي فرصة الصعود والعزف على مسرح مهرجان الحمامات يوم 10 جويلية 2023 وهو  يوم  سيبقى محفورا في الذاكرة خاصة وانه تزامن مع يوم مولدي وبداية   الطريق نحو الشهرة
+
+- وأسوء موقف حصل معك ؟
+
+-أسوء موقف  هو رفض بعض الاشخاص تعليمي العزف عندما رغبت في دراسة الموسيقى
+
+كلمة الختام
+
+- خير ما اختم به هو قول الشاعر الكويتي  محمد بن فوزان  الذي قال :
+
+ ليس المعاق الذي شلت جوارحه
+
+ولا الــذي قـــدرا هـدته أسـقــام
+
+ بـل المعـاق الـذي شانـت فعائـلـه
+
+فكم كفيف لـه فـي النـاس منزلـة
+
+ومبـصـر جهـلـه يـــجلله إظـــلام
+
+فكـن لغيـرك نــور يستـضـاء بـه
+
+ تعـطـي الضـيـاء ولا تقـعـدك آلام.
+
+ فالاعاقة بالنسبة لي هي دافع للتميز والاختلاف و حب الحياة ...
+
+
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+هذا العمل أنجز في إطار مشروع " من أجل تحسين وصول الأشخاص ذوي الإعاقة إلى الخدمات والحقوق في تونس "  من تنفيذ وزارة الشؤون الإجتماعية بالتنسيق مع وزارة الأسرة والمرأة والطفل وكبار السن ( MFFE#) والديوان الوطني للأسرة والعمران البشري (ONFP#) وبالشراكة مع تمثيلية صندوق الأمم المتحدة للسكان بتونس  UNFPA# منظمة الأمم المتحدة للتربية والعلوم والثقافة UNESCO# مفوضية  الأمم المتحدة السامية لحقوق الإنسان HCDH# ومنظمة الأشخاص ذوي الإعاقة ، لاسيما جمعية إبصار IBSAR# والمنظمة التونسية  للدفاع عن حقوق الأشخاص ذوي الإعاقة OTDDPH#
+
+`,
     category: "recent"
   },
+
+
   
 ];
 

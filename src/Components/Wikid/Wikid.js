@@ -1,13 +1,13 @@
 import React from 'react';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useLocation } from 'react-router-dom';
-import { wikiditems } from './wikiditems'; // Import wikiditems data
 import "./Wikid.css";
+import WikidiPreview from './WikidiPreview'; // Import the WikidiPreview component
+
 
 const Wikidi = () => {
     const location = useLocation();
     const currentPath = location.pathname.split('/').pop(); // Extract current page from URL
-    const latestStory = wikiditems[0];
 
     // Updated links based on your provided categories
     const wikidlinks = [
@@ -23,11 +23,9 @@ const Wikidi = () => {
             <div className="background-image-wikiphedia">
                 <div className="overlay-text-wikiphedia">
                     <h1 className="wikiphedia-titre">Wikiphedia</h1>
-                    <p className="p-5 wikiphedia-description">
-                        Découvrez des profils détaillés d'artistes, d'athlètes paralympiques, et d'entrepreneurs de scientifiques et d'autres profils de personnes en situation de handicap, Explorez leurs réalisations, parcours et contributions dans divers domaines pour vous inspirer et vous informer.
-                    </p>
+                    
                 </div>
-
+                
                 <div className="button-container">
                     {wikidlinks.map((item, index) => (
                         <Button
@@ -41,7 +39,17 @@ const Wikidi = () => {
                 </div>
             </div>
 
-           
+            {/* Article preview section */}
+            <Container>
+                <Row>
+                <p className="mt-5  wikiphedia-description">
+                        Découvrez des profils détaillés d'artistes, d'athlètes paralympiques, et d'entrepreneurs de scientifiques et d'autres profils de personnes en situation de handicap, Explorez leurs réalisations, parcours et contributions dans divers domaines pour vous inspirer et vous informer.
+                    </p>
+                    <Col>
+                        <WikidiPreview />
+                    </Col>
+                </Row>
+            </Container>
         </>
     );
 };

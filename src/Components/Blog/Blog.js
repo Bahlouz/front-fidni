@@ -1,166 +1,117 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Container, Row, Col, Button, Form } from 'react-bootstrap';
-import blogPosts from './blogPosts.jsx';
 import './Blog.css';
-import backnavhead from "../../Assets/back navhead.jpg";
+import blogPosts from './blogPosts';
+import { Button, Modal, Form } from 'react-bootstrap';
 
-const Blog = ({ onSubmit }) => {
-  const [featuredPost, setFeaturedPost] = useState({});
-  const [recentPosts, setRecentPosts] = useState([]);
-  const [formData, setFormData] = useState({
-    nomPrenom: '',
-    occupation: '',
-    age: '',
-    email: '',
-    content: '',
-    media: null
-  });
-  const [showForm, setShowForm] = useState(false);
+const Blog = () => {
+  const featuredPost = blogPosts[0];
+  const otherFeaturedPosts = blogPosts.slice(1, 6);
+  const allPosts = blogPosts.slice(6);
 
-  useEffect(() => {
-    const featured = blogPosts.find(post => post.category === 'featured');
-    const recent = blogPosts.filter(post => post.category === 'recent');
-    setFeaturedPost(featured);
-    setRecentPosts(recent);
-  }, []);
+  const [show, setShow] = useState(false);
 
-  const handleChange = (e) => {
-    const { name, value, type, files } = e.target;
-    setFormData({
-      ...formData,
-      [name]: type === 'file' ? files[0] : value
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onSubmit(formData);
-    setFormData({
-      nomPrenom: '',
-      occupation: '',
-      age: '',
-      email: '',
-      content: '',
-      media: null
-    });
-    setShowForm(false);
-  };
-
-  const handleAddPostClick = () => {
-    setShowForm(!showForm);
-  };
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
     <>
-    <img className="backnavhead" src={backnavhead} alt="Background" />
-    <Container fluid className="p-0">
-      <Row>
-        
-      </Row>
-      <Container className="blog-main">
-        <Row>
-          <Col md={8}>
-            <article className="blog-article-featured">
-              <h2 className="blog-article-title">{featuredPost.title}</h2>
-              <img src={featuredPost.image} alt={featuredPost.alt} className="blog-article-image" />
-              <p className="blog-article-info">{featuredPost.date} | {featuredPost.postedBy}</p>
-              <p className="blog-article-body">{featuredPost.body}</p>
-              <Link to={`/post/${featuredPost.id}`} className="blog-article-read-more">CONTINUER LA LECTURE</Link>
-            </article>
-            {recentPosts.map((post, index) => (
-              <article className="blog-article-recent" key={index}>
-                <Row>
-                  <Col md={6}>
-                    <div className="blog-article-recent-main">
-                      <h2 className="blog-article-title">{post.title}</h2>
-                      <p className="blog-article-body">{post.body}</p>
-                      <Link to={`/post/${post.id}`} className="blog-article-read-more">CONTINUER LA LECTURE</Link>
+      <div className="background-image-blog">
+        <div className="overlay-text-blog-singlepage">
+          <h1 className="p-5 blog-titre-singlepage">Blog</h1>
+          <Button variant="primary" onClick={handleShow} className="my-4">
+            Ajouter un post
+          </Button>
+        </div>
+      </div>
+      <div className="background-image-blog-two">
+        <div className="blog-container-unique">
+          <div className="featured-post-container-unique">
+            <div className="featured-post-unique">
+              <Link to={`/blog/${featuredPost.id}`} className="post-link">
+                <img src={featuredPost.image} alt={featuredPost.alt} className="featured-image-unique" />
+              </Link>
+              <div className="featured-content-unique">
+                <span className="featured-category-unique">{featuredPost.category}</span>
+                <h1 className="featured-title-unique">{featuredPost.title}</h1>
+              </div>
+            </div>
+            <div className="other-featured-posts-unique">
+              <h2 className="other-featured-title-unique">Other featured posts</h2>
+              {otherFeaturedPosts.map(post => (
+                <div key={post.id} className="other-post-unique">
+                  <img src={post.image} alt={post.alt} className="other-post-image-unique" />
+                  <div className="other-post-content-unique">
+                    <Link to={`/blog/${post.id}`} className="post-link">
+                      <h3 className="other-post-title-unique">{post.title}</h3>
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="all-posts-container-unique">
+            <h2 className="all-posts-title-unique">All Posts</h2>
+            <div className="all-posts-grid-unique">
+              {allPosts.map(post => (
+                <div key={post.id} className="post-unique">
+                  <img src={post.image} alt={post.alt} className="post-image-unique" />
+                  <div className="post-content-unique">
+                    <Link to={`/blog/${post.id}`} className="post-link">
+                      <h3 className="post-title-unique">{post.title}</h3>
+                    </Link>
+                    <p className="post-description-unique">{post.description}</p>
+                    <div className="post-meta-unique">
+                      <span className="post-author-unique">{post.postedBy}</span>
+                      <span className="post-date-unique">{post.date}</span>
+                      <span className="post-readtime-unique">• {post.readTime} read</span>
                     </div>
-                  </Col>
-                  <Col md={6}>
-                    <div className="blog-article-recent-secondary">
-                      <img src={post.image} alt={post.alt} className="blog-article-image" />
-                      <p className="blog-article-info">{post.date} | {post.postedBy}</p>
-                    </div>
-                  </Col>
-                </Row>
-              </article>
-            ))}
-          </Col>
-          <Col md={4}>
-            <Button variant="primary" className="button-add-post" onClick={handleAddPostClick}>
-              Ajouter un post
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Modal for PostBlogForum */}
+      <Modal show={show} onHide={handleClose} centered style={{ marginTop: "5em", zIndex: "10000" }}>
+        <Modal.Header closeButton>
+          <Modal.Title>Ajouter un post</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            <Form.Group controlId="formName" className="mb-3">
+              <Form.Control type="text" placeholder="Nom et Prénom" />
+            </Form.Group>
+
+            <Form.Group controlId="formDomain" className="mb-3">
+              <Form.Control type="text" placeholder="Votre domaine d'expertise" />
+            </Form.Group>
+
+            <Form.Group controlId="formAge" className="mb-3">
+              <Form.Control type="number" placeholder="Âge" />
+            </Form.Group>
+
+            <Form.Group controlId="formEmail" className="mb-3">
+              <Form.Control type="email" placeholder="Email" />
+            </Form.Group>
+
+            <Form.Group controlId="formContent" className="mb-3">
+              <Form.Control as="textarea" rows={3} placeholder="Contenu" />
+            </Form.Group>
+
+            <Form.Group controlId="formFile" className="mb-3">
+              <Form.Control type="file" />
+            </Form.Group>
+
+            <Button variant="success" type="submit" className="w-100">
+              Envoyer
             </Button>
-            {showForm && (
-              <Form className="blog-form" onSubmit={handleSubmit}>
-                <Form.Group>
-                  <Form.Control
-                    type="text"
-                    name="nomPrenom"
-                    value={formData.nomPrenom}
-                    onChange={handleChange}
-                    placeholder="Nom et Prénom"
-                    required
-                  />
-                </Form.Group>
-                <Form.Group>
-                  <Form.Control
-                    type="text"
-                    name="occupation"
-                    value={formData.occupation}
-                    onChange={handleChange}
-                    placeholder="Votre domaine d’expertise ou votre occupation"
-                    required
-                  />
-                </Form.Group>
-                <Form.Group>
-                  <Form.Control
-                    type="number"
-                    name="age"
-                    value={formData.age}
-                    onChange={handleChange}
-                    placeholder="Âge"
-                    required
-                  />
-                </Form.Group>
-                <Form.Group>
-                  <Form.Control
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="Email"
-                    required
-                  />
-                </Form.Group>
-                <Form.Group>
-                  <Form.Control
-                    as="textarea"
-                    name="content"
-                    value={formData.content}
-                    onChange={handleChange}
-                    placeholder="Contenu"
-                    required
-                  />
-                </Form.Group>
-                <Form.Group>
-                  <Form.Control
-                    type="file"
-                    name="media"
-                    onChange={handleChange}
-                    accept="image/*,video/*"
-                  />
-                </Form.Group>
-                <Button type="submit" variant="success">
-                  Envoyer
-                </Button>
-              </Form>
-            )}
-          </Col>
-        </Row>
-      </Container>
-    </Container>
+          </Form>
+        </Modal.Body>
+      </Modal>
     </>
   );
 };

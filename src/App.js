@@ -56,6 +56,10 @@ import Guide from './Components/SavoirLab/Communication/Guide/Guide';
 import Lexique from './Components/SavoirLab/Communication/Lexique/Lexique';
 import Charte from './Components/SavoirLab/Communication/Charte/Charte';
 import Recommandation from './Components/SavoirLab/Communication/Recommandation/Recommandation';
+import Adoption from './Components/SavoirLab/Communication/Recommandation/Adoption/Adoption';
+import Coalition from "./Components/SavoirLab/Communication/Charte/Coalition/Coalition";
+import ContactUs from './Components/ContactUs';
+import SingleEvents from './Components/News_&_Events/Events/SingleEvents';
 
 function App() {
   const { toggleTheme, theme } = useTheme();
@@ -79,44 +83,50 @@ function App() {
           <AccessibilityIcon />
           <NavBar />
           <Routes>
-            <Route path="/accessibility" element={<AccessibilityFeatures />} />
-            <Route path='/savoir-lab/wikiphedia' element={<Wikid />} />
-            <Route path="/savoir-lab/wikiphedia/acteurs-sociaux-politiques" element={<ActeurScPl />} />
-            <Route path="/savoir-lab/wikiphedia/artistes" element={<Artistes />} />
-            <Route path="/savoir-lab/wikiphedia/chercheurs" element={<Chercheurs />} />
-            <Route path="/savoir-lab/wikiphedia/entrepreneurs" element={<Entrepreneurs />} />
-            <Route path="/savoir-lab/wikiphedia/sportifs" element={<Sportifs />} />
-            <Route path="/savoir-lab/wikiphedia/:storyId" element={<SingleWikidi />} />
-            <Route path='/savoir-lab/savoir-lab' element={<SavoirLab />} />
-            <Route path='/savoir-lab/accessibilite' element={<Accessibility />} />
-            <Route path='/savoir-lab/Accessibilité aux médias et à l’information' element={<AccessMedia />} />
-            <Route path='/savoir-lab/Appui des acteurs médiatiques au processus d accessibilité' element={<AppuiActeurs />} />
-            <Route path='/savoir-lab//communication-inclusive' element={<Communication />} />
-            <Route path='/savoir-lab/guide' element={<Guide />} />
-            <Route path='/savoir-lab/lexique' element={<Lexique />} />
-            <Route path='/savoir-lab/charte-nationale' element={<Charte />} />
-            <Route path='/savoir-lab/recommandations' element={<Recommandation />} />
-            <Route path='/savoir-lab/documents-de-plaidoyer' element={<DocumentPl />} />
-            <Route path='/services-et-droits/droits' element={<Droits />} />
-            <Route path="/services-et-droits/convention" element={<Convention />} />
-            <Route path="/services-et-droits/cadre" element={<Cadre />} />
-            <Route path='/for-you/annuaire-ong' element={<Annuaire />} />
-            <Route path="/" element={<Home />} />
-            <Route path="/resources/media/video" element={<VideoPlayerList />} />
-            <Route path="/resources/media/audio-podcast" element={<AudioPodcast />} />
-            <Route path="/press-corner" element={<PressCorner />} />
-            <Route path="/press-corner/:pressId" element={<SinglePressRelease />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/post/:postId" element={<SinglePost />} />
-            <Route path="/resources/library/pdf" element={<Docpdf />} />
-            <Route path="/resources/library/epub3" element={<Docepub3 />} />
-            <Route path="/news-events/news" element={<News />} />
-            <Route path="/news/:newsId" element={<SingleNews />} />
-            <Route path="/news-events/events" element={<Events />} />
-            <Route path="/for-you/useful-links" element={<UsefulLinks />} />
-            <Route path="/for-you/useful-addresses" element={<UsefulAddresses />} />
-            <Route path="/for-you/useful-documents" element={<UsefulDocuments />} />
-            <Route path="/services-et-droits/opportunites" element={<Opportunities />} />
+          <Route path="/accessibility" Component={AccessibilityFeatures} />
+          <Route path='/savoir-lab/wikiphedia' Component={Wikid} />
+          <Route path="/savoir-lab/wikiphedia/acteurs-sociaux-politiques" Component={ActeurScPl} />
+          <Route path="/savoir-lab/wikiphedia/artistes" Component={Artistes} />
+          <Route path="/savoir-lab/wikiphedia/chercheurs" Component={Chercheurs} />
+          <Route path="/savoir-lab/wikiphedia/entrepreneurs" Component={Entrepreneurs} />
+          <Route path="/savoir-lab/wikiphedia/sportifs" Component={Sportifs} />
+          <Route path="/savoir-lab/wikiphedia/:storyTitle" Component={SingleWikidi} />
+          <Route path='/savoir-lab/savoir-lab' Component={SavoirLab} />
+          <Route path='/savoir-lab/accessibilite' Component={Accessibility} />
+          <Route path='/savoir-lab/Accessibilité aux médias et à l’information' Component={AccessMedia} />
+          <Route path='/savoir-lab/Appui des acteurs médiatiques au processus d accessibilité' Component={AppuiActeurs} />
+          <Route path='/savoir-lab/communication-inclusive' Component={Communication} />
+          <Route path='/savoir-lab/communication-inclusive/charte-nationale/coalition' Component={Coalition} />
+          <Route path='/contactez-nous' Component={ContactUs} />
+          <Route path='/savoir-lab/guide' Component={Guide} />
+          <Route path='/savoir-lab/lexique' Component={Lexique} />
+          <Route path='/savoir-lab/charte-nationale' Component={Charte} />
+          <Route path='/savoir-lab/recommandations' Component={Recommandation} />
+          <Route path='/savoir-lab/recommandations/adoption' Component={Adoption} />
+          <Route path='/savoir-lab/documents-de-plaidoyer' Component={DocumentPl} />
+          <Route path='/services-et-droits/droits' Component={Droits} />
+          <Route path='/services-et-droits/services' Component={Services} />
+          <Route path="/services-et-droits/convention" Component={Convention} />
+          <Route path="/services-et-droits/cadre" Component={Cadre} />
+          <Route path='/for-you/annuaire-ong' Component={Annuaire} />
+          <Route path="/" Component={Home} />
+          <Route path="/resources/media/video" Component={VideoPlayerList} />
+          <Route path="/resources/media/audio-podcast" Component={AudioPodcast} />
+          <Route path="/press-corner" Component={PressCorner} />
+          <Route path="/press-corner/:pressId" Component={SinglePressRelease} />
+          <Route path="/blog" Component={Blog} />
+          <Route path="/blog/:postId" element={<SinglePost />} />
+          <Route path="/post/:postId" Component={SinglePost} />
+          <Route path="/resources/library/pdf" Component={Docpdf} />
+          <Route path="/resources/library/epub3" Component={Docepub3} />
+          <Route path="/news-events/news" Component={News} />
+          <Route path="/news/:newsId" Component={SingleNews} />
+          <Route path="/news-events/events" Component={Events} />
+          <Route path="/events/:eventTitle" element={<SingleEvents />} />
+          <Route path="/for-you/useful-links" Component={UsefulLinks} />
+          <Route path="/for-you/useful-addresses" Component={UsefulAddresses} />
+          <Route path="/for-you/useful-documents" Component={UsefulDocuments} />
+          <Route path="/services-et-droits/opportunites" Component={Opportunities} />
           </Routes>
           <Footer />
         </Router>

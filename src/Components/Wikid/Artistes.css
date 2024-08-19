@@ -41,4 +41,9 @@
 .artistes-description{
     font-size:1.3em;
 }
+.single-line-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 

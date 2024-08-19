@@ -12,7 +12,7 @@
 }
 .custom-card-img-top{
   width: 30em;
-  height:auto;
+  height:20em;
 }
 
 .custom-thumbnail {
@@ -109,7 +109,11 @@
 .custom-tags-list-town {
   background-color: #9c27b0;
 }
-
+.events-title{
+  text-align: center;
+  font-weight: bold;
+  color: #0056b3;
+}
 .custom-bottom-left {
   position: absolute;
   bottom: 14px;

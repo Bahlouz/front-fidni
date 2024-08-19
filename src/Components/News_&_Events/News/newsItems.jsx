@@ -2,76 +2,125 @@ export const newsItems = [
     {
         id: 1,
         title: "La Tunisie préside la 17e conférence des états parties à la convention relative aux droits des personnes handicapées qui se tient à New York du 11 au 13 juin 2024",
-        date: "1 Août 2024",
-        content: "Le ministre des affaires sociales Kamel Maddouri a présenté Mardi 11 Juin 2024 la déclaration de la Tunisie, au cours de la séance inaugurale des travaux de la 17e conférence des états parties à la convention relative aux droits des personnes handicapées, présidée par la Tunisie, qui se tient du 11 au 13 juin 2024 à New-York.",
-        imageUrl: "https://www.social.gov.tn/sites/default/files/2024-06/%D8%AA%D9%88%D9%86%D8%B3%20%D8%AA%D8%AA%D8%B1%D8%A3%D8%B3%20%D8%A7%D9%84%D8%AF%D9%88%D8%B1%D8%A9%2017%20%D9%84%D9%85%D8%A4%D8%AA%D9%85%D8%B1%20%D8%A7%D9%84%D8%AF%D9%88%D9%84%20%D8%A7%D9%84%D8%A3%D8%B7%D8%B1%D8%A7%D9%81%20%D9%81%D9%8A%20%D8%A5%D8%AA%D9%81%D8%A7%D9%82%D9%8A%D8%A9%20%D8%AD%D9%82%D9%88%D9%82%20%D8%A7%D9%84%D8%A3%D8%B4%D8%AE%D8%A7%D8%B5%20%D8%B0%D9%88%D9%8A%20%D8%A7%D9%84%D8%A5%D8%B9%D8%A7%D9%82%D8%A9%20%28%D9%86%D9%8A%D9%88%D9%8A%D9%88%D8%B1%D9%83%D8%8C%2011-13%20%D8%AC%D9%88%D8%A7%D9%86%202024%29_0.jpg",
+        date: "29 juillet 2024",
+        content: `La saison des soldes d'été commence le 7 aoûtMohsen Ben Sassi, président de la Chambre nationale des du prêt-à-porter et des tissus a annoncé, ce lundi 29 juillet 2024, que la saison des soldes d’été commencera le 7 août prochain et durera six semaines.
+
+Ben Sassi a précisé que la période des soldes débutera avec des réductions de  20 %, lesquelles augmenteront progressivement.
+
+Il a également encouragé les commerçants à participer aux soldes et à déposer leurs dossiers.
+`,
+        imageUrl: "https://www.mosaiquefm.net/_next/image?url=https%3A%2F%2Fcontent.mosaiquefm.net%2Fuploads%2Fcontent%2Flarge%2F1722245304.png&w=1920&q=75",
     },
     {
         id: 2,
-        title: "Inauguration d'un centre de formation pour les jeunes handicapés",
-        date: "5 Août 2024",
-        content: "Un nouveau centre de formation professionnelle ouvre ses portes pour offrir des formations adaptées aux jeunes handicapés, visant à faciliter leur intégration sur le marché du travail.",
-        imageUrl: "https://www.undp.org/sites/g/files/zskgke326/files/2023-05/Ramadan%20Kareem%20%284%29.png",
+        title: "Élection présidentielle 2024 : Les recours d’Abir Moussi et Mondher Zenaidi rejetés",
+        date: "18 Août 2024",
+        content: `La chambre d’appel près le tribunal administratif a émis, dimanche, trois jugements rejetant les recours déposés contre la liste préliminaire des candidats à l’élection présidentielle prévue pour le 6 octobre 2024, a indiqué le porte-parole du tribunal, Faicel Bouguerra.
+
+Le tribunal a jugé irrecevable un premier recours, et a rejeté un second et un troisième pour vice de fond.
+
+Dans une déclaration accordée à l’agence TAP, Bouguerra a expliqué que les deux recours déposés par la présidente du Parti destourien libre Abir Moussi ont été rejetés.
+
+La deuxième affaire concerne le candidat Mondher Zenaidi.
+
+Bouguerra a rappelé que sur un total de sept affaires, la juridiction en question s’est prononcée, jusqu’à dimanche, sur cinq d’entre elles.
+
+Les deux autres jugements, concernant Imed Daimi et Bechir Aouani, devraient être rendus demain lundi.
+
+Selon Bouguerra, les candidats sont informés de ces jugements dans les 48 heures suivant leur prononcé. Le 31 août est le dernier délai pour le dépôt des recours en appel.
+
+Rappelons que la liste définitive des candidats à l’élection présidentielle devrait être publiée le 3 septembre prochain.`,
+        imageUrl: "https://i0.wp.com/lapresse.tn/wp-content/uploads/2024/08/1723998671835.jpg?resize=850%2C491&ssl=1",
     },
     {
         id: 3,
-        title: "Lancemwent d'une application mobile pour aider les personnes sourdes à communiquer",
-        date: "10 Août 2024",
-        content: "Une nouvelle application mobile est lancée pour permettre aux personnes sourdes de communiquer plus facilement grâce à la traduction instantanée en langue des signes et au sous-titrage en temps réel.",
-        imageUrl: "https://www.tousergo.com/blog/wp-content/uploads/2016/07/ROGERVOICE.jpg",
+        title: "Saïed honore les héros olympiques : Kattoussi, Ferjani et Jendoubi décorés pour leurs exploits à Paris 2024",
+        date: "17 Août 2024",
+        content: `e Président de la République Kais Saied a décerné ce vendredi l’insigne de première classe de l’Ordre national du Mérite sportif aux athlètes Firas Kattoussi, Fares Ferjani et Mohamed Khalil Jendoubi pour leur exploits aux Jeux Olympiques de Paris 2024.
+
+Le chef de l’État a exhorté les athlètes décorés à déployer davantage d’efforts pour hisser haut le drapeau national, soulignant qu’en dépit des ressources et des moyens limitées, la volonté de briller et d’obtenir les premières places a pallié tous les obstacles.
+
+La cérémonie a été l’occasion pour le Président d’appeler tous les athlètes « à se doter de la culture de la victoire. L’ère de la participation pour la participation est révolue, et quiconque participe à un événement sportif doit oeuvrer pour la victoire ».
+
+Pour rappel, Firas Kattousi a décroché la médaille d’or du Taekwondo aux Jeux Olympiques de Paris 2024, tandis que Fares Ferjani a remporté l’argent en escrime et Mohamed Khalil a raflé le bronze au Taekwondo.`,
+        imageUrl: "https://i0.wp.com/lapresse.tn/wp-content/uploads/2024/08/1723853679178.jpg?resize=850%2C491&ssl=1",
     },
     {
         id: 4,
-        title: "Exposition artistique mettant en valeur le talent des artistes handicapés",
-        date: "15 Août 2024",
-        content: "Une exposition d'art est organisée pour mettre en lumière le talent créatif des artistes handicapés, avec des œuvres variées allant de la peinture à la sculpture.",
-        imageUrl: "data:image/jpeg;base64,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",
-    },
-    {
-        id: 5,
-        title: "Le ministre des affaires sociales s'entretient à Rome avec la ministre italienne du travail et des politiques sociales",
-        date: "20 Août 2024",
-        content: "Le ministre des affaires sociales, Malek Ezzahi s’est entretenu, Mardi 05 Mars 2024 à Rome, avec la ministre italienne du Travail et des Politiques sociales, Marina Elvira Calderone, au sujet des perspectives de coopération entre la Tunisie et l’Italie dans le domaine de l’accueil de la main-d’œuvre et des compétences.Le ministre a proposé de renforcer les opportunités pour les Tunisiens issus de familles pauvres et à faible revenu",
-        imageUrl: "https://www.social.gov.tn/sites/default/files/2024-03/%D9%88%D8%B2%D9%8A%D8%B1%20%D8%A7%D9%84%D8%B4%D8%A4%D9%88%D9%86%20%D8%A7%D9%84%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%D9%8A%D8%A9%20%D9%8A%D9%84%D8%AA%D9%82%D9%8A%20%D8%A8%D9%88%D8%B2%D9%8A%D8%B1%D8%A9%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%20%D9%88%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B3%D8%A7%D8%AA%20%D8%A7%D9%84%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%D9%8A%D8%A9%20%D8%A7%D9%84%D8%A5%D9%8A%D8%B7%D8%A7%D9%84%D9%8A%D8%A9.jpg",
+        title: "Tunisie : Un taux de croissance de 0,6% au premier semestre 2024",
+        date: "17 Août 2024",
+        content: `La Tunisie a enregistré une croissance économique de 1% au deuxième trimestre 2024 et une croissance cumulative de 0,6% au premier semestre.
+
+
+
+Selon les données de l’Institut National de la Statistique (INS), qui vient de publier son rapport trimestriel sur la croissance économique au deuxième trimestre 2024, l’économie tunisienne a enregistré une croissance du Produit Intérieur Brut (PIB) en volume corrigé des variations saisonnières de 1% sur un an.
+
+Ce résultat est en amélioration par rapport au premier trimestre de l’année, où la croissance annuelle était de 0,3% et comparé au premier trimestre de 2024, le PIB a progressé de 0,2% en glissement trimestriel.
+
+Ainsi, pour le premier semestre de l’année, l’économie tunisienne affiche une croissance cumulative de 0,6%.`,
+        imageUrl: "https://www.webdo.tn/uploads/news/10/2024-08/fb95192e0eddcd8d0b585121888dd00d.webp",
     },
     {
         id: 6,
-        title: "Traitement médiatique des questions liées aux handicapés : Etre objectif, c’est toujours relatif !",
-        date: "25 Août 2024",
-        content: "Clichés, métaphores mal filées, désignations erronées, voire dévalorisantes, se glissent vite au fil de la plume, il y a de quoi appeler les médias à un juste traitement des questions liées aux personnes handicapées, loin des stigmates et jugements de valeur.",
-        imageUrl: "https://i0.wp.com/lapresse.tn/wp-content/uploads/2024/05/handicap.jpg?w=850&ssl=1",
+        title: "Le rôle historique du tribunal administratif pour rendre justice aux candidats refusés par l’Isie",
+        date: "16 Août 2024",
+        content: `Sur les 117 prétendants à la candidature pour la présidentielle, seuls seize ont déposé leurs dossiers. Sur les seize, seuls trois ont vu leurs dossiers validés par l’instance électorale. Six ont jeté l’éponge et sept ont déposé des recours devant le Tribunal administratif espérant qu’il leur rende justice et les remette dans la course présidentielle. S’il est très improbable que les juges administratifs rendent justice pour les six, l’espoir demeure encore pour quelques-uns d’entre eux. 
+
+ 
+
+Du vendredi 16 au lundi 19 août 2024, les yeux sont rivés sur le Tribunal administratif qui doit trancher sur les recours déposés par sept candidats à la présidentielle refusés par l’Instance supérieure indépendante pour les élections (Isie). 
+
+L’enjeu est à la fois très grand, et historique. Entre les mains des juges administratifs, il se trouve, peut-être, le dossier du futur président de la République. Et c’est à eux, et à eux seuls, de décider si ce dossier est valide ou pas. L’enjeu est d’autant plus grand qu’il vient dans un contexte des plus délicats. Le régime de Kaïs Saïed a mis la justice à sa botte, limoge et mute les juges à tours de bras et se montre très nerveux ces derniers temps face aux candidats à la présidentielle. Pour leur barrer la route, il a utilisé à la fois l’arme judiciaire et administrative. Certains se sont vus refuser l’octroi du bulletin numéro 3 (B3, casier judiciaire) et d’autres ont été condamnés à de la prison ferme, parfois en présentiel, parfois par contumace.
+
+Les intimidations observées ces dernières semaines ont poussé plusieurs candidats à se retirer de la course.  C’est le cas de Kamel Akrout, Nizar Chaâri ou Safi Saïd. En tout, sur les 117 prétendants, il n’y a eu que seize dépôts de candidature. S’il est clair que l’écrasante majorité n’a pas réussi à réunir les parrainages nécessaires, il n’en demeure pas moins que quelques-uns, parmi les 117, ont eu peur d’une arrestation et d’un mandat de dépôt ou d’un mandat d’amener, préférant se retirer.
+
+Sur les seize dossiers déposés par les candidats, seuls trois ont été acceptés par l’instance électorale. Celui du président sortant Kaïs Saïed et ceux de Zouhair Maghzaoui et Ayachi Zammel.
+
+Six ont jeté l’éponge, pour différentes raisons considérant que l’affaire est perdue d’avance et qu’il ne sert à rien de lutter contre un régime qui ne veut pas de rivaux sérieux face à lui. Sept tiennent encore bon et entendent lutter jusqu’à la dernière seconde pour obtenir gain de cause et poursuivre la course présidentielle. Ils ont, pour cela, déposé des recours devant le Tribunal administratif.
+
+ 
+
+Entre leur devoir de rendre justice aux sept candidats qui ont déposé recours et le risque de sanction d’un régime nerveux aux multiples antécédents, les juges administratifs se trouvent entre le marteau et l’enclume. Une pression monstre pèse sur leurs épaules, car ils risquent d’être perdants d’une façon ou d’une autre. S’ils rendent justice aux candidats, ils risquent les affres du pouvoir. S’ils ne leur rendent pas justice, ils doivent subir une mauvaise conscience d’avoir fait rater à la Tunisie l’occasion de sortir du marasme et d’avoir une élection vraiment intègre. 
+
+Techniquement, ce sont les présidents des chambres d’appel du Tribunal administratif qui statuent en premier ressort, sur les recours formés contre les décisions de l’Isie.
+
+Ensuite, en phase d’appel, c’est l’assemblée plénière juridictionnelle du Tribunal administratif qui va statuer sur les recours formés contre les décisions rendues par les chambres d’appel.
+
+Que ce soit en premier recours ou en phase d’appel, ce sont 27 magistrats qui vont statuer sur les dossiers. Le jugement doit donc être validé par quatorze magistrats au moins.
+
+La question est si ces 27 magistrats vont prendre leur décision en se basant sur des questions purement technico-juridiques ou s’ils vont tenir compte de considérations politiques ? Autre question, est-ce qu’ils vont prendre en considération d’anciens jugements du même Tribunal administratif et faire valoir la jurisprudence pour justifier leurs décisions actuelles ?
+
+ 
+
+Les recours déposés sont en lien avec le B3, à l’évaluation d’une partie des dix mille parrainages populaires et du refus d’acceptation des parrainages parlementaires.
+
+L’Isie est dans son droit de refuser ces dossiers. D’après elle, tout dossier sans B3 est refusé. Ce n’est pas de son ressort si le ministère de l’Intérieur a refusé de le délivrer à certains candidats.
+
+Pour ce qui est des parrainages populaires, tout est une question d’évaluation. L’Isie tient à la disposition du Tribunal administratif tous les parrainages refusés et motive, à chaque fois, sa décision.
+
+Enfin, pour ce qui est des parrainages des parlementaires, certains se sont rétractés, d’après nos informations et ont fait part à l’Isie de leur changement d’avis. L’Isie considère donc que le parrainage du parlementaire devient nul, puisque ce dernier a décidé de ne plus parrainer un candidat. Parenthèse en passant, les parlementaires qui ont parrainé des rivaux à Kaïs Saïed subissent depuis quelques jours une véritable campagne de haine et des menaces sur les réseaux sociaux par des soi-disant partisans du régime.
+
+ 
+
+Toutes ces considérations de l’Isie sont rejetées par les candidats et c’est aux 27 magistrats de trancher en premier recours et en appel.
+
+Concernant le B3, l’Isie est dans son droit, certes, mais les candidats sont aussi dans leur droit. Au-delà de l’aspect technique de la chose, il y a un aspect politique. Refuser un B3 à un candidat à la présidentielle n’est pas un acte anodin, purement technique, c’est un acte hautement politique.
+
+Le Tribunal administratif a déjà donné raison à l’Isie quant à son exigence du document, mais cette décision n’exclut pas de donner également raison aux candidats en considérant qu’il leur est impossible de présenter un document que seul l’État peut délivrer. Face à cette impasse, la bonne justice doit toujours pencher en faveur des plus faibles.
+
+Concernant les parrainages populaires, tout est une question d’évaluation. Si l’Isie a bien motivé ses refus de certains parrainages, les magistrats ne peuvent que la suivre dans ses décisions. Si, en revanche, elle a fait preuve de zèle ou de manque de sérieux et a refusé, n’importe comment, les parrainages, les magistrats vont donner raison aux candidats.
+
+Concernant enfin les parrainages des parlementaires, il y a une jurisprudence en la matière et elle date de 2014. Le Tribunal administratif a déjà eu à faire face à des parlementaires qui se sont rétractés et il les a désavoués. Les magistrats ont considéré qu’une fois le parlementaire a signé son parrainage, ou un quelconque document, il ne peut plus se rétracter ensuite. Le principe est simple, un parlementaire n’est pas un citoyen lambda ou un enfant pour qu’il s’amuse avec sa signature en disant oui aujourd’hui et non demain. Une fois qu’il a signé un document, il doit l’assumer pleinement.
+
+Si jamais le Tribunal administratif prend en considération son propre jugement de 2014, il va remettre en course au moins un candidat, parmi les sept qui ont déposé recours. Ici, la question n’est pas uniquement technique, elle est aussi politique. 
+
+ 
+
+C’est clair, rares sont les personnes qui aimeraient être aujourd’hui à la place des 27 juges administratifs. Un poids énorme pèse sur leurs épaules, ils vont décider de l’avenir de la Tunisie. Quelles que soient leurs décisions, elles seront historiques et seront, plus tard, enseignées dans les facs de droit. Soit, elles seront enseignées comme modèle de ce qu’il faut faire, ou a contrario, de ce qu’il ne faut pas faire.
+
+Au-delà de l’aspect purement technico-juridique, il y a aussi un aspect politique dans ces décisions du Tribunal administratif et cet aspect sera, lui aussi, enseigné dans les facultés des sciences politiques. Car il est assez rare de voir que le sort d’un hypothétique président de la République soit entre les mains des magistrats, non pas parce qu’il a commis un crime ou un délit, mais juste pour des questions techniques et des obstacles mis sur sa route par le régime en place.`,
+        imageUrl: "https://www.businessnews.com.tn/images/album/IMGBN108113TA-ISIE.jpg",
         readMoreUrl: "/news/2"
     },
-    {
-        id: 7,
-        title: "Initiative pour rendre les événements culturels accessibles à tous",
-        date: "30 Août 2024",
-        content: "Une nouvelle initiative est mise en place pour rendre les événements culturels et artistiques plus accessibles aux personnes handicapées, avec des mesures pour assurer un accès équitable et inclusif.",
-        imageUrl: "https://via.placeholder.com/350x200",
-        readMoreUrl: "/news/2"
-    },
-    {
-        id: 8,
-        title: "Campagne de sensibilisation sur les droits des personnes handicapées",
-        date: "5 Septembre 2024",
-        content: "Une campagne nationale est lancée pour sensibiliser le public aux droits des personnes handicapées et lutter contre les stéréotypes et les discriminations.",
-        imageUrl: "https://via.placeholder.com/350x200",
-        readMoreUrl: "/news/2"
-    },
-    {
-        id: 9,
-        title: "Développement d'une nouvelle technologie pour faciliter la mobilité des personnes en fauteuil roulant",
-        date: "10 Septembre 2024",
-        content: "Une nouvelle technologie innovante est développée pour améliorer la mobilité des personnes en fauteuil roulant, avec des dispositifs adaptés pour faciliter la navigation urbaine et l'accès aux bâtiments publics.",
-        imageUrl: "https://via.placeholder.com/350x200",
-        readMoreUrl: "/news/2"
-    },
-    {
-        id: 10,
-        title: "Création d'un festival de cinéma dédié aux films sur le thème du handicap",
-        date: "15 Septembre 2024",
-        content: "Un nouveau festival de cinéma est organisé pour mettre en avant des films traitant des défis et des réussites des personnes handicapées, offrant une plateforme pour la diversité et l'inclusion dans le cinéma.",
-        imageUrl: "https://via.placeholder.com/350x200",
-        readMoreUrl: "/news/2"
-    }
+    
 ];

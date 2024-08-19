@@ -1,6 +1,7 @@
 import React from 'react';
 import './Guide.css';
 import guidedoc1 from "../../../../Assets/guidedoc1.png";
+import downloadimg from '../../../../Assets/download.png'
 
 const Guide = () => {
   return (
@@ -10,7 +11,7 @@ const Guide = () => {
         
         <div className="overlay-text-Communication">
           <h1 className="Communication-titre">Le guide de bonnes pratiques éditoriales et éthiques </h1>
-          </div>
+        </div>
       <div className="guide-column">
         <div className="guide-preview">
           <img 
@@ -19,16 +20,25 @@ const Guide = () => {
             className="guide-image" 
           />
           <a 
-            href="path-to-guide" 
-            className="download-button" 
+            href={`${process.env.PUBLIC_URL}/pdfs/Guide Unesco.pdf` }
             download
+            target="_blank" 
+            rel="noopener noreferrer"
           >
-            Télécharger
+            <img 
+              className="download-button-guide" 
+              href={`${process.env.PUBLIC_URL}/pdfs/Guide Unesco.pdf` }
+              target="_blank"
+              src={downloadimg} 
+              alt="Télécharger" 
+            />
           </a>
         </div>
         <a 
-          href="path-to-french-version" 
+          href={`${process.env.PUBLIC_URL}/pdfs/Guide Unesco.pdf`} 
           className="french-link"
+          target="_blank" 
+          rel="noopener noreferrer"
         >
           Accéder au guide en français
         </a>
@@ -73,8 +83,8 @@ const Guide = () => {
             pour présenter les personnes handicapées de manière éthique et efficace.
           </p>
           <p>
-          D’où la création de ce guide, qui s’est faite sur la base d’une consultation nationale multipartite en Tunisie et sur une étude nationale de diagnostic. Sa publication a permis de développer une formation pour les professionnels des médias, afin de les sensibiliser sur les questions liées au handicap. A ce jour, 60 journalistes tunisiens ont bénéficié de ces formations. Cela a abouti à des résultats concrets, notamment à des productions médiatiques inclusives, tels que des films d’animation ou des podcasts.  
-Par conséquent, ce n’est pas un simple manuel, c’est un appel à l’action. Il invite les médias tunisiens à adopter des approches éditoriales qui reflètent la diversité et la richesse des expériences des personnes handicapées. A travers des principes éthiques rigoureux, une terminologie respectueuse, et une accessibilité accrue, le guide accompagnera la transformation du paysage médiatique.
+            D’où la création de ce guide, qui s’est faite sur la base d’une consultation nationale multipartite en Tunisie et sur une étude nationale de diagnostic. Sa publication a permis de développer une formation pour les professionnels des médias, afin de les sensibiliser sur les questions liées au handicap. A ce jour, 60 journalistes tunisiens ont bénéficié de ces formations. Cela a abouti à des résultats concrets, notamment à des productions médiatiques inclusives, tels que des films d’animation ou des podcasts.  
+            Par conséquent, ce n’est pas un simple manuel, c’est un appel à l’action. Il invite les médias tunisiens à adopter des approches éditoriales qui reflètent la diversité et la richesse des expériences des personnes handicapées. A travers des principes éthiques rigoureux, une terminologie respectueuse, et une accessibilité accrue, le guide accompagnera la transformation du paysage médiatique.
           </p>
         </div>
       </div>

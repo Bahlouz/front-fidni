@@ -49,6 +49,15 @@
     font-size:1.5em;
   }
   .pdf-list {
-    
     padding: 20px;
   }
+  .pdf-image {
+    width: 90px;  /* Adjust the width as needed */
+    height: auto;
+    object-fit: contain;  /* Ensures the image maintains its aspect ratio */
+}
+.card-plaidoyer{
+  background-color: #e1ebff !important;
+  box-shadow: 5px 5px 9px rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+}

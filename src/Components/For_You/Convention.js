@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container ,Row,Col,Image} from 'react-bootstrap';
 import './Convention.css';
+import conventiondoc from "../../Assets/convention.png"
 
 const Convention = () => {
   
@@ -14,7 +15,7 @@ const Convention = () => {
   
   <Container className="convention-container">
     <Row>
-    <div>
+    <div className="definitions-convention">
   <h2>Définitions :</h2>
   <ul>
     <li>
@@ -46,7 +47,7 @@ const Convention = () => {
     </Row>
       <Row>
         <Col>
-          <h2 className="convention-title">Convention relative aux Droits des Personnes Handicapées (CDPH)</h2>
+          <h2 className="convention-title" style={{marginTop:"2em"}}>Convention relative aux Droits des Personnes Handicapées (CDPH)</h2>
         </Col>
       </Row>
       <Row>
@@ -74,30 +75,34 @@ const Convention = () => {
             <li>Est juridiquement contraignante pour les États parties : les États doivent régulièrement faire un rapport des mesures entreprises pour l’appliquer ;</li>
             <li>Est un outil de développement et un instrument des droits humains :
               <ul>
-                <li>Avisée le changement de paradigme sur la question du handicap en appliquant le modèle social du handicap à la totalité du texte de la Convention ;</li>
+                <li>Avisée le changement de paradigme sur la question du handicap en appliquant le modèle social du handicap à la totalité du texte de la Convention<sup>1</sup> ;</li>
                 <li>Est un instrument s’appliquant à tous les types d’incapacités et tous les secteurs ;</li>
                 <li>Représente « un grand pas en avant pour la promotion de l’accès aux services destinés aux personnes handicapées, dans tous les contextes et à tout moment ».</li>
               </ul>
             </li>
-            <li>Stipule clairement le rôle des organisations représentatives des personnes handicapées comme élément moteur dans la promotion des droits des personnes handicapées, exigeant par conséquent leur participation systématique.</li>
+            <li>Stipule clairement le rôle des organisations représentatives des personnes handicapées comme élément moteur dans la promotion des droits des personnes handicapées, exigeant par conséquent leur participation systématique<sup>2</sup>.</li>
           </ul>
         </Col>
       </Row>
       <Row>
-        <Col>
+        <Col className='liens-conventions'>
           <h3 className="convention-subtitle">Lien utile :</h3>
           <p className="convention-text">
-            <a href="https://example.com" className="convention-link">Accéder à la Convention relative aux droits des personnes handicapées (CDPH) en français</a>
+            <a href="https://www.ohchr.org/fr/instruments-mechanisms/instruments/convention-rights-persons-disabilities" className="convention-link">Accéder à la Convention relative aux droits des personnes handicapées (CDPH) en français</a>
           </p>
-          <Image src="/path-to-your-image.png" fluid className="convention-image" />
+          <Image src={conventiondoc} fluid className="convention-image" />
         </Col>
       </Row>
       <Row>
         <Col>
           <h4 className="convention-subtitle">Consulter :</h4>
+          <p style={{borderTop: '1px solid'}}>
+            <sup>1</sup><small>CDPH, Article 1. Op, cit.</small><br />
+            <sup>2</sup><small>CDPH. Articles 3, 4.3, 29, 30, 32 et 33. Op, cit.</small>
+          </p>
           <ul className="convention-list">
-            <li>Droits</li>
-            <li>Cadre réglementaire concernant le handicap en Tunisie</li>
+            <li><a href="/services-et-droits/droits">Droits</a></li><br />
+            <li><a href="/services-et-droits/cadre">Cadre réglementaire concernant le handicap en Tunisie</a></li>
           </ul>
         </Col>
       </Row>

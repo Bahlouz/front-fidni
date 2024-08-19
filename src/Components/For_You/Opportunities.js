@@ -36,7 +36,7 @@ const Opportunities = () => {
             <Container className="mt-4">
                 <Row>
                     <Col>
-                        <h1 className="opportunities-title">Opportunités de Bénévolat</h1>
+                        <h1 className="opportunities-title">Opportunités</h1>
                     </Col>
                 </Row>
                 <Row>

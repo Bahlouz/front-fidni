@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container ,Row,Col,Table} from 'react-bootstrap';
+import { Container ,Row} from 'react-bootstrap';
 import './Cadre.css';
 
 const Convention = () => {
@@ -52,43 +52,41 @@ const Convention = () => {
     </Row>
     <Container fluid className="regulations-table">
       <h2>A retenir : Cadre réglementaire concernant le handicap en Tunisie</h2>
-      <Table bordered responsive>
-        <tbody>
-          <tr>
-            <td className="blue">
-              <p>L’article 54 de la Constitution (2022) :</p>
-              <p>« L’État protège les personnes handicapées de toute discrimination et prend toutes les mesures qui lui garantissent une pleine intégration dans la société ».</p>
-            </td>
-            <td className="green">
-              <p>L’article 48 de la Constitution (2014) stipule que l’État protège les personnes handicapées contre toute discrimination fondée sur le handicap, de bénéficier de toutes les mesures propres à lui garantir une entière intégration au sein de la société ; incombe à l’État de prendre toutes les mesures nécessaires à cet effet.</p>
-            </td>
-          </tr>
-          <tr>
-            <td className="light-blue">
-              <p>La loi n° 2005-83 énonce que toute entreprise publique ou privée de plus de 100 employés doit réserver 1% au moins de son personnel pour les postes des employés handicapés. Celles qui emploient plus de 100 personnes doivent réserver 2 % des postes à des personnes handicapées.</p>
-            </td>
-            <td className="green">
-              <p>Loi organique n° 2016-61 du 3 août 2016, relative à la prévention et la lutte contre la traite des personnes.</p>
-            </td>
-          </tr>
-          <tr>
-            <td className="dark-blue">
-              <p>Loi d'orientation N° 83-2005 du 15 août 2005 relative à la protection des personnes handicapées ;</p>
-            </td>
-            <td className="green">
-              <p>Décret n°96-849 du 1 mai 1996, relatif à la création du Conseil national des personnes handicapées Décret n°90-2601 du 10 décembre 1990, modifié par le décret n°96-1419 du 12 août 1996, portant organisation de l’institut de promotion des personnes handicapées.</p>
-            </td>
-          </tr>
-          <tr>
-            <td className="orange">
-              <p>Décret n°2005-3029 du 21 novembre 2005, portant création d’un conseil supérieur de la protection des personnes handicapées et fixant sa composition, ses attributions et les modalités de son fonctionnement.</p>
-            </td>
-            <td className="green">
-              <p>Décret n°2005-3086 du 29 novembre 2005, relatif à la création des commissions régionales des personnes handicapées, à la fixation des critères de handicap et aux conditions d’attribution de la carte de handicap.</p>
-            </td>
-          </tr>
-        </tbody>
-      </Table>
+      <table bordered responsive>
+  <tbody>
+    <tr>
+      <td className="td-constitution-2022">
+        <p>L’article 54 de la Constitution (2022) :</p>
+        <p>« L’État protège les personnes handicapées de toute discrimination et prend toutes les mesures qui lui garantissent une pleine intégration dans la société ».</p>
+      </td>
+      <td className="td-constitution-2014">
+        <p>L’article 48 de la Constitution (2014) stipule que l’État protège les personnes handicapées contre toute discrimination fondée sur le handicap, de bénéficier de toutes les mesures propres à lui garantir une entière intégration au sein de la société ; incombe à l’État de prendre toutes les mesures nécessaires à cet effet.</p>
+      </td>
+      <td className="td-law-2005-83">
+        <p>La loi n° 2005-83 énonce que toute entreprise publique ou privée de plus de 100 employés doit réserver 1% au moins de son personnel pour les postes des employés handicapés. Celles qui emploient plus de 100 personnes doivent réserver 2 % des postes à des personnes handicapées.</p>
+      </td>
+      <td className="td-law-2016-61">
+        <p>Loi organique n° 2016-61 du 3 août 2016, relative à la prévention et la lutte contre la traite des personnes.</p>
+      </td>
+    </tr>
+    <tr>
+      <td className="td-law-83-2005">
+        <p>Loi d'orientation N° 83-2005 du 15 août 2005 relative à la protection des personnes handicapées ;</p>
+      </td>
+      <td className="td-decree-1996">
+        <p>Décret n°96-849 du 1 mai 1996, relatif à la création du Conseil national des personnes handicapées Décret n°90-2601 du 10 décembre 1990, modifié par le décret n°96-1419 du 12 août 1996, portant organisation de l’institut de promotion des personnes handicapées.</p>
+      </td>
+      <td className="td-decree-2005-3029">
+        <p>Décret n°2005-3029 du 21 novembre 2005, portant création d’un conseil supérieur de la protection des personnes handicapées et fixant sa composition, ses attributions et les modalités de son fonctionnement.</p>
+      </td>
+      <td className="td-decree-2005-3086">
+        <p>Décret n°2005-3086 du 29 novembre 2005, relatif à la création des commissions régionales des personnes handicapées, à la fixation des critères de handicap et aux conditions d’attribution de la carte de handicap.</p>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
     </Container>
     <p>CARTE HANDICAP :</p>
     <a href="https://www.social.gov.tn/fr/attribution-de-carte-de-handicap">https://www.social.gov.tn/fr/attribution-de-carte-de-handicap</a>

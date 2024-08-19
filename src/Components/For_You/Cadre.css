@@ -80,24 +80,91 @@
     height: auto;
     margin-top: 10px;
   }
-  .blue {
-    background-color: #a3c7f7; /* Blue shade */
-  }
-  
-  .green {
-    background-color: #b1e2a1; /* Light green shade */
-  }
-  
-  .light-blue {
-    background-color: #93c5fd; /* Light blue shade */
-  }
-  
-  .dark-blue {
-    background-color: #1e40af; /* Dark blue shade */
-    color: #fff; /* White text for readability */
-  }
-  
-  .orange {
-    background-color: #fcd34d; /* Light orange shade */
-  }
-  
+  /* Convention Table Styling */
+.regulations-table {
+  margin-top: 2em;
+  background-color: #f8f9fa;
+  padding: 1.5em;
+  border-radius: 8px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.regulations-table h2 {
+  margin-bottom: 1em;
+  text-align: center;
+  font-size: 1.5em;
+  color: #0056b3;
+  font-weight: bold;
+}
+
+.regulations-table table {
+  width: 100%;
+  border:solid 2px black ;
+  table-layout: fixed; 
+}
+
+.regulations-table table tbody tr:nth-child(odd) {
+  background-color: #e9ecef;
+}
+
+.regulations-table table tbody tr:nth-child(even) {
+  background-color: #fdfdfe;
+}
+
+.regulations-table table td {
+  padding: 1em;
+  border: 2px solid #000000;
+  vertical-align: top;
+
+}
+
+
+.regulations-table table td p {
+  margin: 0;
+  color: #343a40;
+  font-size: 1em;
+  line-height: 1.5;
+  color: white !important;
+}
+
+
+.td-constitution-2022 {
+  background-color: #00BFFF; /* Light blue */
+  color: white;
+}
+
+.td-constitution-2014 {
+  background-color: #6AA84F; /* Light green */
+  color: white;
+}
+
+.td-law-2005-83 {
+  background-color: #007F7F; /* Light yellow */
+  color: black;
+}
+
+.td-law-2016-61 {
+  background-color:  #408000; /* Light orange */
+  color: black;
+}
+
+.td-law-83-2005 {
+  background-color: #003f7f; /* Dark blue */
+  color: white;
+}
+
+.td-decree-1996 {
+  background-color: #6AA84F; /* Lighter blue */
+  color: black;
+}
+
+.td-decree-2005-3029 {
+  background-color: #FFA07A; /* Light yellow */
+  color: black;
+}
+
+.td-decree-2005-3086 {
+  background-color: #a7d85e; /* Light green */
+  color: white;
+}

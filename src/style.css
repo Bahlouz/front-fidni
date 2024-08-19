@@ -1,6 +1,8 @@
 /* styles.css */
 
-
+h2,h1{
+  font-family: raleway !important;
+}
 
 
 .accessibility-container {
@@ -469,6 +471,7 @@ body {
   .header-links a:hover,
   .header-controls :hover{
     text-decoration: underline;
+    cursor:pointer !important;
   }
   .header-icons a {
     margin-right: 0.625em;
@@ -500,7 +503,7 @@ body {
     margin-left: 0.625em;
   }
   
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     .header.visible{
       background-color: rgba(0, 0, 0, 0.8);
     }
@@ -520,10 +523,10 @@ body {
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: #fff;
-    border: 1px solid #ccc;
+    background-color: rgba(0, 0, 0, 0.8);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+    color: white;
 
   }
   
@@ -536,6 +539,7 @@ body {
   
   .search-dropdown .suggestions-list {
     list-style-type: none;
+    color: white;
     margin: 0;
     padding: 0;
     max-height: 12.5em;
@@ -551,7 +555,7 @@ body {
   }
   
   .search-dropdown .suggestions-list li:hover {
-    background-color: #f0f0f0;
+    background-color: #4e4e4e;
   }
   
 
@@ -561,36 +565,39 @@ body {
     
 }
 #navbar{
-  width: 100%;
+  width: 100vw;
 }  
 
 .navbar.scrolled {
-  width: 100%;
+  width: 100vw;
+  height: auto;
   display: flex;
-  margin-top: 2.51em;  
+  margin-top: 2.1em;  
   transition: all 0.3s ease-in-out;
   left: 0;
   right: 0;
   padding: 0rem  !important;
-  font-size: 1em !important;
+  font-size: 1.1em ;
   font-family: raleway;
   background-color: rgba(0, 0, 0, 0.8);
   background-position: top center;
   z-index: 7000;
   border-bottom: 2px solid white;
   filter: none !important;
+  white-space:wrap;
 }
 
 
   .navbar.visible {
-    width: 100%;
+    width: 100vw;
+    height: auto;
     display: flex;
     position:fixed !important;
     top: 0;
     left: 0;
     right: 0;
     padding: 0rem  !important;
-    font-size: 1em !important;
+    font-size: 1.2em ;
     font-family:raleway;
     background-color: transparent;
     background-position: top center;
@@ -598,6 +605,7 @@ body {
     margin-top: 3.32em;  
     z-index: 7000;
     filter: none !important;
+    white-space:wrap;
   }
   
   .navbar-toggler {
@@ -650,20 +658,26 @@ body {
     transform: rotate(-135deg) !important;
     opacity: 0.9 !important;
   }
-  
-  @media (max-width: 768px) {
-    .navbar-hidden{
-      position: fixed !important;
+  @media (max-width: 1440px) {
+    .navbar.visible{
+      font-size: 1.2em;
     }
+  }
+  @media (max-width: 1024px) {
+    .navbar.visible{
+      font-size: 0.8em !important;
+    }
+  }
+  @media (max-width: 992px) {
     .navbar.visible {
-      width: 100%;
+    width: 100vw;
     display: flex;
     position:fixed !important;
     top: 0;
     left: 0;
     right: 0;
     padding: 0rem  !important;
-    font-size: 1.4em !important;
+    font-size: 1.4em !important ;
     font-family:raleway;
     background-color: rgba(0, 0, 0, 0.8);
     background-position: top center;
@@ -697,10 +711,27 @@ body {
   .nav-link {
     padding: 0.8rem 1rem !important;
   }
+  .nav-link:hover {
+    text-decoration: underline ;
+    cursor: pointer !important;
+    transition: all ease-in-out 0.3s !important;
+  }
+  .navbar-nav .dropdown-toggle::after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    transition: transform 0.3s ease-in-out;
+    vertical-align: middle ; /* Centers the arrow vertically */
+  }
   
-  @media (max-width: 768px) {
+  /* Rotate arrow on open */
+  .navbar-nav .dropdown.show .dropdown-toggle::after {
+    transform: rotate(180deg); /* Rotate the arrow */
+  }
+  @media (max-width: 992px) {
     .nav-link {
-      
+
       padding: 0.7rem 1rem !important;
     }
   }
@@ -765,14 +796,15 @@ body {
     width: 100%;
     height: 100%;
   }
-  .home-chiffre{
+  .home-chiffre {
     text-align: center;
     font-size: 3em;
     font-family: 'Times New Roman';
-    margin-bottom:2.5em;
+    margin-bottom: 2.5em;
     z-index: 1;
     color: white;
   }
+  
   .statistics-section {
     position: relative;
     text-align: center;
@@ -804,36 +836,111 @@ body {
   
   .stat-circle {
     position: relative;
-    background:linear-gradient(from top, to bottom, rgba(0, 0, 0, 0.5));
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5));
     color: #fff;
-    font-size:2rem;
-    margin-bottom: 2em;    
+    font-size: 2rem;
+    margin-bottom: 2em;
     font-weight: bold;
     border-radius: 50%;
-    width: 52.5vh; /* Définir une largeur fixe */
-    height: 52.5vh; /* Définir une hauteur fixe */
+    width: 52.5vh;
+    height: 52.5vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 6;
-    transition:all ease-in-out 0.7s;
+    transition: all ease-in-out 0.7s;
   }
+  
   .stat-circle:hover {
     box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.75);
     scale: 1.15;
   }
+  
   .stat-number {
-    font-size:2.5em;
+    font-size: 2.5em;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
   
+  /* Responsive adjustments */
+  @media (max-width: 1200px) {
+    .home-chiffre {
+      font-size: 2.5em !important;
+    }
+  
+    .stat-circle {
+      width: 45vh !important;
+      height: 45vh !important;
+    }
+  
+    .stat-number {
+      font-size: 2.2em !important;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .home-chiffre {
+      font-size: 2em !important;
+    }
+  
+    .stat-circle {
+      width: 40vh !important;
+      height: 40vh !important;
+    }
+  
+    .stat-number {
+      font-size: 2em !important;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .home-chiffre {
+      font-size: 1.8em !important;
+    }
+  
+    .stat-circle {
+      width: 35vh !important;
+      height: 35vh !important;
+    }
+  
+    .stat-number {
+      font-size: 1.8em !important;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .home-chiffre {
+      font-size: 1.5em !important;
+    }
+  
+    .stat-circle {
+      width: 30vh !important;
+      height: 30vh !important;
+    }
+  
+    .stat-number {
+      font-size: 1.5em!important;
+    }
+  
+    .statistics-section {
+      padding: 1em !important;
+    }
+  }
+  
+  
   .home_img {
+    background: url('Assets/home_pic.svg') no-repeat center center;
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
     top: -30px;
-    width: auto; /* 100% of viewport width */
-    height: 100%; /* 100% of viewport height */
-    overflow: hidden; /* Ensures no scrollbars appear */ 
   }
   .home_img::before{
     position:absolute;
@@ -842,8 +949,45 @@ body {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(3, 2, 2, 0.7); /* Adjust the alpha value for more or less tint */
+    background: rgba(0, 0, 0, 0.7); /* Adjust the alpha value for more or less tint */
     z-index: 2;
+  }
+  @media (max-width: 992px) {
+    .home_img {
+      background-size: cover !important; /* Ensure the entire image is visible */
+      background-position: top center !important;
+      top: 0 !important;
+    }
+    
+    .home_img::before {
+      height: 100% !important; /* Ensure the overlay covers the entire container */
+      top: 0 !important;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .home_img {
+      background-size: cover !important; /* Ensure the entire image is visible */
+      background-position: top center !important;
+      top: 0 !important;
+    }
+    
+    .home_img::before {
+      height: 100% !important; /* Ensure the overlay covers the entire container */
+      top: 0 !important;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .home_img {
+      background-size: cover !important; /* Ensure the entire image is visible */
+      background-position: top center !important;
+      top: 0 !important; /* Adjust top position */
+    }
+    
+    .home_img::before {
+      height: 100% !important; /* Ensure the overlay covers the entire container */
+    }
   }
   
   .imgh{
@@ -854,55 +998,77 @@ body {
     object-fit: cover; /* Ensures image covers entire area */
   }
   .overlay-home {
-    
     width: 100vw;
     height: auto;
     position: absolute;
-    top: 50%;
-    left:0;
-    padding: 20px !important;
+    left: 0;
+    bottom: 0;
+    padding: 4em 4em 0 4em !important;
     max-width: 100%;
+    text-align: left !important;
     z-index: 888;
+
   }
   
-  @media (max-width: 768px) {
-    .home_img{
-      border-radius: 0;
-      width: 100vh;
-    }
-    .overlay-home{
-      width: 100vh;
-      height: auto;
-    }
-    .home-section{
-      position: relative;
-    background-position: top center;
-    background-repeat: no-repeat;
-    padding-bottom: 0px !important;
-    padding-top: 0px !important;
-    overflow: hidden;
-    }
-  }
-  .overlay-home h1{
+  .overlay-home h1 {
     font-family: raleway;
     font-weight: bold;
-    font-size:5rem;
+    font-size: 5em;
     color: white;
-    text-align: left;
-    margin-left: 1.25em;
+    text-align: left !important;
   }
-  .overlay-home p{
+  
+  .overlay-home p {
     font-family: raleway;
-    font-size: 20px;
-    text-align:justify ;
-    margin-left: 10px;
-    margin-right: 10px;
-    padding-right: 20px;
-    padding-left: 20px;
+    font-size: 1.5em;
+    text-align: justify !important;
     color: white;
     overflow: hidden;
   }
-
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .home_img {
+      width: 100vw; /* Use viewport width for scaling */
+      height: 80vh; /* Maintain aspect ratio by setting height to auto */
+    }
+    
+    .overlay-home {
+      padding: 1.5em !important; /* Adjust padding for smaller screens */
+    }
+  
+    .overlay-home h1 {
+      font-size: 2.5em !important; /* Adjust the font size to be more readable */
+      padding: 0 !important;
+      text-align: left !important;
+    }
+  
+    .overlay-home p {
+      font-size: 0.9em !important; /* Adjust the font size for readability */
+      padding: 0 !important;
+      text-align: justify !important;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .home_img {
+      height: 60vh; /* Adjust height for very small screens */
+    }
+    
+    .overlay-home {
+      padding: 1em !important; /* Further reduce padding */
+    }
+  
+    .overlay-home h1 {
+      font-size: 2em !important; /* Further reduce font size */
+    }
+  
+    .overlay-home p {
+      font-size: 0.8em !important; /* Further reduce font size */
+      padding: 0 1em !important; /* Reduce padding */
+    }
+  }
+  
   .home-section {
     position: relative;
     background-position: top center;
@@ -927,48 +1093,7 @@ body {
     font-size:1.2rem;
   }
   
-  @media (max-width: 768px) {
-    .home_img {
-      width: 100vw; /* Full viewport width */
-      height: 50vh; /* Adjust height */
-    }
-  
-    .overlay-home {
-      width: 100vh ; /* Adjust width for smaller screens */
-      height: auto; /* Adjust height */
-      top: 70%; /* Adjust position */
-      left: 50%;
-      transform: translate(-50%, -50%);
-      padding: 10px; /* Reduce padding */
-      border-radius: 30px 0 0 30px; /* Adjust border radius */
-    }
-  
-    .overlay-home h1 {
-      font-size: 3rem; /* Reduce font size */
-      margin-left: 10px; /* Adjust margin */
-    }
-  
-    .overlay-home p {
-      font-size: 16px; /* Reduce font size */
-      margin-left: 5px; /* Adjust margin */
-      padding-right: 10px; /* Reduce padding */
-      padding-left: 10px; /* Reduce padding */
-    }
-  
-    .home-section {
-      padding-bottom: 10px !important; /* Adjust padding */
-      padding-top: 20px !important; /* Adjust padding */
-    }
-  
-    .home-about-section {
-      width: 100%; /* Full width */
-      padding-bottom: 30px !important; /* Adjust padding */
-      padding-top: 30px !important; /* Adjust padding */
-      padding-right: 20px !important; /* Adjust padding */
-      padding-left: 20px !important; /* Adjust padding */
-      font-size: 1rem; /* Adjust font size */
-    }
-  }
+
 
   
   
@@ -1238,6 +1363,10 @@ background-image:url("Assets/backfooter.jpg") !important;
 .footer-copyright-link {
   color: #fff;
   text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+  cursor:pointer  !important;
 }
 
 /* Media Query for different screens */

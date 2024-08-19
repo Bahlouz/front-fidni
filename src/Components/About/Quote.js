@@ -91,7 +91,7 @@ function QuoteComponent() {
           </Col>
         </Row>
       </Container>
-      <img className="before-footer" src={beforefooter} aria-hidden="true" />    
+      <img className="before-footer"  aria-hidden="true" />    
     </Container>
   );
 }

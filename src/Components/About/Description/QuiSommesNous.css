@@ -1,30 +1,38 @@
 .qui-sommes-nous-container {
   background: radial-gradient(circle, #ffffff, #f0f0f0);
-  color: rgb(48, 48, 48); /* Adjust text color for better contrast */
-  
-    padding: 1.25em;
-    font-family: Arial, sans-serif;
+  color: rgb(48, 48, 48);
+  padding: 1.25em;
+  font-family: Arial, sans-serif;
+}
+
+.qui-sommes-nous-title {
+  color: #0056b3;
+  font-weight: bold;
+  text-align: center;
+  font-size: 3rem; /* Reduced font size for better readability on smaller screens */
+  font-family: raleway;
+}
+
+.qui-sommes-nous-text {
+  margin: 2em 6em;
+  font-size: 1.3em;
+  text-align: justify;
+  font-family: raleway;
+}
+
+/* Styles for screens 767px and smaller */
+@media (max-width: 767px) {
+  .qui-sommes-nous-container {
+    padding: 1em !important; /* Reduced padding to fit content better */
   }
-  
+
   .qui-sommes-nous-title {
-    color: #0056b3;
-    font-weight: bold;
-    text-align: center;
-    font-size: 4rem;
-    font-family: raleway;
+    font-size: 2.5rem !important; /* Further reduced font size for titles */
   }
-  
+
   .qui-sommes-nous-text {
-    margin: 2em 6em 2em 6em;
-    font-size: 1.3em;
-    text-align: justify;
-    font-family: raleway;
+    margin: 1em 2em !important; /* Reduced margins to avoid excessive space on the sides */
+    font-size: 1.1em !important; /* Slightly reduced font size for better text flow */
+    line-height: 1.4 !important; /* Improved line height for readability */
   }
- 
-  @media(max-width:767px){
-    .qui-sommes-nous-text {
-      padding:1px;
-      margin: 0;
-      font-size: 1.2em;
-    }
-  }
+}

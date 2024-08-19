@@ -3,11 +3,32 @@ import { useLocation } from 'react-router-dom';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { Entrepreneursitems } from './Entrepreneursitems'; // Import Entrepreneursitems data
 import "./Wikid.css";
-import "./Entrepreneurs.css"
+import "./Entrepreneurs.css";
+
 const Entrepreneurs = () => {
     const location = useLocation();
     const currentPath = location.pathname.split('/').pop(); // Extract current page from URL
     const latestStory = Entrepreneursitems[0];
+
+    // Function to format description content
+    const formatDescription = (content) => {
+        return content
+            .replace(/<b>/g, '<strong>')
+            .replace(/<\/b>/g, '</strong>')
+            .replace(/<br\s*\/?>/g, '<br />');
+    };
+
+    // Function to extract the first line of formatted content
+    const getFirstLine = (content) => {
+        // Format the description
+        const formattedContent = formatDescription(content);
+        // Create a temporary div to use its textContent property
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = formattedContent;
+        // Get the first line
+        const firstLine = tempDiv.textContent.split('\n')[0];
+        return firstLine;
+    };
 
     // Updated links based on your provided categories
     const wikidlinks = [
@@ -22,9 +43,9 @@ const Entrepreneurs = () => {
         <>
             <div className="background-image-entrepreneurs">
                 <div className="overlay-text-entrepreneurs">
-                    <h1 className="entrepreneurs-titre">Les entrepreneurs </h1>
+                    <h1 className="entrepreneurs-titre">Les entrepreneurs</h1>
                     <p className="p-5 entrepreneurs-description">
-                        Découvrez des profils détaillés d'artistes, d'athlètes paralympiques, et d'entrepreneurs de scientifiques et d'autres profils de personnes en situation de handicap, Explorez leurs réalisations, parcours et contributions dans divers domaines pour vous inspirer et vous informer.
+                        Découvrez des profils détaillés d'entrepreneurs visionnaires, explorez leurs réalisations, parcours et contributions dans le monde des affaires et de l'innovation. Inspirez-vous de leur esprit d'entreprise et de leur impact économique.
                     </p>
                 </div>
 
@@ -55,8 +76,10 @@ const Entrepreneurs = () => {
                             <Card.Body>
                                 <Card.Title>{latestStory.title}</Card.Title>
                                 <Card.Subtitle className="mb-2 text-muted">{latestStory.date}</Card.Subtitle>
-                                <Card.Text>{latestStory.content}</Card.Text>
-                                <Button variant="primary" href={`/Entrepreneurs/${latestStory.id}`}>Lire plus</Button>
+                                <Card.Text className="truncate-text">
+                                    {getFirstLine(latestStory.content)}
+                                </Card.Text>
+                                <Button variant="primary" href={`/savoir-lab/wikiphedia/${latestStory.title}`}>Lire plus</Button>
                             </Card.Body>
                         </Card>
                     </Col>
@@ -70,8 +93,10 @@ const Entrepreneurs = () => {
                                 <Card.Body>
                                     <Card.Title>{item.title}</Card.Title>
                                     <Card.Subtitle className="mb-2 text-muted">{item.date}</Card.Subtitle>
-                                    <Card.Text>{item.content}</Card.Text>
-                                    <Button variant="primary" href={`/Entrepreneurs/${item.id}`}>Lire plus</Button>
+                                    <Card.Text className="truncate-text">
+                                        {getFirstLine(item.content)}
+                                    </Card.Text>
+                                    <Button variant="primary" href={`/savoir-lab/wikiphedia/${item.title}`}>Lire plus</Button>
                                 </Card.Body>
                             </Card>
                         </Col>
