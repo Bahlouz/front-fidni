@@ -929,7 +929,7 @@ body {
   
   
   .home_img {
-    background: url('Assets/home_pic.svg') no-repeat center center;
+    background: url('Assets/homepageimg.jpg') no-repeat center center;
     background-attachment: fixed;
     background-size: cover;
     width: 100vw;
