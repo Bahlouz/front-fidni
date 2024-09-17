@@ -8,43 +8,33 @@ const videos = [
   },
   {
     url: 'https://www.youtube.com/watch?v=qlh6fNZRFS8',
-    title: 'Maroua feki :DIWAN Épisode 1 : De la Persévérance et de la Créativité au Sommet du Succès ',
-    description: ": L'Histoire d'un Entrepreneur Inspirant) raconte le parcours d'un entrepreneur ayant surmonté divers défis pour atteindre le succès. Elle décrit comment, malgré des débuts difficiles marqués par le manque de ressources financières et une forte concurrence, l'entrepreneur a innové, établi des partenariats stratégiques et utilisé les technologies numériques pour transformer son entreprise. La vidéo met en lumière la persévérance, l'innovation, et le leadership inspirant comme clés de son succès, et encourage les futurs entrepreneurs à croire en leurs capacités et à ne pas abandonner face aux obstacles"
+    title: 'Épisode 1 : De la Persévérance et de la Créativité au Sommet du Succès ',
+    description: "Cette vidéo présente l’histoire d’un entrepreneur inspirant ayant surmonté divers défis pour atteindre le succès. Elle décrit comment, malgré des débuts difficiles marqués par le manque de ressources financières et une forte concurrence, l'entrepreneur a innové, établi des partenariats stratégiques et utilisé les technologies numériques pour transformer son entreprise. La vidéo met en lumière la persévérance, l'innovation, et le leadership inspirant comme clés de son succès, et encourage les futurs entrepreneurs à croire en leurs capacités et à ne pas abandonner face aux obstacles"
   },
   {
     url: 'https://www.youtube.com/watch?v=NMah18ma_jQ',
-    title: "Maroua feki :DIWAN Épisode 2 : Durra et le fait que je sois sans mains mais que j'enseigne à mes élèves",
-    description: "présente l'histoire inspirante de Durra, une enseignante qui, malgré la perte de ses mains, continue de transmettre son savoir et sa passion pour l'éducation à ses élèves. La vidéo met en lumière comment Durra a surmonté ses défis personnels en utilisant des méthodes d'enseignement créatives et adaptées pour inspirer et motiver ses étudiants. Son exemple illustre la force de la détermination et de l'engagement dans l'éducation, montrant que les limitations physiques ne doivent pas être un obstacle à l'impact positif sur la vie des autres."
-  },
-  {
-    url: 'https://www.instagram.com/reel/C9fNbX5oNBj/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
-    title: 'Syrine abidi',
-    description: "Le reel Instagram annonce que kortable Media a été sélectionné pour participer à une formation sur 'Les médias et l'intégration des personnes en situation de handicap' organisée par l'UNESCO sous la supervision de Dr. Lamia Ben Hassine. Suite à cette formation, leur proposition a été acceptée et financée par l'UNESCO et l'Association Ibsar. Le message encourage les spectateurs à participer à des formations similaires et à rechercher des opportunités de financement pour des projets liés à l'inclusion des personnes handicapées"
-  },
-  {
-    url: 'https://www.instagram.com/reel/C9fxAF4IS3_/?igsh=MWh1a3I0aHI4d3d2Yg==',
-    title: 'Syrine abidi',
-    description: "Le reel Instagram annonce que kortable Media a été sélectionné pour participer à une formation sur 'Les médias et l'intégration des personnes en situation de handicap' organisée par l'UNESCO sous la supervision de Dr. Lamia Ben Hassine. Suite à cette formation, leur proposition a été acceptée et financée par l'UNESCO et l'Association Ibsar. Le message encourage les spectateurs à participer à des formations similaires et à rechercher des opportunités de financement pour des projets liés à l'inclusion des personnes handicapées"
+    title: "Épisode 2 : Durra et le fait que je sois sans mains mais que j'enseigne à mes élèves",
+    description: "Cette vidéo présente l’histoire inspirante de Durra qui, malgré la perte de ses mains, continue à transmettre son savoir et sa passion à ses élèves . La vidéo met en lumière comment Durra a surmonté ses défis personnels en utilisant des méthodes d'enseignement créatives et adaptées pour inspirer et motiver ses étudiants. Son exemple illustre la force de la détermination et de l'engagement dans l'éducation, montrant que les limitations physiques ne doivent pas être un obstacle à l'impact positif sur la vie des autres."
   },
   {
     url: "https://youtu.be/_XG2_R3oT0s",
-    title: 'Dhafer : (H art):Vers une ville inclusive Épisode 1',
+    title: 'Vers une ville inclusive Épisode 1',
     description: "L'épisode intitulé 'Vers une ville inclusive' explore les initiatives visant à rendre les villes plus accessibles et inclusives pour les personnes en situation de handicap. Il examine les défis actuels en matière d'accessibilité urbaine, les politiques mises en place pour améliorer l'infrastructure et les services publics, ainsi que les innovations qui contribuent à créer des environnements urbains plus équitables. L'épisode met en avant des exemples de bonnes pratiques et des témoignages de personnes handicapées, tout en soulignant l'importance d'une approche collaborative pour atteindre une véritable inclusion dans les villes."
   },
   {
     url:"https://youtu.be/s8k12nhOVrQ",
-    title: 'Dhafer : (H art):Vers une ville inclusive Épisode 2',
+    title: 'Vers une ville inclusive Épisode 2',
     description: "Dans une petite ville magique, une jeune fille curieuse nommée Noura vit des aventures captivantes avec son chien magique, Bobby. Ensemble, ils explorent les mystères de la ville. Parallèlement, Dalila, qui se prépare pour son premier jour de travail, rencontre des obstacles lors de son trajet à cause des trottoirs encombrés et des signaux de circulation non adaptés aux personnes handicapées. Grâce à la magie de Bobby, ils imaginent des solutions innovantes comme l'élargissement des trottoirs, l'ajout de lignes texturées pour guider les piétons, et des signaux sonores qui indiquent quand traverser en toute sécurité. Une fois arrivée à l'arrêt de bus, Dalila utilise un dispositif sonore pour connaître l'heure de son bus. À la fin de son voyage, Dalila réalise combien ces adaptations ont rendu son parcours plus sûr et plus facile. Noura et Bobby comprennent l'importance de rendre les espaces publics plus accessibles pour aider les personnes avec des besoins spéciaux, illustrant ainsi l'impact positif de l'inclusion et de l'innovation sur la vie quotidienne"
   },
   {
     url: "https://youtu.be/6JYiCdqLeq4",
-    title: 'TOPAZ :Vidéo Sensibilisation',
+    title: 'Sensibilisation',
     description: "La vidéo aborde le sujet de l'autisme en soulignant l'importance d'un soutien collectif pour les enfants autistes, impliquant la famille, l'école et les spécialistes. Elle décrit l'autisme comme un trouble neuro-développemental diagnostiqué par des difficultés de communication sociale et linguistique, souvent visible dès un an et demi. Les symptômes incluent un manque de contact visuel, une interaction sociale réduite et un jeu atypique. La vidéo explore divers facteurs contributifs comme les aspects génétiques, environnementaux, nutritionnels et les complications à la naissance. Elle met en avant le 'choc du diagnostic' pour les parents, nécessitant un soutien psychologique, et insiste sur la nécessité d'un programme d'inclusion scolaire rigoureux. La sensibilisation des parents et une approche éducative adéquate sont cruciales pour faciliter l'intégration des enfants autistes dans la société.."
   },
   {
     url:"https://youtu.be/vv5lrSpboQQ",
-    title: 'TOPAZ :Evenement ',
-    description:"La vidéo met en avant l'importance de l'éducation des parents sur les étapes de développement des enfants autistes, soulignant la nécessité de reconnaître les retards de langage et de compétences. Elle explique que des ateliers de formation avec des experts aident les parents à comprendre la différence entre l'âge chronologique et l'âge mental des enfants autistes, permettant ainsi d'adapter les méthodes éducatives. Le soutien parental est essentiel pour l'inclusion scolaire et sociale, avec des stratégies basées sur la patience et une approche scientifique pour améliorer les compétences des enfants tout en respectant leurs capacités individuelles."
+    title: "Parés pour Paris 2024 - Equipe paralympique de Tunisie",
+    description:`Reportage produit pour le "Wikithon pour l'Inclusion - S'informer, s'engager, s'inspirer. Le cas de l'équipe paralympique de Tunisie", organisé le 7 décembre 2023 à Tunis, Tunisie, par le Bureau de l'UNESCO pour le Maghreb, en partenariat avec le Comité paralympique de Tunisie.`
   },
   {
     url:  "https://youtu.be/SySFrUJ8JJU",

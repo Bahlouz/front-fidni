@@ -1,8 +1,15 @@
-import React from 'react';
+
+import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import './DocumentPl.css';
 
+const BASE_URL = 'http://localhost:1337'; // Update this to your actual base URL
+
 const DocumentPl = () => {
+    const [fetchedData, setFetchedData] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    // Static PDF list
     const pdfList = [
         {
             title: 'Etude Sur Les Droits Politiques Et Culturels Des Personnes Handicapées En Tunisie',
@@ -23,6 +30,44 @@ const DocumentPl = () => {
             imageUrl: `${process.env.PUBLIC_URL}/pdfs/etude1.png`  // Replace with the actual image URL
         },
     ];
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch('http://localhost:1337/api/post-blogs?populate=*');
+                const data = await response.json();
+
+                // Filter data based on subcategory name
+                const filteredData = data.data.filter(item =>
+                    item.attributes.subcategory?.data?.attributes?.name === 'Documents de plaidoyer'
+                );
+
+                // Format the data
+                const formattedData = filteredData.map(item => ({
+                    title: item.attributes.Title,
+                    description: item.attributes.Description.map(desc => desc.children.map(child => child.text).join('')).join('\n'),
+                    link: item.attributes.Mediafiles?.data?.[0]?.attributes?.url
+                        ? `${BASE_URL}${item.attributes.Mediafiles.data[0].attributes.url}` 
+                        : '',
+                    imageUrl: item.attributes.Mediafiles?.data?.[1]?.attributes?.formats?.medium?.url 
+                        ? `${BASE_URL}${item.attributes.Mediafiles.data[1].attributes.formats.medium.url}` 
+                        : ''
+                }));
+
+                setFetchedData(formattedData);
+                setLoading(false);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                setLoading(false);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    // Combine static and fetched data
+    const combinedData = [...pdfList, ...fetchedData];
+
+    if (loading) return <p>Loading...</p>;
 
     return (
         <div>
@@ -35,15 +80,19 @@ const DocumentPl = () => {
                     </p>
                 </div>
                 <Row className="pdf-list">
-                    {pdfList.map((pdf, index) => (
-                        <Col key={index} xs={12} className="mb-4 ">
+                    {combinedData.map((pdf, index) => (
+                        <Col key={index} xs={12} className="mb-4">
                             <Card className='card-plaidoyer'>
                                 <Card.Body className="d-flex align-items-start card-plaidoyer">
-                                    <img src={pdf.imageUrl} alt={pdf.title} className="pdf-image me-3 " />
+                                    <img src={pdf.imageUrl} alt={pdf.title} className="pdf-image me-3" />
                                     <div>
                                         <Card.Title>{pdf.title}</Card.Title>
-                                        <Card.Text>{pdf.description}</Card.Text>
-                                        <Card.Link href={pdf.link} target="_blank" rel="noopener noreferrer">
+                                        <Card.Text className='DocumentPl-description'>{pdf.description}</Card.Text>
+                                        <Card.Link 
+                                            href="#"
+                                            onClick={() => window.open(pdf.link, '_blank')}
+                                            rel="noopener noreferrer"
+                                        >
                                             Voir PDF
                                         </Card.Link>
                                     </div>

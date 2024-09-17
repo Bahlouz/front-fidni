@@ -11,9 +11,9 @@ function QuoteComponent() {
       <Container fluid className="quote-container">
         <Row>
           <Col xs={12} className="text-center">
-            <div className="quote-text">
+            <h2 className="quote-text">
               Chaque voix mérite d'être entendue
-            </div>
+            </h2>
           </Col>
         </Row>
         <Row className="align-items-center justify-content-center">
@@ -26,7 +26,7 @@ function QuoteComponent() {
               <br />
               de l'UNESCO pour le Maghreb
             </div>
-            <img src={unescoImage} alt="Eric Falt" className="unesco-logo" />
+            <img src={unescoImage} alt="Eric Falt" className="unesco-logo" aria-label="Image d'Eric Falt" />
           </Col>
           <Col md={6} className="quote-content text-center">
             <div className="quote-body">
@@ -87,7 +87,7 @@ function QuoteComponent() {
               <br />
               de ​l’association IBSAR
             </div>
-            <img src={ibsarImage} alt="Mohammed Mansouri" className="unesco-logo" />
+            <img src={ibsarImage} alt="Mohammed Mansouri" className="unesco-logo" aria-label="Image de Mohammed Mansouri" />
           </Col>
         </Row>
       </Container>

@@ -41,4 +41,13 @@
 .sportifs-description{
     font-size:1.3em;
 }
-
+.card img.wikid-card-image {
+    height: 200px !important; /* Force the height */
+    width: 100%; /* Ensure full width */
+    object-fit: cover; /* Cover the space while maintaining aspect ratio */
+}
+.latest-wikid{
+    width: 100%;
+    height: 500px;
+    object-fit:cover;
+}

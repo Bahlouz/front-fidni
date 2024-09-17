@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import './Services.css';
 import downloadbutton from '../../Assets/downloadimg.png';
 
 const Services = () => {
+  const [apiCardData, setApiCardData] = useState([]);
+  const BASE_URL = 'http://localhost:1337';
+  
   const cardData = [
     {
       title: "Comment obtenir une carte d'handicap ?",
@@ -38,51 +41,126 @@ const Services = () => {
       pdfLinkArabic: `${process.env.PUBLIC_URL}/services/دليل الهياكل العاملة في مجال الإعاقة في تونس.docx`
     },
     {
-      title: "Découvrez le guide des services de santé reproductive et sexuelle pour les personnes en situation de handicap. ",
+      title: "Découvrez le guide des services de santé reproductive et sexuelle pour les personnes en situation de handicap.",
       documentTitleFrench: "Guide des services de santé reproductive et sexuelle pour les personnes en situation de handicap",
       documentTitleArabic: "دﻟﻴﻞ ﺗﻮﺟﻴﻬﻲ ﻟﺨﺪﻣﺎت اﻟﺼﺤﺔ اﻹﻧﺠﺎﺑﻴﺔ واﻟﺠﻨﺴﻴﺔ ﻟﻸﺷﺨﺎص ذوي وذوات اﻹﻋﺎﻗﺔ",
       previewImage: `${process.env.PUBLIC_URL}/services/ssr.png`,
-      pdfLinkFrench: `${process.env.PUBLIC_URL}/servicesCarto SSR accessible ar.docx`,
-      pdfLinkArabic: `${process.env.PUBLIC_URL}/services/Carto SSR accessible ar.docx`
+      pdfLinkFrench: `${process.env.PUBLIC_URL}/services/Carte_des_Services_de_Santé_Reproductive_et_Sexuelle_Accessibles.docx`,
+      pdfLinkArabic: `${process.env.PUBLIC_URL}/services/Carto_SSR_accessible_ar.docx`
     },
-    // Add more objects here as needed
   ];
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:1337/api/post-blogs?populate=*');
+        const result = await response.json();
+
+        // Filter by subcategory "Services"
+        const filteredData = result.data.filter(
+          (item) => item.attributes.subcategory.data?.attributes?.name === 'Services'
+        );
+
+        if (filteredData.length > 0) {
+          const formattedData = filteredData.map((item) => {
+            const { attributes } = item;
+
+            // Extract document titles from description
+            const description = attributes.Description || [];
+            const documentTitleFrench = description.find(
+              (desc) => desc.type === 'paragraph' && desc.children.some(child => child.text.startsWith('<fr>'))
+            )?.children[0]?.text.replace('<fr>', '').replace('</fr>', '') || '';
+
+            const documentTitleArabic = description.find(
+              (desc) => desc.type === 'paragraph' && desc.children.some(child => child.text.startsWith('<ar>'))
+            )?.children[0]?.text.replace('<ar>', '').replace('</ar>', '') || '';
+
+            // Extract image URL from Mediafiles
+            const mediaFiles = attributes.Mediafiles.data || [];
+            const thumbnailImage = mediaFiles.find(media => media.attributes.mime.startsWith('image'))?.attributes.url || '';
+
+            // Properly construct the full image URL if the image exists
+            const previewImage = thumbnailImage ? `${BASE_URL}${thumbnailImage}` : '';
+
+            // Extract PDF links
+            const pdfLinks = mediaFiles.reduce(
+              (acc, media) => {
+                const fileName = media.attributes.name.toLowerCase();
+                if (fileName.includes('fr')) {
+                  acc.pdfLinkFrench = `${BASE_URL}${media.attributes.url}`;
+                } else if (fileName.includes('ar')) {
+                  acc.pdfLinkArabic = `${BASE_URL}${media.attributes.url}`;
+                }
+                return acc;
+              },
+              { pdfLinkFrench: '', pdfLinkArabic: '' }
+            );
+
+            return {
+              title: attributes.Title,
+              documentTitleFrench: documentTitleFrench,
+              documentTitleArabic: documentTitleArabic,
+              previewImage: previewImage,  // Use the properly constructed preview image URL
+              pdfLinkFrench: pdfLinks.pdfLinkFrench,
+              pdfLinkArabic: pdfLinks.pdfLinkArabic,
+            };
+          });
+
+          setApiCardData(formattedData);
+        }
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const combinedData = [...cardData, ...apiCardData];
 
   return (
     <Container fluid className="p-0 services-container">
       <div className="background-image-services">
         <div className="overlay-text-services">
-          <h1 className="services-titre">SERVICES ET LEGISLATION</h1>
+          <h1 className="services-titre">SERVICES</h1>
           <p className="services-description">Vous allez trouver dans cette section des informations sur les services aux personnes handicapées en Tunisie.</p>
         </div>
       </div>
       <Row className="justify-content-center">
-        {cardData.map((card, index) => (
+        {combinedData.map((card, index) => (
           <Col key={index} md={10} className="mb-4">
             <div className="service-card">
               <h2 className="service-card-title">{card.title}</h2>
-              <Row  className="justify-content-center preview-row">
+              <Row className="justify-content-center preview-row">
                 <Col md={5} className="text-center">
-                  <a href={card.pdfLinkFrench} target="_blank" rel="noopener noreferrer">
+                  <a 
+                    href={card.pdfLinkFrench} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    download  // Add download attribute
+                  >
                     <div className="preview-row">
                       <div className="document-title">{card.documentTitleFrench}</div>
                       <img 
-                        src={downloadbutton}  // Update this to your custom download icon path
+                        src={downloadbutton}
                         alt="Download"
                         className="service-card-download-icon"
                       />
                       <img src={card.previewImage} alt={`Preview of ${card.title} in French`} className="service-card-image" />
                     </div>
                   </a>
-
                 </Col>
-
                 <Col md={5} className="text-center">
-                  <a href={card.pdfLinkArabic} target="_blank" rel="noopener noreferrer">
+                  <a 
+                    href={card.pdfLinkArabic} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    download  // Add download attribute
+                  >
                     <div className="preview-row">
                       <div className="document-title">{card.documentTitleArabic}</div>
                       <img 
-                        src={downloadbutton} // Update this to your custom download icon path
+                        src={downloadbutton}
                         alt="Download"
                         className="service-card-download-icon"
                       />

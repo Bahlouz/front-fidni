@@ -1,36 +1,96 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
-import { Artistesitems } from './Artistesitems'; // Import Artistesitems data
+import { Artistesitems } from './Artistesitems'; // Import static data
 import "./Wikid.css";
 import "./Artistes.css";
+
+// Function to extract the first line of HTML content
+const getFirstLine = (htmlContent) => {
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = htmlContent;
+    const firstLine = tempDiv.textContent.split('\n')[0];
+    return firstLine;
+};
+
+// Function to format date
+const formatDate = (dateString) => {
+    const options = { day: '2-digit', month: 'long', year: '2-digit' };
+    return new Date(dateString).toLocaleDateString('fr-FR', options);
+};
+
+// Function to check if the description contains the <artiste> tag
+const containsArtisteTag = (description) => {
+    return description.some(paragraph => 
+        paragraph.children.some(child => child.text === '<artiste>')
+    );
+};
+
+// Function to encode the title for URL
+const encodeTitleForURL = (title) => {
+    return encodeURIComponent(title.toLowerCase().replace(/\s+/g, '-'));
+};
+
+const BASE_URL = 'http://localhost:1337';
 
 const Artistes = () => {
     const location = useLocation();
     const currentPath = location.pathname.split('/').pop(); // Extract current page from URL
-    const latestStory = Artistesitems[0];
 
-    // Function to format description content
-    const formatDescription = (content) => {
-        // Replace <b> tags with <strong> tags for better semantics
-        // Replace <br> and <br /> with line breaks
-        return content
-            .replace(/<b>/g, '<strong>')
-            .replace(/<\/b>/g, '</strong>')
-            .replace(/<br\s*\/?>/g, '<br />');
-    };
+    const [apiItems, setApiItems] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
-    // Function to extract the first line of formatted content
-    const getFirstLine = (content) => {
-        // Format the description
-        const formattedContent = formatDescription(content);
-        // Create a temporary div to use its textContent property
-        const tempDiv = document.createElement('div');
-        tempDiv.innerHTML = formattedContent;
-        // Get the first line
-        const firstLine = tempDiv.textContent.split('\n')[0];
-        return firstLine;
-    };
+    // Fetch data from API
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch('http://localhost:1337/api/post-blogs?populate=*');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+    
+                // Filter items based on subcategory 'WikiPhédia' and the presence of <artiste> tag in description
+                const filteredItems = data.data.filter(item => 
+                    item.attributes?.subcategory?.data?.attributes?.name === 'WikiPhédia' &&
+                    containsArtisteTag(item.attributes?.Description || [])
+                );
+    
+                // Map to include media files if available
+                const itemsWithImages = filteredItems.map(item => {
+                    const mediaFiles = item.attributes?.Mediafiles?.data || [];
+                    return {
+                        ...item,
+                        attributes: {
+                            ...item.attributes,
+                            mediaFiles: mediaFiles.map(file => file.attributes?.url || ''), // Extract URLs safely
+                            imageUrl: mediaFiles[0]?.attributes?.url ? `${BASE_URL}${mediaFiles[0].attributes.url}` : '' // Full URL for image
+                        }
+                    };
+                });
+    
+                setApiItems(itemsWithImages);
+            } catch (err) {
+                setError(err);
+            } finally {
+                setLoading(false);
+            }
+        };
+    
+        fetchData();
+    }, []);
+    
+    // Combine static and API data
+    const combinedItems = [...Artistesitems, ...apiItems];
+
+    // Sort combined items by publishedAt date to find the latest story
+    const sortedItems = combinedItems.sort((a, b) => 
+        new Date(b.attributes?.publishedAt || b.attributes?.publishedAt) - new Date(a.attributes?.publishedAt || a.attributes?.publishedAt)
+    );
+
+    // Latest story based on sorted items
+    const latestStory = sortedItems[0] || {};
 
     // Updated links based on your provided categories
     const wikidlinks = [
@@ -41,13 +101,16 @@ const Artistes = () => {
         { title: 'Les sportifs', link: '/savoir-lab/wikiphedia/sportifs', page: 'sportifs' }
     ];
 
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error: {error.message}</p>;
+
     return (
         <>
             <div className="background-image-artistes">
                 <div className="overlay-text-artistes">
                     <h1 className="artistes-titre">Les artistes</h1>
                     <p className="p-5 artistes-description">
-                    Découvrez des profils détaillés d'artistes talentueux, explorez leurs œuvres, parcours créatifs et contributions au monde de l'art. Laissez-vous inspirer par leurs réalisations et leurs approches uniques.
+                        Découvrez des profils détaillés d'artistes talentueux, explorez leurs œuvres, parcours créatifs et contributions au monde de l'art. Laissez-vous inspirer par leurs réalisations et leurs approches uniques.
                     </p>
                 </div>
 
@@ -56,7 +119,7 @@ const Artistes = () => {
                         <Button
                             key={index}
                             className={`wikid-button ${currentPath === item.page ? 'active' : ''}`}
-                            href={item.link} // Navigate to the new page
+                            href={item.link}
                         >
                             {item.title}
                         </Button>
@@ -72,33 +135,71 @@ const Artistes = () => {
                 </Row>
                 <Row>
                     <Col>
-                        {/* Display the latest success story */}
-                        <Card className="mb-4 ">
-                            <Card.Img variant="top" src={latestStory.imageUrl} />
-                            <Card.Body>
-                                <Card.Title>{latestStory.title}</Card.Title>
-                                <Card.Subtitle className="mb-2 text-muted">{latestStory.date}</Card.Subtitle>
-                                <Card.Text className="single-line-text">
-                                    {getFirstLine(latestStory.content)}
-                                </Card.Text>
-                                <Button variant="primary" href={`/savoir-lab/wikiphedia/${latestStory.title}`}>Lire plus</Button>
-                            </Card.Body>
-                        </Card>
+                        {/* Display the latest story */}
+                        {latestStory.id && (
+                            <Card className="mb-4 custom-card">
+                                {/* Handle image rendering for dynamic images */}
+                                {latestStory.attributes?.mediaFiles?.[0] && (
+                                    <Card.Img 
+                                        className="latest-wikid" 
+                                        variant="top" 
+                                        src={`${BASE_URL}${latestStory.attributes.mediaFiles[0]}`} 
+                                        alt={latestStory.attributes?.Title || latestStory.title}
+                                        onError={() => console.error('Image not found:', latestStory.attributes?.mediaFiles[0])} // Error handling
+                                    />
+                                )}
+                                {/* Handle image rendering for static data */}
+                                {!latestStory.attributes?.mediaFiles?.[0] && latestStory.imageUrl && (
+                                    <Card.Img 
+                                        className="latest-wikid" 
+                                        variant="top" 
+                                        src={latestStory.imageUrl} 
+                                        alt={latestStory.title}
+                                    />
+                                )}
+                                <Card.Body>
+                                    <Card.Title>{latestStory.attributes?.Title || latestStory.title}</Card.Title>
+                                    <Card.Subtitle className="mb-2 text-muted">{formatDate(latestStory.attributes?.publishedAt || latestStory.date)}</Card.Subtitle>
+                                    <Card.Text className="card-text-truncatedd">
+                                        {getFirstLine(latestStory.attributes?.content || latestStory.content)}
+                                    </Card.Text>
+                                    <Button variant="primary" href={`/savoir-lab/wikiphedia/${encodeTitleForURL(latestStory.attributes?.Title || latestStory.title)}`}>Lire plus</Button>
+                                </Card.Body>
+                            </Card>
+                        )}
                     </Col>
                 </Row>
                 <Row>
-                    {/* Display remaining success stories */}
-                    {Artistesitems.slice(1).map(item => (
+                    {/* Display remaining stories */}
+                    {sortedItems.slice(1).map(item => (
                         <Col key={item.id} md={4} className="mb-4">
-                            <Card className="h-100">
-                                <Card.Img variant="top" src={item.imageUrl} />
+                            <Card className="custom-card h-100">
+                                {/* Handle image rendering for dynamic images */}
+                                {item.attributes?.mediaFiles?.[0] && (
+                                    <Card.Img 
+                                        variant="top" 
+                                        className="wikid-card-image" 
+                                        src={`${BASE_URL}${item.attributes.mediaFiles[0]}`} 
+                                        alt={item.attributes?.Title || item.title}
+                                        onError={() => console.error('Image not found:', item.attributes?.mediaFiles[0])} // Error handling
+                                    />
+                                )}
+                                {/* Handle image rendering for static data */}
+                                {!item.attributes?.mediaFiles?.[0] && item.imageUrl && (
+                                    <Card.Img 
+                                        variant="top" 
+                                        className="wikid-card-image" 
+                                        src={item.imageUrl} 
+                                        alt={item.title}
+                                    />
+                                )}
                                 <Card.Body>
-                                    <Card.Title>{item.title}</Card.Title>
-                                    <Card.Subtitle className="mb-2 text-muted">{item.date}</Card.Subtitle>
-                                    <Card.Text className="single-line-text">
-                                        {getFirstLine(item.content)}
+                                    <Card.Title>{item.attributes?.Title || item.title}</Card.Title>
+                                    <Card.Subtitle className="mb-2 text-muted">{formatDate(item.attributes?.publishedAt || item.date)}</Card.Subtitle>
+                                    <Card.Text className="card-text-truncatedd">
+                                        {getFirstLine(item.attributes?.content || item.content)}
                                     </Card.Text>
-                                    <Button variant="primary" href={`/savoir-lab/wikiphedia/${item.title}`}>Lire plus</Button>
+                                    <Button variant="primary" href={`/savoir-lab/wikiphedia/${encodeTitleForURL(item.attributes?.Title || item.title)}`}>Lire plus</Button>
                                 </Card.Body>
                             </Card>
                         </Col>

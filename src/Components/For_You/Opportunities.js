@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import './Opportunities.css';
 import backnavhead from "../../Assets/back navhead.jpg";
+
+// Base URL for image paths
+const BASE_URL = 'http://localhost:1337'; // Adjust this URL to match your server
 
 const volunteerOpportunities = [
     {
@@ -28,6 +31,55 @@ const volunteerOpportunities = [
 ];
 
 const Opportunities = () => {
+    const [opportunities, setOpportunities] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        // Fetch data from the API
+        fetch('http://localhost:1337/api/post-blogs?populate=*')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Log the data to check its structure
+                console.log('Fetched data:', data);
+
+                // Extract the data from the response
+                const fetchedOpportunities = data.data
+                    .filter(post => post.attributes.subcategory?.data?.attributes?.name === 'Opportunités')
+                    .map(post => ({
+                        title: post.attributes.Title,
+                        organization: post.attributes.Description.map(block => block.children.map(child => child.text).join('')).join('\n'), // Description from the Description field// Organization from the content field
+                        description: post.attributes.content || 'Unknown',
+                        // Construct the full image URL
+                        imageUrl: post.attributes.Mediafiles?.data?.[0]?.attributes?.formats?.large?.url ? `${BASE_URL}${post.attributes.Mediafiles.data[0].attributes.formats.large.url}` : ''
+                    }));
+
+                // Combine fetched opportunities with local volunteer opportunities
+                const combinedOpportunities = [...volunteerOpportunities, ...fetchedOpportunities];
+                setOpportunities(combinedOpportunities);
+            })
+            .catch(error => {
+                setError(error);
+                console.error("There was an error fetching the opportunities!", error);
+            })
+            .finally(() => {
+                setLoading(false);
+            });
+    }, []);
+
+    if (loading) {
+        return <p>Loading...</p>;
+    }
+
+    if (error) {
+        return <p>Error: {error.message}</p>;
+    }
+
     return (
         <>
             <Row>
@@ -47,13 +99,17 @@ const Opportunities = () => {
                     </Col>
                 </Row>
                 <Row>
-                    {volunteerOpportunities.map((opportunity) => (
-                        <Col md={4} key={opportunity.id} className="mb-4">
-                            <Card className="h-100">
+                    {opportunities.map((opportunity, index) => (
+                        <Col md={4} key={index} className="mb-4">
+                            <Card className="h-100 opportunity-card">
                                 <Card.Body>
                                     <Row className="align-items-center">
                                         <Col xs="auto">
-                                            <img src={opportunity.imageUrl} alt={opportunity.title} className="opportunity-image" />
+                                            {opportunity.imageUrl ? (
+                                                <img src={opportunity.imageUrl} alt={opportunity.title} className="opportunity-image" />
+                                            ) : (
+                                                <p>No image available</p>
+                                            )}
                                         </Col>
                                         <Col>
                                             <Card.Title>{opportunity.title}</Card.Title>

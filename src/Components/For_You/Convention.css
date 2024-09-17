@@ -79,6 +79,14 @@
   max-width: 100px !important;
   height: auto;
   margin-top: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  transition: all ease-in-out 0.7s;
+  cursor: pointer !important;
+  border-radius: 15px;
+}
+.convention-image:hover{
+  scale: 1.1;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
 }
 
 /* Updated to match the correct class name */

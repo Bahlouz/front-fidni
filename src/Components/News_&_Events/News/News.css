@@ -1,5 +1,7 @@
 .img-news{
-    height:17em;
+    width: auto;
+    height:19em;
+    object-fit: cover !important;
 }
 .news-content-desc {
     display: -webkit-box;

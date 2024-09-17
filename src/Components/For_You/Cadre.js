@@ -22,23 +22,23 @@ const Convention = () => {
     Cette démarche affirmait déjà un engagement fort envers la protection et la promotion des droits des personnes en situation de handicap. Des avancées significatives ont ensuite été enregistrées avec l'intégration de ces principes dans la Constitution tunisienne, en 2014 et réaffirmée en 2022, consacrant ainsi la protection des personnes handicapées contre toute forme de discrimination, conformément à l'article 54 qui stipule que <strong>« l’État protège les personnes handicapées contre toute discrimination et prend toutes les mesures propres à leur garantir une entière intégration au sein de la société ». </strong>
     </p>
     <p>
-    La Tunisie a aussi adopté d’autres mesures légales pour promouvoir et protéger les droits des personnes handicapées, dont la Loi n° 2005-83 du 15 août 200526, qui vise notamment à garantir :     
+    La Tunisie a aussi adopté d’autres mesures légales pour promouvoir et protéger les droits des personnes handicapées, dont la Loi n° 2005-83 du 15 août 2005, qui vise notamment à garantir :     
     </p>
   <ul style={{ paddingLeft: "5em" }}>
     <li>
     « l'égalité des chances entre les personnes handicapées et les autres personnes, ainsi que leur promotion et leur protection contre toutes formes de discrimination » (article 1er) ;
     </li>
     <li>
-    « une carte de Handicap à tous ceux qui y ont droit » (article 9) 
+    « une carte de Handicap à tous ceux qui y ont droit » (article 9) ;
     </li>
     <li>
-    « l’aménagement de l’environnement, à l’adaptation des moyens de communication et d’information, à la facilitation des déplacements des per-sonnes handicapées et leur accès aux prestations » (article 10) 
+    « l’aménagement de l’environnement, à l’adaptation des moyens de communication et d’information, à la facilitation des déplacements des personnes handicapées et leur accès aux prestations » (article 10) ;
     </li>
     <li>
-    « gratuité de soins, de l’hospitalisation dans les structures publiques de santé, des appareils de prothèses et de réadaptation » (article 15)     
+    « gratuité de soins, de l’hospitalisation dans les structures publiques de santé, des appareils de prothèses et de réadaptation » (article 15) ; 
     </li>
     <li>
-    « le droit à l’éducation, l’enseignement, la réadaptation et la formation dans le système ordinaire pour les enfants handicapés » (article 19)     
+    « le droit à l’éducation, l’enseignement, la réadaptation et la formation dans le système ordinaire pour les enfants handicapés » (article 19) ;    
     </li>
     <li>
     « droit d’exercer et de jouir des activités culturelles, sportives et de loi-sirs » et œuvrer à « supprimer tous les obstacles qui entravent l’exercice de ces activités » (art. 36).      
@@ -46,7 +46,7 @@ const Convention = () => {
   </ul>
   <p>Cette loi marque l’adoption en Tunisie d’une approche centrée sur les droits humains et l’inclusion des personnes handicapées. La Tunisie serait ainsi passée d'une approche purement médicale du handicap à une approche à la fois médicale, psychologique et sociale prenant en considération les particularités personnelles et environnementales.  </p>
   <p>
-  Cependant, malgré ces avancées juridiques, le rapport d’avril 2023 du Comité des droits des personnes handicapées du Haut-Commissariat aux droits de l'homme (HCDH), a mis en lumière un décalage entre les dispositions légales et leur application effective sur le terrain en Tunisie27. Les membres du Comité ont exprimé leur préoccupation quant au supposé faible niveau de sensibilisation de la société tunisienne aux droits des personnes handicapées, ainsi qu'à l'usage présumé dans certains médias d'un langage dénigrant à leur égard. Ces constats mettent en lumière les défis liés à la perception sociale du handicap et soulignent <b>la nécessité d'une intervention holistique et multipartite pour renforcer la sensibilisation et promouvoir une approche basée sur les droits humains </b>.
+  Cependant, malgré ces avancées juridiques, le rapport d’avril 2023 du Comité des droits des personnes handicapées du Haut-Commissariat aux droits de l'homme (HCDH), a mis en lumière un décalage entre les dispositions légales et leur application effective sur le terrain en Tunisie. Les membres du Comité ont exprimé leur préoccupation quant au supposé faible niveau de sensibilisation de la société tunisienne aux droits des personnes handicapées, ainsi qu'à l'usage présumé dans certains médias d'un langage dénigrant à leur égard. Ces constats mettent en lumière les défis liés à la perception sociale du handicap et soulignent <b>la nécessité d'une intervention holistique et multipartite pour renforcer la sensibilisation et promouvoir une approche basée sur les droits humains </b>.
   </p>
 </div>
     </Row>
@@ -89,7 +89,7 @@ const Convention = () => {
 
     </Container>
     <p>CARTE HANDICAP :</p>
-    <a href="https://www.social.gov.tn/fr/attribution-de-carte-de-handicap">https://www.social.gov.tn/fr/attribution-de-carte-de-handicap</a>
+    <a  target='_blank' rel='noreferrer' href="https://www.social.gov.tn/fr/attribution-de-carte-de-handicap">https://www.social.gov.tn/fr/attribution-de-carte-de-handicap</a>
     </Container>
     </>
   );

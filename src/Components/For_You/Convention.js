@@ -23,7 +23,7 @@ const Convention = () => {
       mentales, intellectuelles ou sensorielles durables dont l'interaction avec diverses
       barrières peut faire obstacle à leur pleine et effective participation à la société sur
       la base de l'égalité avec les autres.
-    </li>
+    </li><br />
     <li>
       <b>Discrimination fondée sur le handicap</b>: toute distinction, exclusion ou
       restriction fondée sur le handicap qui a pour objet ou pour effet de compromettre
@@ -32,14 +32,14 @@ const Convention = () => {
       fondamentales dans les domaines politique, économique, social, culturel, civil ou
       autres. La discrimination fondée sur le handicap comprend toutes les formes de
       discrimination, y compris le refus d'aménagement raisonnable.
-    </li>
+    </li><br />
     <li>
       <b>Aménagement raisonnable</b>: les modifications et ajustements nécessaires et
       appropriés n'imposant pas de charge disproportionnée ou indue apportés, en
       fonction des besoins dans une situation donnée, pour assurer aux personnes
       handicapées la jouissance ou l'exercice, sur la base de l'égalité avec les autres,
       de tous les droits de l'homme et de toutes les libertés fondamentales.
-    </li>
+    </li><br />
   </ul>
   <p>Source: Convention relative aux Droits des Personnes Handicapées</p>
 </div>
@@ -71,16 +71,14 @@ const Convention = () => {
         <Col>
           <p className="convention-text">Parmi les changements les plus significatifs, il faut retenir que cette Convention :</p>
           <ul className="convention-list">
-            <li>Ne crée pas de nouveaux droits pour les personnes handicapées : elle exprime l’ensemble des droits humains en prenant en compte les besoins spécifiques et la situation des personnes handicapées, et énumère les étapes et actions nécessaires à leur réalisation pleine et entière ;</li>
-            <li>Est juridiquement contraignante pour les États parties : les États doivent régulièrement faire un rapport des mesures entreprises pour l’appliquer ;</li>
+            <li>Ne crée pas de nouveaux droits pour les personnes handicapées : elle exprime l’ensemble des droits humains en prenant en compte les besoins spécifiques et la situation des personnes handicapées, et énumère les étapes et actions nécessaires à leur réalisation pleine et entière ;</li><br />
+            <li>Est juridiquement contraignante pour les États parties : les États doivent régulièrement faire un rapport des mesures entreprises pour l’appliquer ;</li><br />
             <li>Est un outil de développement et un instrument des droits humains :
-              <ul>
-                <li>Avisée le changement de paradigme sur la question du handicap en appliquant le modèle social du handicap à la totalité du texte de la Convention<sup>1</sup> ;</li>
-                <li>Est un instrument s’appliquant à tous les types d’incapacités et tous les secteurs ;</li>
-                <li>Représente « un grand pas en avant pour la promotion de l’accès aux services destinés aux personnes handicapées, dans tous les contextes et à tout moment ».</li>
-              </ul>
+            <li>Avisée le changement de paradigme sur la question du handicap en appliquant le modèle social du handicap à la totalité du texte de la Convention<sup>1</sup> ;</li><br />
+            <li>Est un instrument s’appliquant à tous les types d’incapacités et tous les secteurs ;</li><br />
+            <li>Représente « un grand pas en avant pour la promotion de l’accès aux services destinés aux personnes handicapées, dans tous les contextes et à tout moment » ;</li><br />
             </li>
-            <li>Stipule clairement le rôle des organisations représentatives des personnes handicapées comme élément moteur dans la promotion des droits des personnes handicapées, exigeant par conséquent leur participation systématique<sup>2</sup>.</li>
+            <li>Stipule clairement le rôle des organisations représentatives des personnes handicapées comme élément moteur dans la promotion des droits des personnes handicapées, exigeant par conséquent leur participation systématique<sup>2</sup> ;</li><br />
           </ul>
         </Col>
       </Row>
@@ -90,7 +88,9 @@ const Convention = () => {
           <p className="convention-text">
             <a href="https://www.ohchr.org/fr/instruments-mechanisms/instruments/convention-rights-persons-disabilities" className="convention-link">Accéder à la Convention relative aux droits des personnes handicapées (CDPH) en français</a>
           </p>
-          <Image src={conventiondoc} fluid className="convention-image" />
+          <a href={`${process.env.PUBLIC_URL}/pdfs/Convention relative aux droits des personnes handicapées.pdf`} target="_blank" rel="noopener noreferrer">
+      <Image src={conventiondoc} fluid className="convention-image" />
+          </a>
         </Col>
       </Row>
       <Row>
@@ -101,8 +101,8 @@ const Convention = () => {
             <sup>2</sup><small>CDPH. Articles 3, 4.3, 29, 30, 32 et 33. Op, cit.</small>
           </p>
           <ul className="convention-list">
-            <li><a href="/services-et-droits/droits">Droits</a></li><br />
-            <li><a href="/services-et-droits/cadre">Cadre réglementaire concernant le handicap en Tunisie</a></li>
+            <li><a href="/services-et-droits/droits">Droits</a></li><br /><br />
+            <li><a href="/services-et-droits/cadre">Cadre réglementaire concernant le handicap en Tunisie</a></li><br />
           </ul>
         </Col>
       </Row>

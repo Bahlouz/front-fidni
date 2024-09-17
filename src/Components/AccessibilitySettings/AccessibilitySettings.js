@@ -367,6 +367,7 @@ const AccessibilityIcon = () => {
         const content = event.target.textContent.trim();
         if (content) {
           const newUtterance = new SpeechSynthesisUtterance(content);
+          newUtterance.lang = 'fr-FR';
           newUtterance.onend = () => setCurrentUtterance(null);
           window.speechSynthesis.speak(newUtterance);
           setCurrentUtterance(newUtterance);
@@ -418,7 +419,7 @@ const AccessibilityIcon = () => {
     };
     // Define handleKeyPress with useCallback
     const handleKeyPress = useCallback((event) => {
-        if (event.key === 'Enter' || event.key === ' ') {
+        if (event.key === 'Enter') {
             toggleMenu();
         }
     }, []); 
@@ -500,7 +501,7 @@ const AccessibilityIcon = () => {
         role="button" 
         aria-label="bouton d'accessibilité"
         onClick={toggleMenu}
-        onKeyPress={handleKeyPress}
+
       ></div>
    
       {menuVisible && (

@@ -3,22 +3,22 @@
   "name": "Fidni",
   "icons": [
     {
-      "src": "Fidni.svg",
+      "src": "fidni.ico",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "type": "image/ico"
     },
     {
-      "src": "Fidni.svg",
-      "type": "image/svg",
+      "src": "fidni.ico",
+      "type": "image/ico",
       "sizes": "192x192"
     },
     {
-      "src": "Fidni.svg",
-      "type": "image/svg",
+      "src": "fidni.ico",
+      "type": "image/ico",
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"

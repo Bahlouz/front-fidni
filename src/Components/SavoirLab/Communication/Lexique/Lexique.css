@@ -136,4 +136,20 @@
     color: red;
     font-weight: bold;
   }
+  @media screen and (max-width: 768px) {
+    .lexique-container {
+      flex-direction: column;
+    }
   
+    .lexique-column, .lexique-content {
+      width: 100%;
+    }
+  
+    .lexique-column {
+      order: 2; /* This will move the lexique-column after lexique-content */
+    }
+  
+    .lexique-content {
+      order: 1;
+    }
+  }

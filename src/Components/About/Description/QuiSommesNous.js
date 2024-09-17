@@ -13,7 +13,7 @@ const QuiSommesNous = () => {
 
       </p>
       <p className="qui-sommes-nous-text">
-      Initiée dans le cadre des actions menées par l’UNESCO dans le projet conjoint « Pour un meilleur accès des personnes handicapées aux services et aux droits en Tunisie »* favorisant une communication inclusive et des politiques fondées sur les droits de l'homme, en s'appuyant sur les articles 8 et 21 de la Convention relative aux droits des personnes handicapées (CDPH) ; FIDNI réunit toutes les parties engagées pour un meilleur accès aux droits et services des personnes handicapées en Tunisie. 
+      Initiée dans le cadre des actions menées par l’UNESCO dans le projet conjoint « Pour un meilleur accès des personnes handicapées aux services et aux droits en Tunisie » favorisant une communication inclusive et des politiques fondées sur les droits de l'homme, en s'appuyant sur les articles 8 et 21 de la Convention relative aux droits des personnes handicapées (CDPH) ; FIDNI réunit toutes les parties engagées pour un meilleur accès aux droits et services des personnes handicapées en Tunisie. 
       </p>
     </div>
   );

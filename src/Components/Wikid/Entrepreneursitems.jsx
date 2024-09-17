@@ -43,7 +43,7 @@ Aymen participe également à des initiatives communautaires en Tunisie, visant 
     },
     {
         id: 3,
-        title: "Bilel Amdouni : Transformer l'Adversité en Innovation, l'Histoire d'un citoyen  Tunisien",
+        title: "Bilel Amdouni : Transformer l'Adversité en Innovation, l'Histoire d'un citoyen Tunisien",
         date: "",
         content: `
 <b>Chouaieb Nemri : Une Figure Inspirante de l’Ingénierie et de l’Intelligence Artificielle en Tunisie</b><br/><br/>

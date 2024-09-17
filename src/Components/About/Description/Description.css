@@ -37,6 +37,8 @@
 
 .description-title {
     font-size: 2.5em;
+    font-weight: bold;
+    color: #0056b3;
 }
 
 .description-p {

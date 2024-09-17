@@ -1,44 +1,79 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect ,useRef} from "react";
 import { useLocation, Link } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import logo from "../Assets/logo.svg";
 import { NavDropdown, Form, FormControl, Button } from "react-bootstrap";
-import ScrollHandler from './ScrollHandler';
-import Header from "./Header";
 import axios from "axios";
 import { AiOutlineSearch } from "react-icons/ai";
 import { useTheme } from '../Context/ThemeContext';
 import useCategoriesAndSubCategories from "./usefetch";
+import Header from "./Header";
+
+// Define your manual links here
+const manualLinks = {
+  "Acceuil": "/",
+  "Services et Droits": {
+    "Services": "/services-et-droits/services",
+    "Droits": "/services-et-droits/droits",
+    "Opportunités": "/services-et-droits/opportunites"
+  },
+  "Savoir Lab": {
+    "Accessibilité": "/savoir-lab/accessibilite",
+    "Communication inclusive": "/savoir-lab/communication-inclusive",
+    "WikiPhédia": "/savoir-lab/wikiphedia",
+    "Documents de plaidoyer": "/savoir-lab/documents-de-plaidoyer"
+  },
+  "Actualités et Événements": {
+    "Actualités": "/actualites-et-evenements/actualites",
+    "Événements": "/actualites-et-evenements/evenements"
+  },
+  "Médiathèque": {
+    "Audio & Podcast": "/mediatheque/audio-podcast",
+    "Vidéo": "/mediatheque/video"
+  },
+  "Blog": "/blog"
+};
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
-  const isVisible = ScrollHandler();
   const [searchQuery, setSearchQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const { toggleTheme, theme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
-  const { loading, error, categories } = useCategoriesAndSubCategories();
+  const { loading, error, categories = [], subcategoriesNoCategory = [] } = useCategoriesAndSubCategories();
   const location = useLocation();
+  const searchInputRef = useRef(null);
 
-  const handleSearchToggle = () => setSearchOpen(!searchOpen);
 
   const handleSearchInputChange = async (event) => {
     const query = event.target.value;
     setSearchQuery(query);
-
+  
     try {
       if (query.trim() !== '') {
-        const response = await axios.get(``);
-        const users = response.data;
-        const userSuggestions = users.map(user => user.email);
-        setSuggestions(userSuggestions);
+        const response = await axios.get('http://localhost:1337/api/post-blogs?populate=*'); // Replace with your API endpoint
+        const blogPosts = response.data.data; // Adjust according to API response structure
+  
+        // Filter blog posts by title and include subcategory
+        const filteredPosts = blogPosts.filter(post => post.attributes.Title.toLowerCase().includes(query.toLowerCase()));
+        const suggestions = filteredPosts.map(post => {
+          const subcategory = post.attributes.subcategory?.data?.attributes?.name || 'No Subcategory'; // Access subcategory
+  
+          return {
+            title: post.attributes.Title,
+            subcategory: subcategory, // Use the correctly accessed subcategory
+            link: `/blog/${post.id}` // Adjust according to your routing setup
+          };
+        });
+  
+        setSuggestions(suggestions);
         setSearchOpen(true);
       } else {
         setSuggestions([]);
-        setSearchOpen(true);
+        setSearchOpen(false);
       }
     } catch (error) {
       console.error('Error fetching suggestions:', error);
@@ -52,9 +87,26 @@ function NavBar() {
     setSearchOpen(false);
     setSuggestions([]);
   };
+  const handleSearchToggle = () => {
+    setSearchOpen(!searchOpen);
+    if (!searchOpen) {
+      setTimeout(() => {
+        searchInputRef.current?.focus();
+      }, 0);
+    }
+  };
 
-  const handleSuggestionClick = (suggestion) => {
-    setSearchQuery(suggestion);
+  // Handle click outside to close the search bar
+  const handleClickOutside = (event) => {
+    if (searchInputRef.current && !searchInputRef.current.contains(event.target) && !event.target.closest('.search-container')) {
+      setSearchOpen(false);
+    }
+  };
+
+
+  const handleSuggestionClick = (link) => {
+    window.location.href = link; // Navigate to the blog post
+    setSearchQuery("");
     setSuggestions([]);
     setSearchOpen(false);
   };
@@ -79,6 +131,60 @@ function NavBar() {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
+  // Function to get manual link for a category or subcategory
+  const getManualLink = (name) => {
+    for (const [category, link] of Object.entries(manualLinks)) {
+      if (typeof link === 'string' && category === name) {
+        return link;
+      }
+      if (typeof link === 'object') {
+        const subLink = link[name];
+        if (subLink) {
+          return subLink;
+        }
+      }
+    }
+    return null;
+  };
+
+  // Map fetched categories and subcategories to manual links
+  const mappedCategories = Object.keys(manualLinks).map((categoryTitle) => {
+    const categoryLink = manualLinks[categoryTitle];
+    const categoryFromFetchedData = categories.find(category => category.name === categoryTitle);
+
+    if (!categoryFromFetchedData) {
+      return null; // Skip categories that are not found in the fetched data
+    }
+
+    if (typeof categoryLink === 'string') {
+      // This is a main category with no subcategories
+      return {
+        title: categoryTitle,
+        to: categoryLink, // Direct link for top-level categories
+        items: []
+      };
+    }
+
+    return {
+      title: categoryTitle,
+      items: Object.keys(categoryLink).map(subcat => ({
+        to: categoryLink[subcat], // Use the manual link here
+        label: subcat,
+      }))
+    };
+  }).filter(category => category !== null); // Remove any null values from the array
+
+  // Add subcategories with no corresponding category as top-level categories
+  const additionalCategories = subcategoriesNoCategory
+    .map(subcategory => ({
+      title: subcategory.name,
+      items: [], // Assuming these subcategories don't have subcategories
+      to: getManualLink(subcategory.name) // Add manual link for these subcategories
+    }))
+    .filter(cat => cat.to !== null); // Ensure they have a manual link
+
+  const finalCategories = [...mappedCategories, ...additionalCategories];
+
   return (
     <div className="navigation">
       <Header />
@@ -91,8 +197,8 @@ function NavBar() {
         aria-label="Navigation principale"
       >
         <Container fluid>
-          <Navbar.Brand href="/" className="d-flex m-0 p-1">
-            <img src={logo} className="img-fluid logo" alt="Logo HandiHub" />
+          <Navbar.Brand as={Link} to="/" className="d-flex m-0 p-1">
+            <img src={logo} className="img-fluid logo" alt="Fidni logo" />
           </Navbar.Brand>
           <Navbar.Toggle
             aria-controls="responsive-navbar-nav"
@@ -107,159 +213,71 @@ function NavBar() {
           </Navbar.Toggle>
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto" defaultActiveKey="#home">
+              {finalCategories && finalCategories.length > 0 && finalCategories.map((menu, index) => (
+                menu.items.length > 0 ? (
+                  <NavDropdown
+                    key={index}
+                    title={menu.title}
+                    id={`nav-dropdown-${index}`}
+                    className="navbar-item"
+                  >
+                    {menu.items.map((item, idx) => (
+                      <NavDropdown.Item
+                        as={Link}
+                        to={item.to}
+                        key={idx}
+                        className="dropdown-item"
+                      >
+                        {item.label}
+                      </NavDropdown.Item>
+                    ))}
+                  </NavDropdown>
+                ) : (
+                  <Nav.Link
+                    as={Link}
+                    to={menu.to}
+                    key={index}
+                    className="navbar-item"
+                  >
+                    {menu.title}
+                  </Nav.Link>
+                )
+              ))}
               <Nav.Item>
-                <Nav.Link
-                  as={Link}
-                  to="/"
-                  onClick={() => updateExpanded(false)}
-                  aria-label="Accueil"
-                >
-                  Accueil
-                </Nav.Link>
-              </Nav.Item>
-              <NavDropdown title="Services et Droits" id="for-you-dropdown">
-                <NavDropdown.Item
-                  as={Link}
-                  to="/services-et-droits/services"
-                  onClick={() => updateExpanded(false)}
-                  aria-label="Services"
-                >
-                  Services
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  as={Link}
-                  to="/services-et-droits/droits"
-                  onClick={() => updateExpanded(false)}
-                  aria-label="Droits"
-                >
-                  Droits
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  as={Link}
-                  to="/services-et-droits/opportunites"
-                  onClick={() => updateExpanded(false)}
-                  aria-label="Opportunités"
-                >
-                  Opportunités
-                </NavDropdown.Item>
-              </NavDropdown>
-              <NavDropdown title="Savoir lab" id="savoir-lab-dropdown">
-                <NavDropdown.Item
-                  as={Link}
-                  to="/savoir-lab/accessibilite"
-                  onClick={() => updateExpanded(false)}
-                  aria-label="Savoir lab"
-                >
-                  Accessibilité
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  as={Link}
-                  to="/savoir-lab/communication-inclusive"
-                  onClick={() => updateExpanded(false)}
-                  aria-label="Savoir lab"
-                >
-                  Communication inclusive
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  as={Link}
-                  to="/savoir-lab/wikiphedia"
-                  onClick={() => updateExpanded(false)}
-                  aria-label="WikiPhédia"
-                >
-                  WikiPhédia
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  as={Link}
-                  to="/savoir-lab/documents-de-plaidoyer"
-                  onClick={() => updateExpanded(false)}
-                  aria-label="Savoir lab"
-                >
-                  Documents de plaidoyer
-                </NavDropdown.Item>
-              </NavDropdown>
-              <NavDropdown title="Actualités et Événements" id="news-events-dropdown">
-                <NavDropdown.Item
-                  as={Link}
-                  to="/news-events/news"
-                  onClick={() => updateExpanded(false)}
-                  aria-label="Actualités"
-                >
-                  Actualités
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  as={Link}
-                  to="/news-events/events"
-                  onClick={() => updateExpanded(false)}
-                  aria-label="Événements"
-                >
-                  Événements
-                </NavDropdown.Item>
-              </NavDropdown>
-              <NavDropdown title=" Médiathèque" id="media-dropdown">
-                <NavDropdown.Item
-                  as={Link}
-                  to="/resources/media/audio-podcast"
-                  onClick={() => updateExpanded(false)}
-                  aria-label="Audio & Podcast"
-                >
-                  Audio & Podcast
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  as={Link}
-                  to="/resources/media/video"
-                  onClick={() => updateExpanded(false)}
-                  aria-label="Vidéo"
-                >
-                  Vidéo
-                </NavDropdown.Item>
-              </NavDropdown>
-              <Nav.Item>
-                <Nav.Link
-                  as={Link}
-                  to="/blog"
-                  onClick={() => updateExpanded(false)}
-                  aria-label="Blog"
-                >
-                  Blog
-                </Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link onClick={handleSearchToggle} aria-label="Rechercher">
+                <Nav.Link onClick={handleSearchToggle}>
                   <AiOutlineSearch />
                 </Nav.Link>
               </Nav.Item>
             </Nav>
-            {searchOpen && (
-              <div className="search-dropdown">
-                <Container>
-                  <Form onSubmit={handleSearchSubmit} className="position-relative">
-                    <FormControl
-                      type="search"
-                      placeholder="Rechercher..."
-                      className="me-2"
-                      aria-label="Rechercher"
-                      value={searchQuery}
-                      onChange={handleSearchInputChange}
-                    />
-                    <Button variant="outline-success" type="search">
-                      Rechercher
-                    </Button>
-                  </Form>
-                  {suggestions.length > 0 && (
-                    <ul className="suggestions-list">
-                      {suggestions.map((suggestion, index) => (
-                        <li key={index} onClick={() => handleSuggestionClick(suggestion)}>
-                          {suggestion}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </Container>
-              </div>
-            )}
           </Navbar.Collapse>
         </Container>
       </Navbar>
+
+      {searchOpen && (
+        <div className={`search-container ${searchOpen ? 'open' : ''}`}>
+          <Form onSubmit={handleSearchSubmit} className="d-flex">
+            <FormControl
+              type="search"
+              placeholder="Search"
+              className="me-2 search-input"
+              aria-label="Search"
+              value={searchQuery}
+              onChange={handleSearchInputChange}
+              ref={searchInputRef} // Attach ref here
+            />
+            <Button variant="outline-success" type="submit">Search</Button>
+          </Form>
+          {suggestions.length > 0 && (
+            <ul className="search-suggestions">
+              {suggestions.map((suggestion, index) => (
+                <li key={index} onClick={() => handleSuggestionClick(suggestion.link)}>
+                  {suggestion.title} <span className="subcategory">{suggestion.subcategory}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      )}
     </div>
   );
 }

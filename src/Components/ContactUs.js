@@ -24,6 +24,10 @@ const ContactUs = () => {
               <Form.Label>Nom & Prénom</Form.Label>
               <Form.Control type="text" placeholder="Entrez votre nom et prénom" />
             </Form.Group>
+            <Form.Group controlId="formOrganization" className="mb-4">
+              <Form.Label>L'organisation/individu.</Form.Label>
+              <Form.Control type="text"  placeholder="Entrez le nom de l'organisation ou de l'individu" />
+            </Form.Group>
 
             <Form.Group controlId="formEmail" className="mb-4">
               <Form.Label>Adresse Email</Form.Label>

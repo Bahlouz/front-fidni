@@ -2,7 +2,7 @@ export const ActeurScPlitems = [
     {
         id: 1,
         title: "Yosri Mzati : Défenseur des droits des personnes handicapées en Tunisie",
-        date: "",
+        date: "10 aout 2023",
         content: `<b>Yosri Mzati</b> : Défenseur des droits des personnes handicapées en Tunisie<br /><br/>
 <b>Biographie</b><br/>
 Nom complet : Yosri Mzati<br/>

@@ -32,6 +32,9 @@ const RecommendationsComponent = () => {
               médiatiques des dispositions énoncées dans les cahiers des charges relatifs
               aux personnes handicapées.
             </li>
+            <li>
+              Appel à concevoir un guide pour l’accès des personnes handicapées aux programmes télévisés 
+            </li>
           </ul>
           <p><b>ii. Auto-régulation</b></p>
           <ul>
@@ -83,7 +86,7 @@ const RecommendationsComponent = () => {
             <li>
               Ces programmes pilotes s’adressent à toutes les catégories professionnelles:
               journalistes, hommes et femmes, producteurs de programmes, animateurs,
-              présentateurs, commentateurs, etc.
+              présentateurs, commentateurs, analystes.
             </li>
             <li>
               Développer des programmes de formation en coopération avec le SNJT et avec les
@@ -106,26 +109,25 @@ const RecommendationsComponent = () => {
           <p><b>c) Recommandations au niveau national</b></p>
           <ul>
             <li>
-              Créer, à l’initiative conjointe de l’UNESCO, des associations représentatives
-              des personnes handicapées, de la Haute Autorité Indépendante de la
-              Communication Audiovisuelle (HAICA) ou du Conseil de presse, un réseau qu’on
-              pourrait appeler « Coalition nationale pour des médias inclusifs » ou
-              « Observatoire national des médias inclusifs », qui regrouperait les actions
-              visant à faciliter l’inclusion du handicap dans les médias, à travers :
+            Créer, à l'initiative conjointe de l'UNESCO, des associations représentatives des personnes handicapées, de la Haute Autorité Indépendante de la Communication Audiovisuelle (HAICA) ou du Conseil de presse, ce que l'on pourrait appeler la « Coalition nationale pour des médias inclusifs et accessibles aux personnes handicapées », qui regrouperait les organisations liées à l’inclusion du handicap dans les médias, à savoir :
+            </li>
+            <ul className="hyphen-list">
+            <li>
+              Institutions de formation : Institut de Presse et des Sciences de l’Information (IPSI) et Centre Africain de Formation professionnelle des journalistes. 
             </li>
             <li>
-              La création d’un comité conjoint entre l’Institut de Presse et des Sciences de
-              l’Information (IPSI) et le Centre Africain de Formation Professionnelle des
-              journalistes.
+            Les syndicats : le Syndicat national des journalistes tunisiens (SNJT) et les syndicats des institutions privées de radio et de télévision. 
             </li>
+            <li>
+            Les instances de régulation et d’autorégulation des médias, le Conseil de Presse et la HAICA. 
+            </li>
+            <li>
+            Associations pour les droits des personnes handicapées. 
+            </li>
+            </ul>
           </ul>
         </Col>
       </Row>
-      <ul className="hyphen-list">
-        <li>Les syndicats : le Syndicat national des journalistes tunisiens (SNJT) et les syndicats des institutions privées de radio et de télévision.</li>
-        <li>Les instances de régulation et d’autorégulation des médias, le Conseil de Presse et la HAICA.</li>
-        <li>Associations pour les droits des personnes handicapées.</li>
-    </ul>
 
     <p>Cette coalition permet de réaliser les missions suivantes :</p>
 

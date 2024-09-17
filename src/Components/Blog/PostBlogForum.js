@@ -34,6 +34,10 @@ const PostBlogForum = () => {
               <Form.Control type="email" placeholder="Email" />
             </Form.Group>
 
+            <Form.Group controlId="formTitle" className="mb-3">
+              <Form.Control type="text" placeholder="Titre" />
+            </Form.Group>
+
             <Form.Group controlId="formContent" className="mb-3">
               <Form.Control as="textarea" rows={3} placeholder="Contenu" />
             </Form.Group>

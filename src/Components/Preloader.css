@@ -1,106 +1,42 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  background-color: black;
-}
-
 .preloader-container {
-  display: flex;
-  flex-wrap: wrap;
-  width: 60px;
-  transform: rotate(-45deg);
-  margin: auto;
   position: fixed;
-  top: calc(50% - 30px);
-  left: calc(50% - 30px);
-  animation: scale-x 2s ease forwards; /* Increased duration for smoother transition */
-  animation-delay: 2.3s;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.9); /* semi-transparent background */
+  z-index: 9999; /* Make sure the preloader is above all other content */
 }
 
-.preloader-container span {
-  flex-basis: 50%;
-  aspect-ratio: 1/1;
-  display: block;
-  transition: opacity 0.7s ease;
+.preloader-logo-container {
+  position: relative;
+  width: 200px; /* Adjust the width of the logo as needed */
+  height: 200px; /* Adjust the height of the logo as needed */
+  overflow: hidden;
 }
 
-.tile-1 {
-  background-color: white;
-  transform-origin: 100% 100%;
-  animation: flip-1 0.5s linear forwards;
-  border: none;
-  opacity: 0;
-  transition: opacity 0.7s ease;
+.preloader-logo {
+  background-image: url('./FIDNI__1.svg'); /* Path to your logo */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: spin 3s linear infinite; /* Spin animation */
+  z-index: 10000;
 }
 
-.tile-2 {
-  background-color: white;
-  transform-origin: 50% 100%;
-  animation: flip-2 0.5s linear forwards;
-  animation-delay: 0.5s;
-  opacity: 0;
-}
-
-.tile-3 {
-  background-color: white;
-  transform-origin: 50% 0%;
-  animation: flip-4 0.5s linear forwards;
-  animation-delay: 1.5s;
-  opacity: 0;
-}
-
-.tile-4 {
-  background-color: white;
-  transform-origin: 0% 50%;
-  animation: flip-3 0.5s linear forwards;
-  animation-delay: 1s;
-  opacity: 0;
-}
-
-@keyframes flip-1 {
-  to {
-    transform: rotateY(180deg);
-    opacity: 1;
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
   }
-}
-
-@keyframes flip-2 {
   to {
-    transform: rotateX(180deg);
-    opacity: 1;
+    transform: rotate(360deg);
   }
-}
-
-@keyframes flip-3 {
-  to {
-    transform: rotateY(-180deg);
-    opacity: 1;
-  }
-}
-
-@keyframes flip-4 {
-  to {
-    transform: rotateX(-180deg);
-    opacity: 1;
-  }
-}
-
-@keyframes scale-x {
-  to {
-    transform: scale(50);
-    opacity: 0;
-  }
-}
-
-.main-content {
-  display: none;
-  opacity: 0;
-  transition: opacity 1s ease; /* Fade-in effect */
-}
-
-.loaded .main-content {
-  display: block;
-  opacity: 1;
 }

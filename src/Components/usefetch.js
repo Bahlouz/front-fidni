@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const useCategoriesAndSubCategories = () => {
   const [categories, setCategories] = useState([]);
+  const [subcategoriesNoCategory, setSubcategoriesNoCategory] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -9,29 +11,29 @@ const useCategoriesAndSubCategories = () => {
     const fetchCategoriesAndSubCategories = async () => {
       setLoading(true);
       try {
-        const response = await fetch('http://localhost:1337/api/categories?populate=*');
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-
-        const data = await response.json();
-
-        if (!data.data) {
-          throw new Error('Malformed response data');
-        }
-
-        // Extract categories and their subcategories from the response
-        const categoriesData = data.data.map(category => ({
+        // Fetching categories
+        const categoriesResponse = await axios.get('http://localhost:1337/api/categories?populate=*');
+        const categoriesData = categoriesResponse.data.data.map(category => ({
           id: category.id,
           name: category.attributes.name,
           subcategories: category.attributes.subcategories.data.map(subcategory => ({
             id: subcategory.id,
-            name: subcategory.attributes.name
+            name: subcategory.attributes.name,
+            slug: subcategory.attributes.Slug // Ensure you have slug or URL in your response
           }))
         }));
 
+        // Fetching subcategories with no category
+        const subcategoriesResponse = await axios.get('http://localhost:1337/api/subcategories?populate=*&filters[category][$null]=true');
+        const subcategoriesData = subcategoriesResponse.data.data.map(subcategory => ({
+          id: subcategory.id,
+          name: subcategory.attributes.name,
+          slug: subcategory.attributes.Slug
+        }));
+
+        // Update states
         setCategories(categoriesData);
+        setSubcategoriesNoCategory(subcategoriesData);
         setLoading(false);
       } catch (error) {
         console.error('Error fetching categories and subcategories:', error);
@@ -43,7 +45,7 @@ const useCategoriesAndSubCategories = () => {
     fetchCategoriesAndSubCategories();
   }, []);
 
-  return { loading, error, categories };
+  return { loading, error, categories, subcategoriesNoCategory };
 };
 
 export default useCategoriesAndSubCategories;

@@ -9,8 +9,9 @@
   color: #0056b3;
   font-weight: bold;
   text-align: center;
-  font-size: 3rem; /* Reduced font size for better readability on smaller screens */
+  font-size: 4rem; /* Reduced font size for better readability on smaller screens */
   font-family: raleway;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .qui-sommes-nous-text {

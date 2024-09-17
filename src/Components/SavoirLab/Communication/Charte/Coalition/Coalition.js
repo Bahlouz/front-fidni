@@ -36,9 +36,6 @@ En effet, la Tunisie a été l'un des premiers pays à ratifier la Convention re
       <Row>
         <Col className='liens-conventions'>
           <h3 className="convention-subtitle">Lien utile :</h3>
-          <p className="convention-text">
-            <a href="https://www.ohchr.org/fr/instruments-mechanisms/instruments/convention-rights-persons-disabilities" className="convention-link">Accéder à la Convention relative aux droits des personnes handicapées (CDPH) en français</a>
-          </p>
           <div className="guide-preview">
           <img 
             src={coalitiondoc}
@@ -66,7 +63,7 @@ En effet, la Tunisie a été l'un des premiers pays à ratifier la Convention re
           target="_blank" 
           rel="noopener noreferrer"
         >
-          Accéder au guide en arabe
+          Accéder à la Charte en arabe 
         </a>
         </Col>
       </Row>

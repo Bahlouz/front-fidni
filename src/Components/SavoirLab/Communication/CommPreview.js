@@ -6,10 +6,10 @@ import './CommPreview.css'; // Make sure to create this CSS file for custom styl
 const CommPreview = () => {
   // Define the images, titles, and links
   const articles = [
-    { id: 1, imageUrl: `${process.env.PUBLIC_URL}/previewcomm/backcommunication.png`,  title: 'Le guide de bonnes pratiques éditoriales et éthiques', link: '/savoir-lab/guide'},
-    { id: 2, imageUrl: `${process.env.PUBLIC_URL}/previewcomm/backcommunication1.png`, title: 'Le lexique de communication inclusive des personnes handicapées', link: '/savoir-lab/lexique' },
-    { id: 3, imageUrl: `${process.env.PUBLIC_URL}/previewcomm/backcharte.jpg`,title: 'La charte nationale pour des médias inclusifs et accessibles aux personnes handicapées en Tunisie' },
-    { id: 4, imageUrl: `${process.env.PUBLIC_URL}/previewcomm/rec3.png`, title: 'Les recommandations pour les médias et les acteurs médiatiques', link: '/savoir-lab/recommandations' },
+    { id: 1, imageUrl: `${process.env.PUBLIC_URL}/previewcomm/backcommunication.png`,  title: 'Le guide de bonnes pratiques éditoriales et éthiques', link: '/savoir-lab/communication-inclusive/guide'},
+    { id: 2, imageUrl: `${process.env.PUBLIC_URL}/previewcomm/backcommunication1.png`, title: 'Le lexique de communication inclusive des personnes handicapées', link: '/savoir-lab/communication-inclusive/lexique' },
+    { id: 3, imageUrl: `${process.env.PUBLIC_URL}/previewcomm/backcharte.jpg`,title: 'La charte nationale pour des médias inclusifs et accessibles aux personnes handicapées en Tunisie',link:'/savoir-lab/communication-inclusive/charte-nationale' },
+    { id: 4, imageUrl: `${process.env.PUBLIC_URL}/previewcomm/rec3.png`, title: 'Les recommandations pour les médias et les acteurs médiatiques', link: '/savoir-lab/communication-inclusive/recommandations' },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

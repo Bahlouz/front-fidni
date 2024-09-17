@@ -1,7 +1,10 @@
 import React from 'react';
-import { Container, Row, Table } from 'react-bootstrap';
+import { Container,Table } from 'react-bootstrap';
 import './AppuiActeurs.css';
-
+import fiche7 from "../../../../Assets/fiches/fiche7.png";
+import fiche8 from "../../../../Assets/fiches/fiche8.png";
+import fiche9 from "../../../../Assets/fiches/fiche9.png";
+import downloadimg from "../../../../Assets/downloadimg.png"
 const AppuiActeurs = () => {
 
   return (
@@ -12,7 +15,7 @@ const AppuiActeurs = () => {
         </div>
       </div>
       <Container className="appui-acteurs-content">
-        <h2>Fiche n°07 : Comprendre l'importance de l'accessibilité pour promouvoir l'inclusivité</h2>
+        <h2>Comprendre l'importance de l'accessibilité pour promouvoir l'inclusivité</h2>
         <p>
           Le lien entre handicap et accessibilité est indiscociable. Comprendre les défis quotidiens des personnes en situation de handicap est essentiel pour saisir le rôle crucial de l'accessibilité. Celle-ci influence de nombreux aspects de la vie quotidienne, incluant l'éducation, la santé, le travail, le transport, et la culture. Rendre le monde accessible est une nécessité pour promouvoir l'inclusivité. Son objectif est d'éliminer tout ce qui entrave la pleine inclusion de la société, quel que soit les capacités individuelles.
         </p>
@@ -68,8 +71,49 @@ const AppuiActeurs = () => {
         <p>
           Ces approches se croisent pour un objectif commun: assurer aux personnes en situation de handicap l'accès équitable aux mêmes droits et services que tous les citoyens.
         </p>
+        <div className="lexique-column">
+        <div className="lexique-preview">
+          <img 
+            src={fiche7}
+            alt="lexique Preview" 
+            className="lexique-image" 
+          />
+          <a 
+            href={`${process.env.PUBLIC_URL}/pdfs/Fiche 7 word.pdf` }
+            download
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <img 
+              className="download-button-guide" 
+              href={`${process.env.PUBLIC_URL}/pdfs/Fiche 7 word.pdf` }
+              target="_blank"
+              src={downloadimg} 
+              alt="Télécharger" 
+              rel="noopener noreferrer"
+            />
+          </a>
+        </div>
+        <a 
+          href={`${process.env.PUBLIC_URL}/pdfs/Fiche 7 word.pdf` }
+          className="french-link"
+          terget="_blank"
+          rel="noopener noreferrer"
+        >
+          Accéder au lexique en français
+        </a>
+        <a 
+          href={`${process.env.PUBLIC_URL}/pdfs/Fiche 7  Comprendre l'Importance de l'Accessibilité pour promouvoir l’inclusivité_VAR.pdf` }
+          className="french-link"
+          terget="_blank"
+          rel="noopener noreferrer"
+          style={{marginBottom:"3em"}}
+        >
+          Accéder au lexique en arabe
+        </a>
+      </div>
         <div className="fiche8">
-      <h1 className="fiche8-title">Fiche n° 8: Réaliser un reportage sur l'accessibilité des espaces publics urbains</h1>
+      <h1 className="fiche8-title">Réaliser un reportage sur l'accessibilité des espaces publics urbains</h1>
       <div className="fiche8-section">
         <h2 className="fiche8-section-title">1. L'Accessibilité des Espaces Publics</h2>
         <p className="fiche8-section-text">L'accessibilité des espaces publics vise à permettre à toutes les personnes, y compris celles en situation de handicap, de circuler librement et de bénéficier pleinement des services et équipements urbains disponibles. Ce droit fondamental garantit l'égalité d'accès à l'espace urbain et aux services publics pour tous les citoyens.</p>
@@ -99,6 +143,7 @@ const AppuiActeurs = () => {
           <h3 className="fiche8-subsection-title">c. Mobilier Urbain</h3>
           <ul className="fiche8-subsection-list">
             <li className="fiche8-subsection-list-item">Bancs et Chaises: Les bancs doivent être espacés régulièrement et respecter des dimensions confortables pour tous les usagers.</li>
+            <li className="fiche8-subsection-list-item">Signalétique : La signalisation doit être claire, visible et compréhensible par tous, y compris les personnes atteintes de déficiences visuelles ou mentales.</li>
           </ul>
         </div>
       </div>
@@ -120,9 +165,50 @@ const AppuiActeurs = () => {
           <li className="fiche8-section-list-item">Promouvoir l'inclusion et l'égalité des droits dans les politiques urbaines (Journalisme de solution).</li>
         </ul>
       </div>
+      <div className="lexique-column">
+        <div className="lexique-preview">
+          <img 
+            src={fiche8}
+            alt="lexique Preview" 
+            className="lexique-image" 
+          />
+          <a 
+            href={`${process.env.PUBLIC_URL}/pdfs/Fiche 8 word.pdf` }
+            download
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <img 
+              className="download-button-guide" 
+              href={`${process.env.PUBLIC_URL}/pdfs/Fiche 8 word.pdf` }
+              target="_blank"
+              src={downloadimg} 
+              alt="Télécharger" 
+              rel="noopener noreferrer"
+            />
+          </a>
+        </div>
+        <a 
+          href={`${process.env.PUBLIC_URL}/pdfs/Fiche 8 word.pdf` }
+          className="french-link"
+          terget="_blank"
+          rel="noopener noreferrer"
+        >
+          Accéder au lexique en français
+        </a>
+        <a 
+          href={`${process.env.PUBLIC_URL}/pdfs/Fiche 8 Réaliser un reportage sur l’accessibilité des Espaces Publics Urbains_ VAR.pdf` }
+          className="french-link"
+          terget="_blank"
+          rel="noopener noreferrer"
+          style={{marginBottom:"3em"}}
+        >
+          Accéder au lexique en arabe
+        </a>
+      </div>
     </div>
     <div className="fiche9-container">
-      <h2 className="fiche9-title">Fiche n° 09: grille Pratique pour les Journalistes pour le monitoring de l'Accessibilité des Services Numériques Publics</h2>
+      <h2 className="fiche9-title">Grille Pratique pour les Journalistes pour le monitoring de l'Accessibilité des Services Numériques Publics</h2>
       <div className="fiche9-section">
         <h3 className="fiche9-section-title">1. Qu'est-ce que l'accessibilité Numérique ?</h3>
         <p className="fiche9-section-paragraph">L'accessibilité numérique consiste à rendre les services en ligne accessibles à tous, y compris les personnes en situation de handicap. Elle vise à garantir que le contenu web soit perceptible, utilisable, compréhensible et robuste pour tous les utilisateurs, indépendamment de leurs capacités physiques ou mentales.</p>
@@ -296,6 +382,47 @@ const AppuiActeurs = () => {
       <div className="fiche9-text">3. Moyen d'accessibilité: Utilisez une échelle de 0 à 10 pour évaluer chaque critère d'accessibilité. Une note de 0 signifie que le critère n'est pas du tout respecté, tandis qu'une note de 10 signifie qu'il est pleinement respecté</div>
       <div className="fiche9-text">4. Calcul de la moyenne: À la fin du tableau, calculez la moyenne du respect des critères pour évaluer l'accessibilité globale.</div>
       <div className="fiche9-text">Cette fiche pratique permet aux journalistes d'évaluer systématiquement l'accessibilité des services numériques publics et de contribuer, à travers leurs articles et reportages, à l'amélioration de ces services pour tous les utilisateurs.</div>
+      <div className="lexique-column">
+        <div className="lexique-preview">
+          <img 
+            src={fiche9}
+            alt="lexique Preview" 
+            className="lexique-image" 
+          />
+          <a 
+            href={`${process.env.PUBLIC_URL}/pdfs/Fiche 9 word.pdf` }
+            download
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <img 
+              className="download-button-guide" 
+              href={`${process.env.PUBLIC_URL}/pdfs/Fiche 9 word.pdf` }
+              target="_blank"
+              src={downloadimg} 
+              alt="Télécharger" 
+              rel="noopener noreferrer"
+            />
+          </a>
+        </div>
+        <a 
+          href={`${process.env.PUBLIC_URL}/pdfs/Fiche 9 word.pdf` }
+          className="french-link"
+          terget="_blank"
+          rel="noopener noreferrer"
+        >
+          Accéder au lexique en français
+        </a>
+        <a 
+          href={`${process.env.PUBLIC_URL}/pdfs/Fiche 9 grille Pratique pour les Journalistes pour le monitoring de l'Accessibilité des Services Numériques Publics_VAR.pdf` }
+          className="french-link"
+          terget="_blank"
+          rel="noopener noreferrer"
+          style={{marginBottom:"3em"}}
+        >
+          Accéder au lexique en arabe
+        </a>
+      </div>
     </div>
       </Container>
     </Container>

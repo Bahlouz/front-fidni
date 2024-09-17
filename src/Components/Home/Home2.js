@@ -46,20 +46,20 @@ function Home2() {
           <Row className="justify-content-center">
             <Col className="d-flex flex-column align-items-center">
               <div className="stat-circle">
-                <Counter targetNumber={20422} />
-                <p>Personnes handicapées</p>
+                <Counter targetNumber={77} />
+                <p className="service-name">Services de santé sexuelle et reproductive de l'Office national de la famille</p>
               </div>
             </Col>
             <Col className="d-flex flex-column align-items-center">
               <div className="stat-circle">
-                <Counter targetNumber={302} />
-                <p>Gouvernances locales</p>
+                <Counter targetNumber={54} />
+                <p>Services de Santé Reproductive et Sexuelle Accessibles pour les Personnes en Situation de Handicap</p>
               </div>
             </Col>
             <Col className="d-flex flex-column align-items-center">
               <div className="stat-circle">
-                <Counter targetNumber={103} />
-                <p>Violations reportées</p>
+                <Counter targetNumber={181} />
+                <p>Structures œuvrant dans le domaine du handicap en Tunisie</p>
               </div>
             </Col>
           </Row>

@@ -100,7 +100,7 @@ const WikidiPreview = () => {
           <Card.Text>
             <small className="text-muted">{currentArticle.date}</small>
           </Card.Text>
-          <Link to={`/savoir-lab/wikiphedia/${currentArticle.id}`}>
+          <Link to={`/savoir-lab/wikiphedia/${currentArticle.title}`}>
             <Button variant="primary">Lire plus</Button>
           </Link>
         </Card.Body>

@@ -46,3 +46,24 @@
     overflow: hidden;          /* Hides overflow text */
     text-overflow: ellipsis;   /* Adds ellipsis (...) for overflow text */
   }
+
+  /* ActeurScPl.css */
+
+
+
+
+/* ActeurScPl.css */
+
+.latest-story-card {
+    height: 900px; /* Adjust height as needed */
+}
+
+.latest-story-image {
+    height: 50%; /* Adjust height of image as needed */
+    object-fit: cover; /* Ensure the image covers the card properly */
+}
+
+.wikid-card-image {
+    height: 200px; /* Adjust height for other images */
+    object-fit: cover; /* Ensure images cover their containers */
+}

@@ -85,3 +85,14 @@
 .video-player button:hover {
   color: #0056b3; /* Darker blue for hover effect */
 }
+.clamped-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.expanded-description {
+  display: block;
+  -webkit-line-clamp: unset;
+}

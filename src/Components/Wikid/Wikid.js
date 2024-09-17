@@ -23,7 +23,9 @@ const Wikidi = () => {
             <div className="background-image-wikiphedia">
                 <div className="overlay-text-wikiphedia">
                     <h1 className="wikiphedia-titre">Wikiphedia</h1>
-                    
+                    <p className="p-5 sportifs-description">
+                        Vous allez trouver dans cette section des informations sur WikiPHédia. Cette initiative a pour objectif de sensibiliser au manque d’informations concernant les personnes handicapées qui ont grandement contribué à leurs communautés, et mettre en lumière l’importance de la médiatisation des personnes en situation de handicap. 
+                    </p>
                 </div>
                 
                 <div className="button-container">
