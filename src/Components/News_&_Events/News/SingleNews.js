@@ -5,7 +5,7 @@ import './SingleNews.css'; // Import the CSS for single news page
 import { newsItems as staticNewsItems } from './newsItems'; // Import static news items
 import backnavhead from "../../../Assets/back navhead.jpg";
 
-const BASE_URL = 'http://localhost:1337'; // Define the base URL for your API
+
 
 const SingleNews = () => {
     const { newsTitle } = useParams(); // Get title from URL params
@@ -17,7 +17,7 @@ const SingleNews = () => {
         const fetchNews = async () => {
             try {
                 // Fetch from the API
-                const response = await fetch(`${BASE_URL}/api/post-blogs?populate=*`);
+                const response = await fetch(`/api/post-blogs?populate=*`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
@@ -32,7 +32,7 @@ const SingleNews = () => {
                     const { Title, content, Mediafiles, Description } = apiNewsItem.attributes;
                     const date = Description?.[1]?.children?.[0]?.text; // Assume date is in Description field
                     const imageUrl = Mediafiles?.data?.[0]?.attributes?.formats?.large?.url
-                        ? `${BASE_URL}${Mediafiles.data[0].attributes.formats.large.url}`
+                        ? `${Mediafiles.data[0].attributes.formats.large.url}`
                         : '';
                     setNewsItem({
                         title: Title,

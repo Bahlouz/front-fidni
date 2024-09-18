@@ -12,7 +12,7 @@ const useCategoriesAndSubCategories = () => {
       setLoading(true);
       try {
         // Fetching categories
-        const categoriesResponse = await axios.get('http://localhost:1337/api/categories?populate=*');
+        const categoriesResponse = await axios.get('/api/categories?populate=*');
         const categoriesData = categoriesResponse.data.data.map(category => ({
           id: category.id,
           name: category.attributes.name,
@@ -24,7 +24,7 @@ const useCategoriesAndSubCategories = () => {
         }));
 
         // Fetching subcategories with no category
-        const subcategoriesResponse = await axios.get('http://localhost:1337/api/subcategories?populate=*&filters[category][$null]=true');
+        const subcategoriesResponse = await axios.get('/api/subcategories?populate=*&filters[category][$null]=true');
         const subcategoriesData = subcategoriesResponse.data.data.map(subcategory => ({
           id: subcategory.id,
           name: subcategory.attributes.name,

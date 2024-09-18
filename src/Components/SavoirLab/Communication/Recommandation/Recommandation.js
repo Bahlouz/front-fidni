@@ -17,7 +17,7 @@ const Recommandation = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:1337/api/post-blogs?populate=*');
+        const response = await fetch('/api/post-blogs?populate=*');
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }

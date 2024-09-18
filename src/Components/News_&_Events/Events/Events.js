@@ -168,7 +168,7 @@ const Events = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await fetch('http://localhost:1337/api/post-blogs?populate=*');
+        const response = await fetch('/api/post-blogs?populate=*');
         const data = await response.json();
 
         const apiEvents = data.data.map((item) => {
@@ -192,7 +192,7 @@ const Events = () => {
 
           // Extract image URL
           const imageUrl = Mediafiles?.data?.[0]?.attributes?.formats?.large?.url
-            ? `${BASE_URL}${Mediafiles.data[0].attributes.formats.large.url}`
+            ? `${Mediafiles.data[0].attributes.formats.large.url}`
             : '';
 
           return {

@@ -4,7 +4,7 @@ import backvideo from "../../../Assets/backvideo.jpg";
 import { Col, Row, Button } from 'react-bootstrap';
 import localVideos from './videolist'; // Import the local video list
 
-const BASE_URL = 'http://localhost:1337';
+
 
 const VideoPlayer = ({ url, title, description, isExpanded, onToggle }) => {
   const renderVideo = () => {
@@ -173,7 +173,7 @@ const VideoPlayerList = () => {
   useEffect(() => {
     const fetchVideos = async () => {
       try {
-        const response = await fetch(`${BASE_URL}/api/post-blogs?populate=*`);
+        const response = await fetch(`/api/post-blogs?populate=*`);
         const data = await response.json();
 
         const fetchedVideos = data.data

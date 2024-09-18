@@ -93,7 +93,7 @@ export const Sportifsitems = [
 				Lors des Jeux Paralympiques de Paris 2024, Maroua a encore une fois montré l’étendue de son talent· Elle a remporté la médaille d’or au lancer de massue F32 avec un lancer impressionnant de 29,00 mètres, établissant ainsi un nouveau record mondial· Sa performance exceptionnelle ne s’est pas arrêtée là, car elle a également décroché une médaille d’argent au lancer du poids F32, prouvant une fois de plus sa polyvalence et son endurance·
 			</p> `
         ,
-        imageUrl: `${process.env.PUBLIC_URL}/wikiphedia/maroua brahmi.jpg`,
+        imageUrl: `${process.env.PUBLIC_URL}/wikiphedia/maroua.jpg`,
     },
     {
         id: 3,

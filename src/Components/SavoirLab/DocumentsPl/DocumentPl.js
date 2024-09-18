@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import './DocumentPl.css';
 
-const BASE_URL = 'http://localhost:1337'; // Update this to your actual base URL
+
 
 const DocumentPl = () => {
     const [fetchedData, setFetchedData] = useState([]);
@@ -33,7 +33,7 @@ const DocumentPl = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('http://localhost:1337/api/post-blogs?populate=*');
+                const response = await fetch('/api/post-blogs?populate=*');
                 const data = await response.json();
 
                 // Filter data based on subcategory name
@@ -46,10 +46,10 @@ const DocumentPl = () => {
                     title: item.attributes.Title,
                     description: item.attributes.Description.map(desc => desc.children.map(child => child.text).join('')).join('\n'),
                     link: item.attributes.Mediafiles?.data?.[0]?.attributes?.url
-                        ? `${BASE_URL}${item.attributes.Mediafiles.data[0].attributes.url}` 
+                        ? `${item.attributes.Mediafiles.data[0].attributes.url}` 
                         : '',
                     imageUrl: item.attributes.Mediafiles?.data?.[1]?.attributes?.formats?.medium?.url 
-                        ? `${BASE_URL}${item.attributes.Mediafiles.data[1].attributes.formats.medium.url}` 
+                        ? `${item.attributes.Mediafiles.data[1].attributes.formats.medium.url}` 
                         : ''
                 }));
 

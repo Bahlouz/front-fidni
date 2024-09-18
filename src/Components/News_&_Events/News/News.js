@@ -19,7 +19,7 @@ const monthMapping = {
     décembre: 'December'
 };
 
-const BASE_URL = 'http://localhost:1337'; // Define the base URL for your image server
+
 
 const formatFrenchDate = (frenchDate) => {
     if (!frenchDate) return new Date(); // Return current date if date is not provided
@@ -44,7 +44,7 @@ const News = () => {
     useEffect(() => {
         const fetchNews = async () => {
             try {
-                const response = await fetch('http://localhost:1337/api/post-blogs?populate=*');
+                const response = await fetch('/api/post-blogs?populate=*');
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
@@ -73,7 +73,7 @@ const News = () => {
 
                     // Construct image URL
                     const imageUrl = Mediafiles?.data?.[0]?.attributes?.formats?.large?.url
-                        ? `${BASE_URL}${Mediafiles.data[0].attributes.formats.large.url}`
+                        ? `${Mediafiles.data[0].attributes.formats.large.url}`
                         : '';
 
                     return {

@@ -17,7 +17,7 @@ const Charte = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:1337/api/post-blogs?populate=*');
+        const response = await fetch('/api/post-blogs?populate=*');
         const data = await response.json();
         console.log('API Response:', JSON.stringify(data, null, 2)); // Log detailed API response
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import './audio.css';
 
-const BASE_URL = 'http://localhost:1337'; // Change to your API base URL
+
 
 const staticAudioEpisodes = [
 
@@ -16,7 +16,7 @@ const Audio = () => {
   useEffect(() => {
     const fetchAudioEpisodes = async () => {
       try {
-        const response = await fetch(`${BASE_URL}/api/post-blogs?populate=*`);
+        const response = await fetch(`/api/post-blogs?populate=*`);
         const data = await response.json();
 
         const filteredEpisodes = data.data
@@ -35,10 +35,10 @@ const Audio = () => {
               title: post.attributes.Title,
               date: post.attributes.Description?.[1]?.children?.[0]?.text || 'Unknown date',
               description: post.attributes.content,
-              audioUrl: audioFile ? `${BASE_URL}${audioFile.attributes.url}` : '',
-              downloadUrl: audioFile ? `${BASE_URL}${audioFile.attributes.url}` : '', // Ensure the URL is correct
+              audioUrl: audioFile ? `${audioFile.attributes.url}` : '',
+              downloadUrl: audioFile ? `${audioFile.attributes.url}` : '', // Ensure the URL is correct
               imageUrl: imageFile && imageFile.attributes.formats?.large
-                        ? `${BASE_URL}${imageFile.attributes.formats.large.url}`
+                        ? `${imageFile.attributes.formats.large.url}`
                         : `${process.env.PUBLIC_URL}/audios/default.jpg`,
             };
           });

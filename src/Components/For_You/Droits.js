@@ -21,7 +21,7 @@ const Droits = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:1337/api/post-blogs?populate=*');
+        const response = await fetch('/api/post-blogs?populate=*');
         const data = await response.json();
 
         // Function to extract text content from the nested Description

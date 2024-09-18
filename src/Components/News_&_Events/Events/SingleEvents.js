@@ -5,7 +5,7 @@ import './SingleEvents.css'; // Import the CSS for single news page
 import { staticEvents as eventsData } from './Events.js'; // Import your events data
 import backnavhead from "../../../Assets/back navhead.jpg";
 
-const BASE_URL = 'http://localhost:1337'; // Adjust the base URL as needed
+// Adjust the base URL as needed
 
 const SingleEvents = () => {
     const { eventTitle } = useParams(); // Assume URL contains event title
@@ -17,7 +17,7 @@ const SingleEvents = () => {
         const fetchEvent = async () => {
             try {
                 // Fetch event from API
-                const response = await fetch(`http://localhost:1337/api/post-blogs?filters[Title][$eq]=${eventTitle}&populate=*`);
+                const response = await fetch(`/api/post-blogs?filters[Title][$eq]=${eventTitle}&populate=*`);
                 const data = await response.json();
 
                 if (data.data.length > 0) {
@@ -29,7 +29,7 @@ const SingleEvents = () => {
                         location: extractLocation(apiEvent.Description) || 'Unknown Location',
                         description: apiEvent.content || 'No Content',
                         imageUrl: apiEvent.Mediafiles?.data?.[0]?.attributes?.formats?.large?.url
-                            ? `${BASE_URL}${apiEvent.Mediafiles.data[0].attributes.formats.large.url}`
+                            ? `${apiEvent.Mediafiles.data[0].attributes.formats.large.url}`
                             : '',
                         subcategory: apiEvent.subcategory?.data?.attributes?.name || 'Unknown'
                     };

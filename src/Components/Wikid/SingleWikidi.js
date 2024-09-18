@@ -18,7 +18,7 @@ const categories = {
 };
 
 // Define the base URL for images
-const BASE_URL = 'http://localhost:1337';
+
 
 // Map tags to categories
 const tagToCategory = {
@@ -39,7 +39,7 @@ const SingleWikidi = () => {
     const fetchData = async () => {
       try {
         // Fetch data from the API
-        const response = await fetch(`${BASE_URL}/api/post-blogs?populate=*`);
+        const response = await fetch(`/api/post-blogs?populate=*`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -68,7 +68,7 @@ const SingleWikidi = () => {
             date: new Date(apiItem.attributes.publishedAt).toLocaleDateString('fr-FR'),
             content: apiItem.attributes.content,
             imageUrl: apiItem.attributes.Mediafiles?.data?.[0]?.attributes?.formats?.large?.url
-              ? `${BASE_URL}${apiItem.attributes.Mediafiles.data[0].attributes.formats.large.url}`
+              ? `${apiItem.attributes.Mediafiles.data[0].attributes.formats.large.url}`
               : '',
             category,
           });

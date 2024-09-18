@@ -9,18 +9,18 @@ const podcastEpisodes = [
         title: 'Écoute-moi Épisode 1 : Changements climatiques et leurs impacts sur les personnes handicapées ',
         date: '1 Août 2024',
         description: "Dans l'épisode de la série de podcasts 'Écoute-moi' intitulé 'Changements climatiques et leurs impacts sur les personnes handicapées', animé par Jihan El-Zamzami, il est question de la manière dont les changements climatiques affectent spécifiquement les personnes en situation de handicap. Le podcast analyse les risques accrus que ces individus courent en raison des catastrophes naturelles et des conditions climatiques extrêmes, ainsi que les défis d'accessibilité lors des situations d'urgence. Il aborde également les besoins particuliers en matière de préparation et de réponse aux crises, tout en soulignant l'importance d'adapter les politiques climatiques pour inclure les personnes handicapées et garantir leur sécurité et leur bien-être.",
-        audioUrl: `${process.env.PUBLIC_URL}/audios/Écoute-moi ep1.mp4`,
-        downloadUrl: `${process.env.PUBLIC_URL}/audios/Écoute-moi ep1.mp4`,
-        imageUrl: `${process.env.PUBLIC_URL}/podcasts/saida fm.png`  // Placeholder image URL
+        audioUrl: `${process.env.PUBLIC_URL}/audios/Ecoute-moiep1.mp4`,
+        downloadUrl: `${process.env.PUBLIC_URL}/audios/Ecoute-moiep1.mp4`,
+        imageUrl: `${process.env.PUBLIC_URL}/podcasts/saidafm.png`  // Placeholder image URL
     },
     {
         id: 2,
         title: 'Écoute-moi Épisode 2',
         date: '8 Août 2024',
         description: "Le deuxième épisode du podcast 'Écoute-moi' animé par Jihan El-Zamzami se concentre sur les défis auxquels sont confrontées les personnes handicapées pour accéder à l'information. Il explore les obstacles liés aux formats non accessibles, les lacunes dans les réglementations existantes, et les initiatives visant à améliorer l'accessibilité. À travers des témoignages et des exemples concrets, l'épisode met en lumière les efforts réalisés pour surmonter ces obstacles, tout en appelant à une sensibilisation accrue et à des actions concrètes pour garantir un accès équitable à l'information pour tous.",
-        audioUrl: `${process.env.PUBLIC_URL}/audios/Écoute-moi ep2.mp4`,
-        downloadUrl: `${process.env.PUBLIC_URL}/audios/Écoute-moi ep2.mp4`,
-        imageUrl: `${process.env.PUBLIC_URL}/podcasts/saida fm.png`   // Placeholder image URL
+        audioUrl: `${process.env.PUBLIC_URL}/audios/Ecoute-moiep2.mp4`,
+        downloadUrl: `${process.env.PUBLIC_URL}/audios/Ecoute-moiep2.mp4`,
+        imageUrl: `${process.env.PUBLIC_URL}/podcasts/saidafm.png`   // Placeholder image URL
     },
     {
         id: 3,
@@ -36,8 +36,8 @@ const podcastEpisodes = [
         title: 'Production médiatique inclusive : Épisode 1',
         date: '15 Août 2024',
         description: "Dans le podcast sur le projet 'Pour améliorer l'accès des personnes handicapées aux services et aux droits en Tunisie', on explore les initiatives visant à garantir une meilleure inclusion des personnes en situation de handicap dans le pays. Le podcast détaille les efforts pour rendre les services publics et les droits accessibles, en mettant en avant les défis rencontrés et les solutions mises en place pour améliorer l'intégration. Il met également en lumière les témoignages de personnes handicapées et les recommandations pour renforcer les politiques et les infrastructures, afin d'assurer une égalité d'accès aux services et aux droits pour tous les citoyens tunisiens.",
-        audioUrl: `${process.env.PUBLIC_URL}/audios/Dream FM ( production médiatique inclusive) Épisode 1.mp4`,
-        downloadUrl: `${process.env.PUBLIC_URL}/audios/Dream FM ( production médiatique inclusive) Épisode 1.mp4`,
+        audioUrl: `${process.env.PUBLIC_URL}/audios/DreamFMEpisode1.mp4`,
+        downloadUrl: `${process.env.PUBLIC_URL}/audios/DreamFMEpisode1.mp4`,
         imageUrl: `${process.env.PUBLIC_URL}/podcasts/backcard.jpg`   // Placeholder image URL
     },
     {
@@ -45,8 +45,8 @@ const podcastEpisodes = [
         title: 'Production médiatique inclusive : Épisode 2',
         date: '15 Août 2024',
         description: "Dans le podcast sur les droits des personnes handicapées au travail selon la législation tunisienne, dans le cadre du projet 'Pour améliorer l'accès des personnes handicapées aux services et aux droits en Tunisie', il est question des dispositions légales garantissant l'égalité des chances en emploi pour les personnes en situation de handicap. L'épisode examine les lois tunisiennes qui visent à faciliter leur intégration sur le marché du travail, ainsi que les mesures de soutien et d'accommodement au sein des entreprises. Il met en évidence les défis persistants et les efforts nécessaires pour renforcer la mise en œuvre de ces droits, afin d'assurer un accès équitable aux opportunités professionnelles et à un environnement de travail inclusif.",
-        audioUrl: `${process.env.PUBLIC_URL}/audios/Dream FM ( production médiatique inclusive) Épisode 2.mp4`,
-        downloadUrl: `${process.env.PUBLIC_URL}/audios/Dream FM ( production médiatique inclusive) Épisode 2.mp4`,
+        audioUrl: `${process.env.PUBLIC_URL}/audios/DreamFMEpisode2.mp4`,
+        downloadUrl: `${process.env.PUBLIC_URL}/audios/DreamFMEpisode2.mp4`,
         imageUrl: `${process.env.PUBLIC_URL}/podcasts/backcard.jpg`   // Placeholder image URL
     },
     {
@@ -106,7 +106,7 @@ const podcastEpisodes = [
 ];
 
 
-const BASE_URL = 'http://localhost:1337';  // Adjust this to your actual API base URL
+
 
 const Podcast = () => {
   const [episodes, setEpisodes] = useState([]);
@@ -115,7 +115,7 @@ const Podcast = () => {
   useEffect(() => {
     const fetchPodcasts = async () => {
       try {
-        const response = await fetch(`${BASE_URL}/api/post-blogs?populate=*`);
+        const response = await fetch(`/api/post-blogs?populate=*`);
         const data = await response.json();
 
         const filteredEpisodes = data.data
@@ -134,9 +134,9 @@ const Podcast = () => {
               title: post.attributes.Title,
               date: post.attributes.Description?.[1]?.children?.[0]?.text || 'Unknown date',
               description: post.attributes.content,
-              audioUrl: audioFile ? `${BASE_URL}${audioFile.attributes.url}` : '',
+              audioUrl: audioFile ? `${audioFile.attributes.url}` : '',
               imageUrl: imageFile && imageFile.attributes.formats?.large
-                        ? `${BASE_URL}${imageFile.attributes.formats.large.url}`
+                        ? `${imageFile.attributes.formats.large.url}`
                         : backpodcast,
             };
           });

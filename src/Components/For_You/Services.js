@@ -5,14 +5,14 @@ import downloadbutton from '../../Assets/downloadimg.png';
 
 const Services = () => {
   const [apiCardData, setApiCardData] = useState([]);
-  const BASE_URL = 'http://localhost:1337';
+
   
   const cardData = [
     {
       title: "Comment obtenir une carte d'handicap ?",
       documentTitleFrench: "Délivrance d'une carte d'handicap",
       documentTitleArabic: "إسناد بطاقة الإعاقة",
-      previewImage: `${process.env.PUBLIC_URL}/services/Délivrance.png`,
+      previewImage: `${process.env.PUBLIC_URL}/services/Delivrance.png`,
       pdfLinkFrench: `${process.env.PUBLIC_URL}/services/Délivrance_d'une_carte_d'handicap.docx`,
       pdfLinkArabic: `${process.env.PUBLIC_URL}/services/إسناد بطاقة الإعاقة.docx`
     },
@@ -36,7 +36,7 @@ const Services = () => {
       title: "Quel est le répertoire des structures œuvrant dans le domaine du handicap en Tunisie ?",
       documentTitleFrench: "Répertoire des structures œuvrant dans le domaine du handicap en Tunisie",
       documentTitleArabic: "دليل الهياكل العاملة في مجال الإعاقة في تونس",
-      previewImage: `${process.env.PUBLIC_URL}/services/Répertoire.png`,
+      previewImage: `${process.env.PUBLIC_URL}/services/Repertoire.png`,
       pdfLinkFrench: `${process.env.PUBLIC_URL}/services/Répertoire_des_structures_œuvrant_dans_le_domaine_du_handicap_en_Tunisie.docx`,
       pdfLinkArabic: `${process.env.PUBLIC_URL}/services/دليل الهياكل العاملة في مجال الإعاقة في تونس.docx`
     },
@@ -53,7 +53,7 @@ const Services = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:1337/api/post-blogs?populate=*');
+        const response = await fetch('/api/post-blogs?populate=*');
         const result = await response.json();
 
         // Filter by subcategory "Services"
@@ -80,16 +80,16 @@ const Services = () => {
             const thumbnailImage = mediaFiles.find(media => media.attributes.mime.startsWith('image'))?.attributes.url || '';
 
             // Properly construct the full image URL if the image exists
-            const previewImage = thumbnailImage ? `${BASE_URL}${thumbnailImage}` : '';
+            const previewImage = thumbnailImage ? `${thumbnailImage}` : '';
 
             // Extract PDF links
             const pdfLinks = mediaFiles.reduce(
               (acc, media) => {
                 const fileName = media.attributes.name.toLowerCase();
                 if (fileName.includes('fr')) {
-                  acc.pdfLinkFrench = `${BASE_URL}${media.attributes.url}`;
+                  acc.pdfLinkFrench = `${media.attributes.url}`;
                 } else if (fileName.includes('ar')) {
-                  acc.pdfLinkArabic = `${BASE_URL}${media.attributes.url}`;
+                  acc.pdfLinkArabic = `${media.attributes.url}`;
                 }
                 return acc;
               },

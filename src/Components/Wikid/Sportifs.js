@@ -31,7 +31,7 @@ const encodeTitleForURL = (title) => {
     return encodeURIComponent(title.toLowerCase().replace(/\s+/g, '-'));
 };
 
-const BASE_URL = 'http://localhost:1337';
+
 
 const Sportifs = () => {
     const location = useLocation();
@@ -45,7 +45,7 @@ const Sportifs = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('http://localhost:1337/api/post-blogs?populate=*');
+                const response = await fetch('/api/post-blogs?populate=*');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
@@ -65,7 +65,7 @@ const Sportifs = () => {
                         attributes: {
                             ...item.attributes,
                             mediaFiles: mediaFiles.map(file => file.attributes?.url || ''), // Extract URLs safely
-                            imageUrl: mediaFiles[0]?.attributes?.url ? `${BASE_URL}${mediaFiles[0].attributes.url}` : '' // Full URL for image
+                            imageUrl: mediaFiles[0]?.attributes?.url ? `${mediaFiles[0].attributes.url}` : '' // Full URL for image
                         }
                     };
                 });
@@ -143,7 +143,7 @@ const Sportifs = () => {
                                     <Card.Img 
                                         className="latest-wikid" 
                                         variant="top" 
-                                        src={`${BASE_URL}${latestStory.attributes.mediaFiles[0]}`} 
+                                        src={`${latestStory.attributes.mediaFiles[0]}`} 
                                         alt={latestStory.attributes?.Title || latestStory.title}
                                         onError={() => console.error('Image not found:', latestStory.attributes?.mediaFiles[0])} // Error handling
                                     />
@@ -179,7 +179,7 @@ const Sportifs = () => {
                                     <Card.Img 
                                         variant="top" 
                                         className="wikid-card-image" 
-                                        src={`${BASE_URL}${item.attributes.mediaFiles[0]}`} 
+                                        src={`${item.attributes.mediaFiles[0]}`} 
                                         alt={item.attributes?.Title || item.title}
                                         onError={() => console.error('Image not found:', item.attributes?.mediaFiles[0])} // Error handling
                                     />
