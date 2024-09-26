@@ -29,7 +29,7 @@ import { useTheme } from './Context/ThemeContext';
 import SinglePost from './Components/Blog/SinglePost';
 import SingleNews from './Components/News_&_Events/News/SingleNews';
 import SingleWikidi from './Components/Wikid/SingleWikidi';
-import SinglePressRelease from './Components/Press_Corner/SinglePress';
+
 import SavoirLab from './Components/SavoirLab/SavoirLab';
 import Services from './Components/For_You/Services';
 import Droits from './Components/For_You/Droits';
@@ -69,9 +69,9 @@ function App() {
     const fetchData = async () => {
       try {
         const [blogsResponse, categoriesResponse, subcategoriesResponse] = await Promise.all([
-          fetch('http://localhost:1337/api/post-blogs?populate=*'),
-          fetch('http://localhost:1337/api/categories?populate=*'),
-          fetch('http://localhost:1337/api/subcategories?populate=*&filters[category][$null]=true')
+          fetch('/api/post-blogs?populate=*'),
+          fetch('/api/categories?populate=*'),
+          fetch('/api/subcategories?populate=*&filters[category][$null]=true')
         ]);
         const blogsData = await blogsResponse.json();
         const categoriesData = await categoriesResponse.json();

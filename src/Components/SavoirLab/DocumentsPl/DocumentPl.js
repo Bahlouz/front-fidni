@@ -8,6 +8,8 @@ import './DocumentPl.css';
 const DocumentPl = () => {
     const [fetchedData, setFetchedData] = useState([]);
     const [loading, setLoading] = useState(true);
+     const [showModal, setShowModal] = useState(false);
+    const [pdfInModal, setPdfInModal] = useState('');
 
     // Static PDF list
     const pdfList = [
@@ -36,12 +38,10 @@ const DocumentPl = () => {
                 const response = await fetch('/api/post-blogs?populate=*');
                 const data = await response.json();
 
-                // Filter data based on subcategory name
                 const filteredData = data.data.filter(item =>
                     item.attributes.subcategory?.data?.attributes?.name === 'Documents de plaidoyer'
                 );
 
-                // Format the data
                 const formattedData = filteredData.map(item => ({
                     title: item.attributes.Title,
                     description: item.attributes.Description.map(desc => desc.children.map(child => child.text).join('')).join('\n'),
@@ -64,7 +64,17 @@ const DocumentPl = () => {
         fetchData();
     }, []);
 
-    // Combine static and fetched data
+    const handlePdfOpen = async (pdfLink) => {
+        try {
+            const response = await fetch(pdfLink);
+            const blob = await response.blob();
+            const url = window.URL.createObjectURL(blob);
+            window.open(url, '_blank');
+        } catch (error) {
+            console.error('Error opening PDF:', error);
+        }
+    };
+
     const combinedData = [...pdfList, ...fetchedData];
 
     if (loading) return <p>Loading...</p>;
@@ -76,7 +86,7 @@ const DocumentPl = () => {
                 <div className="p-5 overlay-text-DocumentPl">
                     <h1 className="DocumentPl-titre">Documents de plaidoyer</h1>
                     <p className="DocumentPl-description">
-                        Vous allez trouver dans cette section des informations concernant les documents de plaidoyer. Elle a pour vocation de fournir des documents de conseils pratiques pour mener à bien une activité de plaidoyer en faveur de la défense des droits des personnes en situation de handicap.
+                    Vous allez trouver dans cette section des informations concernant les documents de plaidoyer. Elle a pour vocation de fournir des documents de conseils pratiques pour mener à bien une activité de plaidoyer en faveur de la défense des droits des personnes en situation de handicap.
                     </p>
                 </div>
                 <Row className="pdf-list">
@@ -90,7 +100,7 @@ const DocumentPl = () => {
                                         <Card.Text className='DocumentPl-description'>{pdf.description}</Card.Text>
                                         <Card.Link 
                                             href="#"
-                                            onClick={() => window.open(pdf.link, '_blank')}
+                                            onClick={() => handlePdfOpen(pdf.link)}
                                             rel="noopener noreferrer"
                                         >
                                             Voir PDF

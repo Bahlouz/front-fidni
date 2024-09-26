@@ -48,6 +48,22 @@ function NavBar() {
   const searchInputRef = useRef(null);
 
 
+  const getSubcategoryLink = (subcategoryName) => {
+    for (const [category, links] of Object.entries(manualLinks)) {
+      if (typeof links === 'object') {
+        const subLink = links[subcategoryName];
+        if (subLink) {
+          return subLink; // Return the corresponding path for the subcategory
+        }
+      }
+    }
+    return null; // Return null if not found
+  };
+  
+  const formatTitleForURL = (title) => {
+    return encodeURIComponent(title); // Encode the title for URL (spaces become %20, etc.)
+  };
+  
   const handleSearchInputChange = async (event) => {
     const query = event.target.value;
     setSearchQuery(query);
@@ -58,14 +74,19 @@ function NavBar() {
         const blogPosts = response.data.data; // Adjust according to API response structure
   
         // Filter blog posts by title and include subcategory
-        const filteredPosts = blogPosts.filter(post => post.attributes.Title.toLowerCase().includes(query.toLowerCase()));
+        const filteredPosts = blogPosts.filter(post =>
+          post.attributes.Title.toLowerCase().includes(query.toLowerCase())
+        );
+  
         const suggestions = filteredPosts.map(post => {
           const subcategory = post.attributes.subcategory?.data?.attributes?.name || 'No Subcategory'; // Access subcategory
+          const subLink = getSubcategoryLink(subcategory); // Get the corresponding link
+          const formattedTitle = formatTitleForURL(post.attributes.Title); // Format title for URL
   
           return {
             title: post.attributes.Title,
-            subcategory: subcategory, // Use the correctly accessed subcategory
-            link: `/blog/${post.id}` // Adjust according to your routing setup
+            subcategory: subcategory,
+            link: `${subLink}/${formattedTitle}` // Construct the full URL
           };
         });
   
@@ -80,6 +101,7 @@ function NavBar() {
       setSuggestions([]);
     }
   };
+  
 
   const handleSearchSubmit = (event) => {
     event.preventDefault();
@@ -270,10 +292,11 @@ function NavBar() {
           {suggestions.length > 0 && (
             <ul className="search-suggestions">
               {suggestions.map((suggestion, index) => (
-                <li key={index} onClick={() => handleSuggestionClick(suggestion.link)}>
-                  {suggestion.title} <span className="subcategory">{suggestion.subcategory}</span>
-                </li>
-              ))}
+              <li key={index} onClick={() => handleSuggestionClick(suggestion.link)}>
+                {suggestion.title} <span className="subcategory">{suggestion.subcategory}</span>
+              </li>
+            ))}
+
             </ul>
           )}
         </div>

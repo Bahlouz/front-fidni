@@ -69,7 +69,7 @@ const Audio = () => {
           {episodes.map((episode) => (
             <Col md={4} key={episode.id} className="mb-4">
               <Card className="h-100">
-                <Card.Img variant="top" src={episode.imageUrl} alt={episode.title} />
+                <Card.Img className="podcast-img-card" variant="top" src={episode.imageUrl} alt={episode.title} />
                 <Card.Body>
                   <Card.Title>{episode.title}</Card.Title>
                   <Card.Subtitle className="mb-2 text-muted">{episode.date}</Card.Subtitle>

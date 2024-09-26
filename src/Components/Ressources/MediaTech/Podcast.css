@@ -8,7 +8,11 @@
     font-size:4em;
 
 }
-
+.podcast-img-card{
+    height: 200px !important; /* Set your desired height */
+    object-fit: cover; /* Ensures the image covers the entire area */
+    width: 100%; /* Ensures the image stretches to fill the width */
+}
 .card {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

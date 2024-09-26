@@ -1,43 +1,39 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Blog.css';
-import { Button, Modal, Form } from 'react-bootstrap';
-// Import local data for demonstration purposes
-import blogPosts from './blogPosts';
+import { Button, Modal, Form, Card } from 'react-bootstrap';
+import blogPosts from './blogPosts'; // Local data for demo
 
 const Blog = () => {
   const [posts, setPosts] = useState([]);
   const [show, setShow] = useState(false);
   const [formData, setFormData] = useState({
-    name: '',
-    domain: '',
+    nometprenom: '',
+    domainexpertise: '',
     age: '',
     email: '',
-    title: '',
+    titre: '',
     content: '',
-    file: null
+    files: [] // Add files to state
   });
 
+  // Fetch existing posts from the API or fallback to local data
+  const fetchPosts = async () => {
+    try {
+      const response = await fetch('/api/blogs?populate=*');
+      const data = await response.json();
+  
+      // Filter posts by 'approved' status before setting state
+      const approvedPosts = data.data.filter(post => post.attributes.approved === true);
+  
+      // Update the state with only the approved posts
+      setPosts(approvedPosts);
+    } catch (error) {
+      console.error('Error fetching posts:', error);
+    }
+  };
+  
   useEffect(() => {
-    // Fetch blog posts from the API
-    const fetchPosts = async () => {
-      try {
-        const response = await fetch('/api/posts'); // Replace with your API endpoint
-        if (response.ok) {
-          const data = await response.json();
-          setPosts(data);
-        } else {
-          console.error('Error fetching posts:', response.statusText);
-          // Use local data as fallback if the fetch fails
-          setPosts(blogPosts);
-        }
-      } catch (error) {
-        console.error('Error fetching posts:', error);
-        // Use local data as fallback if the fetch fails
-        setPosts(blogPosts);
-      }
-    };
-
     fetchPosts();
   }, []);
 
@@ -45,44 +41,90 @@ const Blog = () => {
   const handleShow = () => setShow(true);
 
   const handleChange = (e) => {
-    const { name, value, type, files } = e.target;
-    if (type === 'file') {
-      setFormData((prev) => ({ ...prev, [name]: files[0] }));
+    const { name, value, files } = e.target;
+    if (name === "files") {
+      setFormData((prev) => ({ ...prev, files: Array.from(files) })); // Handle file uploads
     } else {
-      setFormData((prev) => ({ ...prev, [name]: value }));
+      setFormData((prev) => ({ ...prev, [name]: value })); 
     }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const postToSend = {
+      data: {
+          id: Date.now(), // or generate an appropriate ID
+          attributes: {
+              nometprenom: formData.nometprenom,
+              domainexpertise: formData.domainexpertise,
+              age: Number(formData.age),
+              email: formData.email,
+              titre: formData.titre,
+              content: [
+                  {
+                      type: "paragraph",
+                      children: [
+                          {
+                              text: formData.content,
+                              type: "text",
+                          },
+                      ],
+                  },
+              ],
+              createdAt: new Date().toISOString(),
+              updatedAt: new Date().toISOString(),
+              publishedAt: new Date().toISOString(),
+              approved: false,
+              file: {
+                  data: formData.files.map((file) => ({
+                      id: Date.now(), // or some unique ID generator
+                      attributes: {
+                          name: file.name,
+                          // Add additional attributes for the file if needed
+                          // Alternative text, caption, etc., can be added here
+                      },
+                  })),
+              },
+          },
+      },
+  };
+    
+    // Use FormData to include files
     const formDataToSend = new FormData();
-    Object.keys(formData).forEach(key => {
-      if (formData[key]) {
-        formDataToSend.append(key, formData[key]);
-      }
+    formDataToSend.append("data", JSON.stringify(postToSend.data));
+    formData.files.forEach((file) => {
+      formDataToSend.append("files", file);
     });
 
     try {
-      await fetch('/api/posts', {
+      const response = await fetch('/api/blogs?populate=*', {
         method: 'POST',
-        body: formDataToSend,
-        headers: {
-          // No 'Content-Type' header needed, as FormData sets it automatically
-        },
+        body: formDataToSend, // Send FormData
       });
-      setShow(false);
-      // Optionally, refresh the posts after submission
-      const response = await fetch('/api/posts');
-      const data = await response.json();
-      setPosts(data);
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log('Post submitted successfully:', data);
+        setShow(false); // Close modal after successful submission
+        setFormData({ // Reset form data
+          nometprenom: '',
+          domainexpertise: '',
+          age: '',
+          email: '',
+          titre: '',
+          content: '',
+          files: []
+        });
+        // Fetch updated posts
+        fetchPosts(); // Refresh posts without additional fetch
+      } else {
+        console.error('Error submitting post:', response.statusText);
+      }
     } catch (error) {
       console.error('Error submitting post:', error);
     }
   };
-
-  const featuredPost = posts[0];
-  const otherFeaturedPosts = posts.slice(1, 6);
-  const allPosts = posts.slice(6);
 
   return (
     <>
@@ -96,136 +138,132 @@ const Blog = () => {
       </div>
       <div className="background-image-blog-two">
         <div className="blog-container-unique">
-          <div className="featured-post-container-unique">
-            {featuredPost && (
-              <div className="featured-post-unique">
-                <Link to={`/blog/${featuredPost.id}`} className="post-link">
-                  <img src={featuredPost.image} alt={featuredPost.alt} className="featured-image-unique" />
-                </Link>
-                <div className="featured-content-unique">
-                  <span className="featured-category-unique">{featuredPost.category}</span>
-                  <h1 className="featured-title-unique">{featuredPost.title}</h1>
-                </div>
-              </div>
-            )}
-            <div className="other-featured-posts-unique">
-              <h2 className="other-featured-title-unique">Other featured posts</h2>
-              {otherFeaturedPosts.map(post => (
-                <div key={post.id} className="other-post-unique">
-                  <img src={post.image} alt={post.alt} className="other-post-image-unique" />
-                  <div className="other-post-content-unique">
-                    <Link to={`/blog/${post.id}`} className="post-link">
-                      <h3 className="other-post-title-unique">{post.title}</h3>
-                    </Link>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="all-posts-container-unique">
-            <h2 className="all-posts-title-unique">All Posts</h2>
-            <div className="all-posts-grid-unique">
-              {allPosts.map(post => (
-                <div key={post.id} className="post-unique">
-                  <img src={post.image} alt={post.alt} className="post-image-unique" />
-                  <div className="post-content-unique">
-                    <Link to={`/blog/${post.id}`} className="post-link">
-                      <h3 className="post-title-unique">{post.title}</h3>
-                    </Link>
-                    <p className="post-description-unique">{post.description}</p>
-                    <div className="post-meta-unique">
-                      <span className="post-author-unique">{post.postedBy}</span>
-                      <span className="post-date-unique">{post.date}</span>
-                      <span className="post-readtime-unique">• {post.readTime} read</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+          <h2 className="all-posts-title-unique">All Posts</h2>
+          <div className="all-posts-grid-unique">
+            {posts.map((post) => (
+              <Card key={post.id} className="post-card">
+                {post.attributes.file?.data?.[0]?.attributes?.formats?.large?.url ? (
+                <Card.Img className="blog-image-card" variant="top" src={post.attributes.file.data[0].attributes.formats.large.url} />
+              ) : post.attributes.file?.data?.[0]?.attributes?.formats?.thumbnail?.url ? (
+                <Card.Img className="blog-image-card" variant="top" src={post.attributes.file.data[0].attributes.formats.thumbnail.url} />
+              ) : (
+                <div className="no-image-placeholder">No Image</div>
+              )}
+                <Card.Body>
+                  <Link to={`/blog/${post.id}`} className="post-link">
+                    <Card.Title>{post.attributes.titre || "Untitled Post"}</Card.Title>
+                  </Link>
+                  <Card.Text>
+                    {post.attributes.content && post.attributes.content.length > 0 ? (
+                      post.attributes.content.map((paragraph, index) => (
+                        <p key={index}>
+                          {paragraph.children.map((child) => child.text).join(' ')}
+                        </p>
+                      ))
+                    ) : (
+                      <p>No content available</p>
+                    )}
+                  </Card.Text>
+                  <Card.Footer>
+                    <small className="text-muted">
+                      {post.attributes.createdAt
+                        ? new Date(post.attributes.createdAt).toLocaleDateString()
+                        : "Unknown Date"}
+                    </small>
+                  </Card.Footer>
+                </Card.Body>
+              </Card>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* Modal for PostBlogForum */}
-      <Modal show={show} onHide={handleClose} centered style={{ marginTop: "5em", zIndex: "10000" }}>
+      {/* Modal for Adding a Post */}
+      <Modal show={show} onHide={handleClose} centered>
         <Modal.Header closeButton>
           <Modal.Title>Ajouter un post</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="formName" className="mb-3">
-              <Form.Control 
-                type="text" 
-                name="name"
+              <Form.Control
+                type="text"
+                name="nometprenom"
                 placeholder="Nom et Prénom"
-                value={formData.name}
-                onChange={handleChange} 
+                value={formData.nometprenom}
+                onChange={handleChange}
+                required
               />
             </Form.Group>
 
             <Form.Group controlId="formDomain" className="mb-3">
-              <Form.Control 
-                type="text" 
-                name="domain"
+              <Form.Control
+                type="text"
+                name="domainexpertise"
                 placeholder="Votre domaine d'expertise"
-                value={formData.domain}
-                onChange={handleChange} 
+                value={formData.domainexpertise}
+                onChange={handleChange}
+                required
               />
             </Form.Group>
 
             <Form.Group controlId="formAge" className="mb-3">
-              <Form.Control 
-                type="number" 
+              <Form.Control
+                type="number"
                 name="age"
                 placeholder="Âge"
                 value={formData.age}
-                onChange={handleChange} 
+                onChange={handleChange}
+                required
               />
             </Form.Group>
 
             <Form.Group controlId="formEmail" className="mb-3">
-              <Form.Control 
-                type="email" 
+              <Form.Control
+                type="email"
                 name="email"
                 placeholder="Email"
                 value={formData.email}
-                onChange={handleChange} 
+                onChange={handleChange}
+                required
               />
             </Form.Group>
 
             <Form.Group controlId="formTitle" className="mb-3">
-              <Form.Control 
-                type="text" 
-                name="title"
+              <Form.Control
+                type="text"
+                name="titre"
                 placeholder="Titre de post"
-                value={formData.title}
-                onChange={handleChange} 
+                value={formData.titre}
+                onChange={handleChange}
+                required
               />
             </Form.Group>
 
             <Form.Group controlId="formContent" className="mb-3">
-              <Form.Control 
-                as="textarea" 
+              <Form.Control
+                as="textarea"
                 name="content"
-                rows={3} 
-                placeholder="Contenu de post"
+                placeholder="Écrire le post"
+                rows={5}
                 value={formData.content}
-                onChange={handleChange} 
+                onChange={handleChange}
+                required
               />
             </Form.Group>
 
             <Form.Group controlId="formFile" className="mb-3">
-              <Form.Control 
-                type="file" 
-                name="file"
-                multiple
-                onChange={handleChange} 
+              <Form.Label>Télécharger un fichier</Form.Label>
+              <Form.Control
+                type="file"
+                name="files"
+                multiple // Allow multiple file uploads
+                onChange={handleChange}
               />
             </Form.Group>
 
-            <Button variant="success" type="submit" className="w-100">
-              Envoyer
+            <Button variant="primary" type="submit">
+              Soumettre le post
             </Button>
           </Form>
         </Modal.Body>
