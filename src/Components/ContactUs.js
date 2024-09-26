@@ -6,7 +6,7 @@ import backnavhead from "../Assets/back navhead.jpg";
 const ContactUs = () => {
   const [alert, setAlert] = useState({ show: false, message: '', variant: '' });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const name = e.target.formName.value;
@@ -15,16 +15,54 @@ const ContactUs = () => {
     const subject = e.target.formSubject.value;
     const message = e.target.formMessage.value;
 
+    // Check for required fields
     if (!name || !email || !subject || !message) {
       setAlert({ show: true, message: 'Veuillez remplir tous les champs.', variant: 'danger' });
       return;
     }
 
-    const mailtoLink = `mailto:support@fidni.tn?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\nOrganization: ${organization}\n\nMessage:\n${message}`)}`;
+    // Create the request body object
+    const requestBody = {
+      name: name,
+      email: email,
+      passwordPlaintext: 'defaultPassword', // Replace with actual password if needed
+      disabled: false, // Adjust as needed
+      superAdmin: false, // Adjust as needed
+      redirectTo: organization ? [organization] : [], // Ensure organization is an array
+      referenceId: subject
+    };
 
-    window.location.href = mailtoLink;
+    // Log the request body for debugging
+    console.log('Request Body:', requestBody);
 
-    setAlert({ show: true, message: 'Votre message a été envoyé avec succès!', variant: 'success' });
+    // Base64 encode for Basic Auth
+    const basicAuth = btoa('support@fidni.tn:QKG6HwXGHN');
+
+    try {
+      const response = await fetch('https://mail.fidni.tn:5502/admin/api/v1/boxes', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Basic ${basicAuth}`,
+          'Accept': '*/*'
+        },
+        body: JSON.stringify(requestBody),
+      });
+
+      // Log the response for debugging
+      console.log('Response:', response);
+
+      if (response.ok) {
+        setAlert({ show: true, message: 'Votre message a été envoyé avec succès!', variant: 'success' });
+      } else {
+        const errorData = await response.json();
+        console.error('Error Response:', errorData);
+        setAlert({ show: true, message: `Erreur: ${errorData.message || 'Erreur lors de l\'envoi du message.'}`, variant: 'danger' });
+      }
+    } catch (error) {
+      console.error('Erreur:', error);
+      setAlert({ show: true, message: 'Erreur lors de l\'envoi du message.', variant: 'danger' });
+    }
   };
 
   return (
@@ -54,7 +92,7 @@ const ContactUs = () => {
                 <Form.Control type="text" name="formName" placeholder="Entrez votre nom et prénom" />
               </Form.Group>
               <Form.Group controlId="formOrganization" className="mb-4">
-                <Form.Label>L'organisation/individu.</Form.Label>
+                <Form.Label>L'organisation/individu</Form.Label>
                 <Form.Control type="text" name="formOrganization" placeholder="Entrez le nom de l'organisation ou de l'individu" />
               </Form.Group>
 
